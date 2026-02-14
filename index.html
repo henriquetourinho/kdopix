@@ -237,6 +237,38 @@
                 display: none;
             }
         }
+
+        /* WhatsApp Button Styles */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 100;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        @keyframes pulse-whatsapp {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15) !important;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 60px;
+                right: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -455,6 +487,18 @@
                     </div>
                 </section>
 
+                <!-- WhatsApp Share CTA -->
+                <section class="bg-green-600 p-4 -mx-6 text-center border-y-4 border-green-800">
+                    <button onclick="shareWhatsApp()"
+                        class="w-full bg-white hover:bg-green-50 text-green-600 font-manchete text-2xl py-4 px-6 uppercase transition-smooth shadow-lg border-4 border-green-800 flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-4xl" aria-hidden="true"></i>
+                        <span>COMPARTILHAR NO ZAP</span>
+                        <i class="fas fa-share-nodes text-2xl" aria-hidden="true"></i>
+                    </button>
+                    <p class="text-white text-xs mt-2 font-bold uppercase tracking-wider">👆 Espalhe a verdade!
+                        Compartilhe com seus grupos!</p>
+                </section>
+
                 <!-- Footer do Modal -->
                 <footer class="mt-8 border-t-4 border-black pt-6 bg-gray-900 -mx-6 px-6 pb-6 text-center">
                     <p class="font-manchete text-tv-yellow text-lg uppercase tracking-[3px]">Carlos Henrique Tourinho
@@ -525,20 +569,35 @@
             </div>
         </div>
 
-        <!-- Action Buttons -->
-        <nav class="grid grid-cols-2 bg-gray-900 border-t-2 border-gray-700">
+        <!-- Action Buttons (3 columns with WhatsApp) -->
+        <nav class="grid grid-cols-3 bg-gray-900 border-t-2 border-gray-700">
             <button onclick="toggleSound()" id="play-btn"
-                class="bg-black text-tv-yellow font-manchete text-2xl py-6 hover:bg-gray-800 uppercase border-r border-gray-700 transition-smooth"
+                class="bg-black text-tv-yellow font-manchete text-xl md:text-2xl py-6 hover:bg-gray-800 uppercase border-r border-gray-700 transition-smooth"
                 aria-label="Controlar áudio da página">
-                <span aria-hidden="true">🔊</span> <span id="btn-text">OUVIR ÁUDIO</span>
+                <span aria-hidden="true">🔊</span> <span id="btn-text" class="hidden md:inline">OUVIR ÁUDIO</span><span
+                    class="md:hidden">ÁUDIO</span>
+            </button>
+            <button onclick="shareWhatsApp()"
+                class="bg-green-600 text-white font-manchete text-xl md:text-2xl py-6 hover:bg-green-700 uppercase border-r border-gray-700 transition-smooth shadow-[inset_0_0_30px_rgba(0,0,0,0.3)]"
+                aria-label="Compartilhar no WhatsApp">
+                <span aria-hidden="true">📱</span> <span class="hidden md:inline">COMPARTILHAR</span><span
+                    class="md:hidden">ZAP</span>
             </button>
             <button onclick="toggleModal()"
-                class="bg-tv-red text-white font-manchete text-2xl py-6 hover:bg-red-800 uppercase transition-smooth shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]"
+                class="bg-tv-red text-white font-manchete text-xl md:text-2xl py-6 hover:bg-red-800 uppercase transition-smooth shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]"
                 aria-label="Abrir dossiê completo do caso">
-                <span aria-hidden="true">⚖️</span> CAPIVARA
+                <span aria-hidden="true">⚖️</span> <span class="hidden md:inline">CAPIVARA</span><span
+                    class="md:hidden">DOSSIÊ</span>
             </button>
         </nav>
     </main>
+
+    <!-- Floating WhatsApp Button -->
+    <button onclick="shareWhatsApp()"
+        class="whatsapp-float bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shadow-2xl border-4 border-white transition-smooth"
+        aria-label="Compartilhar escândalo no WhatsApp" title="Compartilhar no WhatsApp">
+        <i class="fab fa-whatsapp text-4xl md:text-5xl" aria-hidden="true"></i>
+    </button>
 
     <!-- Footer Bar -->
     <footer
