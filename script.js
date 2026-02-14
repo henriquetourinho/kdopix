@@ -203,6 +203,47 @@ function toggleSound() {
 }
 
 // ============================================
+// WHATSAPP SHARE
+// ============================================
+
+/**
+ * Share page on WhatsApp with strategic message
+ */
+function shareWhatsApp() {
+    // Mensagem estratégica e viral
+    const message = `🚨 *URGENTE: ESCÂNDALO DO PIX NA BAHIA* 🚨
+
+💰 R$ 407 MIL DESVIADOS de doações para crianças com câncer!
+
+⚖️ 12 RÉUS DENUNCIADOS pelo MP-BA
+🎙️ Jornalistas da Record Bahia envolvidos
+
+📂 Veja o DOSSIÊ COMPLETO com:
+✅ Nomes dos 12 réus
+✅ Valores desviados
+✅ Provas e reportagens oficiais
+✅ Processo judicial em andamento
+
+👉 Acesse agora: https://kdopix.com.br
+
+⚠️ COMPARTILHE! As vítimas precisam de justiça!
+
+#KdOPix #EscândaloDoPix #Bahia #Justiça`;
+
+    // URL encode da mensagem
+    const encodedMessage = encodeURIComponent(message);
+    
+    // URL do WhatsApp Web/App
+    const whatsappURL = `https://wa.me/?text=${encodedMessage}`;
+    
+    // Abrir em nova aba
+    window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+    
+    // Analytics (opcional - pode adicionar tracking aqui)
+    console.log('📱 WhatsApp share clicked');
+}
+
+// ============================================
 // MODAL MANAGEMENT
 // ============================================
 
@@ -338,6 +379,7 @@ function init() {
 // Make functions available globally for inline event handlers
 window.toggleSound = toggleSound;
 window.toggleModal = toggleModal;
+window.shareWhatsApp = shareWhatsApp;
 
 // ============================================
 // START APPLICATION
