@@ -211,7 +211,7 @@ function toggleSound() {
  * Share page on WhatsApp with strategic message
  */
 function shareWhatsApp() {
-    // Mensagem estratégica e viral
+    // Mensagem estratégica e viral com a nova polêmica
     const message = `🚨 *URGENTE: ESCÂNDALO DO PIX NA BAHIA* 🚨
 
 💰 R$ 407 MIL DESVIADOS de doações para crianças com câncer!
@@ -219,17 +219,20 @@ function shareWhatsApp() {
 ⚖️ 12 RÉUS DENUNCIADOS pelo MP-BA
 🎙️ Jornalistas da Record Bahia envolvidos
 
-📂 Veja o DOSSIÊ COMPLETO com:
-✅ Nomes dos 12 réus
-✅ Valores desviados
-✅ Provas e reportagens oficiais
-✅ Processo judicial em andamento
+🚔 *POLÊMICA NOVA:*
+Delegado-Geral da PC-BA HOMENAGEIA réu do Pix com "moeda institucional" enquanto vítimas esperam justiça há 2 ANOS!
 
-👉 Acesse agora: https://kdopix.com.br
+😡 *ISSO VAI FICAR ASSIM?*
+• Julgamento adiado pela 2ª vez
+• Programa cresceu 85% em audiência
+• Apenas 1 preso até agora
 
-⚠️ COMPARTILHE! As vítimas precisam de justiça!
+📂 Veja o DOSSIÊ COMPLETO + VÍDEO:
+👉 https://kdopix.com.br
 
-#KdOPix #EscândaloDoPix #Bahia #Justiça`;
+⚠️ COMPARTILHE! As vítimas precisam de voz!
+
+#KdOPix #EscândaloDoPix #Bahia #Justiça #PoliciaCivilBA`;
 
     // URL encode da mensagem
     const encodedMessage = encodeURIComponent(message);
@@ -313,6 +316,13 @@ function handleEnterClick() {
 
     // Allow body scroll
     document.body.style.overflow = 'auto';
+
+    // Show WhatsApp floating button after entering
+    const whatsappBtn = document.getElementById('whatsapp-float');
+    if (whatsappBtn) {
+        whatsappBtn.classList.remove('hidden');
+        whatsappBtn.classList.add('flex');
+    }
 }
 
 // ============================================
