@@ -4,8 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLANTÃO - KD O PIX?</title>
 
+    <title>ESCÂNDALO DO PIX NA BAHIA - Dossiê Marcelo Castro e Juca</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="URGENTE: Dossiê completo sobre o Escândalo do Pix na Record Bahia. Veja os 12 réus denunciados pelo MP-BA, crimes de estelionato e os R$ 407 mil desviados de doações.">
+    <meta name="keywords"
+        content="Marcelo Castro, Juca, Alô Juca, Golpe do Pix, Record Bahia, TV Aratu, Desvio de Doações, Bahia, Salvador, MP-BA, Justiça, Kd o Pix, Jamerson Oliveira, Balanço Geral, Escândalo Pix Bahia, Crime Bahia, Marcelo Castro Record, Juca SBT">
+    <meta name="author" content="Carlos Henrique Tourinho Santana">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kdopix.com.br/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="🚨 URGENTE: Escândalo do Pix na Bahia - Dossiê Completo">
+    <meta property="og:description"
+        content="Acesse a 'Capivara Completa' dos 12 réus. Valores, nomes e provas do esquema que parou a Bahia. O site que eles não querem que você veja.">
+    <meta property="og:url" content="https://kdopix.com.br/">
+    <meta property="og:image" content="https://kdopix.com.br/media/juca.webp">
+    <meta property="og:site_name" content="KD O PIX?">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🚨 URGENTE: Escândalo do Pix na Bahia - Dossiê Completo">
+    <meta name="twitter:description"
+        content="Acesse a 'Capivara Completa' dos 12 réus. Valores, nomes e provas do esquema que parou a Bahia.">
+    <meta name="twitter:image" content="https://kdopix.com.br/media/juca.webp">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Escândalo do Pix na Bahia: MP-BA denuncia 12 pessoas por desvio de doações",
+      "image": ["https://kdopix.com.br/media/juca.webp"],
+      "datePublished": "2026-02-14T12:00:00-03:00",
+      "author": {
+          "@type": "Person",
+          "name": "Carlos Henrique Tourinho Santana",
+          "url": "https://github.com/henriquetourinho/kdopix"
+        },
+      "publisher": {
+        "@type": "Organization",
+        "name": "KD O PIX? - Dossiê Independente",
+        "logo": { "@type": "ImageObject", "url": "https://kdopix.com.br/media/icon.png" }
+      },
+      "description": "Dossiê aberto sobre o desvio de doações no programa Balanço Geral da Record Bahia envolvendo jornalistas e laranjas."
+    }
+    </script>
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://www.youtube.com">
+
+    <!-- Stylesheets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@700&family=Special+Elite&display=swap"
@@ -30,6 +85,7 @@
                     animation: {
                         'sirene': 'sirene 0.8s infinite',
                         'pisca': 'pisca 0.5s step-end infinite',
+                        'marquee': 'marquee 20s linear infinite',
                     }
                 }
             }
@@ -37,22 +93,55 @@
     </script>
 
     <style>
+        /* Base Styles */
         body {
             background-color: #000;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
+        /* Animations */
         @keyframes sirene {
             0% {
-                background-color: rgba(0, 51, 153, 0.2);
+                background-color: rgba(0, 51, 153, 0.15);
             }
 
             50% {
-                background-color: rgba(214, 0, 0, 0.2);
+                background-color: rgba(214, 0, 0, 0.15);
             }
 
             100% {
-                background-color: rgba(0, 51, 153, 0.2);
+                background-color: rgba(0, 51, 153, 0.15);
+            }
+        }
+
+        @keyframes pisca {
+
+            0%,
+            49% {
+                opacity: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
             }
         }
 
@@ -64,25 +153,19 @@
             animation: pisca 0.5s step-end infinite;
         }
 
+        /* Money Animation - Optimized */
         .money {
-            position: absolute;
+            position: fixed;
             top: -50px;
             font-size: 24px;
             animation: fall linear forwards;
             z-index: 5;
-            opacity: 0.8;
+            opacity: 0.6;
+            pointer-events: none;
+            will-change: transform;
         }
 
-        @keyframes fall {
-            to {
-                transform: translateY(110vh) rotate(360deg);
-            }
-        }
-
-        .blue-gradient {
-            background: linear-gradient(180deg, #003399 0%, #001a4d 100%);
-        }
-
+        /* Video Container */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -98,6 +181,12 @@
             height: 100%;
         }
 
+        /* Gradients */
+        .blue-gradient {
+            background: linear-gradient(180deg, #003399 0%, #001a4d 100%);
+        }
+
+        /* Custom Scrollbar */
         .custom-scroll::-webkit-scrollbar {
             width: 8px;
         }
@@ -110,293 +199,363 @@
             background: #d60000;
             border-radius: 4px;
         }
+
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #a00000;
+        }
+
+        /* Focus Styles for Accessibility */
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #ffcc00;
+            outline-offset: 2px;
+        }
+
+        /* Loading State */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Smooth Transitions */
+        .transition-smooth {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .money {
+                display: none;
+            }
+        }
     </style>
 </head>
 
-<body class="bg-sirene h-screen flex flex-col items-center justify-center relative font-sans">
+<body class="bg-sirene min-h-screen flex flex-col items-center justify-center relative font-sans">
 
-    <div id="start-screen" class="fixed inset-0 z-50 bg-tv-black flex flex-col items-center justify-center p-4">
-
+    <!-- Start Screen -->
+    <div id="start-screen"
+        class="fixed inset-0 z-50 bg-tv-black flex flex-col items-center justify-center p-4 overflow-y-auto"
+        role="dialog" aria-labelledby="start-title" aria-modal="true">
         <div class="text-center mb-8 relative">
-            <h1
+            <h1 id="start-title"
                 class="font-manchete text-6xl md:text-9xl text-tv-yellow uppercase tracking-tighter leading-none animate-pulse">
                 PLANTÃO<br><span class="text-white">URGENTE</span>
             </h1>
-            <div
-                class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-md h-1 bg-tv-red shadow-[0_0_10px_red]">
-            </div>
+            <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-md h-1 bg-tv-red shadow-[0_0_15px_red]"
+                aria-hidden="true"></div>
         </div>
 
         <button id="enter-btn"
-            class="mb-12 bg-red-600 text-white font-manchete text-2xl px-8 py-3 border-4 border-white uppercase shadow-[6px_6px_0px_white] hover:translate-y-1 hover:shadow-[2px_2px_0px_white] transition-all animate-bounce">
-            CLIQUE PARA ENTRAR
+            class="mb-12 bg-red-600 text-white font-manchete text-2xl px-10 py-4 border-4 border-white uppercase shadow-[8px_8px_0px_white] hover:translate-y-1 transition-smooth animate-bounce focus:animate-none"
+            aria-label="Clique para entrar e visualizar o dossiê completo">
+            CLIQUE PARA ENTRAR NO DOSSIÊ
         </button>
 
-        <div class="max-w-xl w-full border-t border-gray-800 pt-6 text-center">
-            <p class="font-typewriter text-gray-400 text-xs md:text-sm italic mb-4 tracking-widest">
+        <div
+            class="max-w-2xl w-full border-t border-gray-800 pt-8 text-center bg-black/40 p-6 rounded-lg backdrop-blur-sm">
+            <blockquote
+                class="font-typewriter text-tv-yellow text-sm md:text-lg italic mb-6 tracking-widest leading-relaxed">
                 "Minhas escolhas podem custar caro, mas abandonar o que eu acredito custaria muito mais."
-            </p>
-
-            <div class="flex flex-col items-center gap-3">
+            </blockquote>
+            <div class="flex flex-col items-center gap-4">
                 <div
-                    class="flex items-center gap-2 uppercase font-bold text-white tracking-widest text-[10px] md:text-xs border px-3 py-1 border-gray-700 rounded-full">
-                    <i class="fas fa-user-secret text-red-600"></i>
+                    class="flex items-center gap-3 uppercase font-bold text-white tracking-widest text-xs md:text-sm border-2 px-4 py-2 border-tv-red rounded-sm">
+                    <i class="fas fa-user-secret text-tv-red" aria-hidden="true"></i>
                     <span>Carlos Henrique Tourinho Santana</span>
                 </div>
-
-                <div class="flex gap-6 text-gray-400 text-xs">
-                    <a href="https://www.instagram.com/henrique.ntxa/" target="_blank"
-                        class="hover:text-tv-yellow transition-colors flex items-center gap-1">
-                        <i class="fab fa-instagram"></i> Instagram
+                <nav class="flex gap-8 text-gray-400 text-sm" aria-label="Links de contato">
+                    <a href="https://www.instagram.com/henrique.ntxa/" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-tv-yellow transition-smooth">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span>Instagram</span>
                     </a>
-                    <a href="https://wiki.debian.org/henriquetourinho" target="_blank"
-                        class="hover:text-tv-red transition-colors flex items-center gap-1">
-                        <i class="fab fa-linux"></i> Wiki Debian
+                    <a href="https://wiki.debian.org/henriquetourinho" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-tv-red transition-smooth">
+                        <i class="fab fa-linux" aria-hidden="true"></i>
+                        <span>Wiki Debian</span>
                     </a>
-                    <a href="mailto:henriquetourinho@riseup.net"
-                        class="hover:text-white transition-colors flex items-center gap-1">
-                        <i class="fas fa-envelope"></i> Email
+                    <a href="mailto:henriquetourinho@riseup.net" class="hover:text-white transition-smooth">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>Email</span>
                     </a>
-                </div>
-
-                <a href="https://github.com/henriquetourinho/kdopix" target="_blank"
-                    class="mt-2 text-green-500 hover:text-green-400 text-[10px] uppercase font-bold tracking-widest flex items-center gap-2">
-                    <i class="fab fa-github"></i> Código Aberto (GitHub)
-                </a>
+                </nav>
             </div>
         </div>
     </div>
 
+    <!-- Modal Processo -->
     <div id="modal-processo"
-        class="hidden fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 backdrop-blur-md overflow-y-auto">
+        class="hidden fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 backdrop-blur-md overflow-y-auto"
+        role="dialog" aria-labelledby="modal-title" aria-modal="true">
         <div
-            class="bg-white w-full max-w-2xl border-4 border-tv-red shadow-2xl relative animate-[bounce_0.3s_ease-out] my-auto flex flex-col max-h-[90vh]">
+            class="bg-white w-full max-w-2xl border-4 border-tv-red shadow-2xl relative my-auto flex flex-col max-h-[90vh]">
 
-            <div
-                class="bg-tv-black text-white p-3 flex justify-between items-center border-b-4 border-tv-yellow shrink-0">
-                <h2 class="font-manchete text-2xl text-tv-yellow">CAPIVARA COMPLETA</h2>
-                <button onclick="toggleModal()" class="text-white hover:text-tv-red font-bold text-xl px-2">✕
-                    FECHAR</button>
-            </div>
+            <header
+                class="bg-tv-black text-white p-4 flex justify-between items-center border-b-4 border-tv-yellow shrink-0">
+                <h2 id="modal-title" class="font-manchete text-2xl text-tv-yellow uppercase">Capivara Completa</h2>
+                <button onclick="toggleModal()"
+                    class="text-white hover:text-tv-red font-bold text-xl px-2 transition-smooth"
+                    aria-label="Fechar modal">
+                    ✕ FECHAR
+                </button>
+            </header>
 
-            <div class="p-6 font-tv text-tv-black space-y-4 bg-gray-50 overflow-y-auto custom-scroll grow">
+            <div class="p-6 font-tv text-tv-black space-y-6 bg-gray-50 overflow-y-auto custom-scroll grow text-black">
 
-                <div class="border-4 border-black mb-4 bg-black shadow-lg shrink-0">
-                    <p class="bg-tv-red text-white font-manchete text-center text-sm uppercase py-1">MATÉRIA DO DOMINGO
-                        ESPETACULAR, RECORD TV</p>
-
-                    <div class="video-container">
-                        <iframe id="yt-iframe" src="https://www.youtube.com/embed/2uMN22sk-7E?rel=0" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-
-                    <div class="bg-gray-900 p-2 text-center border-t-2 border-tv-yellow">
-                        <div class="flex items-center justify-center gap-2 text-tv-yellow animate-pulse">
-                            <i class="fas fa-gavel"></i>
-                            <span class="font-manchete uppercase tracking-widest text-sm">PROCESSO EM SEGREDO DE
-                                JUSTIÇA</span>
-                            <i class="fas fa-gavel"></i>
-                        </div>
-                        <p class="text-gray-400 text-[10px] font-mono mt-1">
-                            A reprodução deste conteúdo é protegida pelo direito de informação e interesse público.
+                <!-- Video Section -->
+                <section aria-labelledby="video-title">
+                    <div class="border-4 border-black bg-black shadow-lg">
+                        <p id="video-title"
+                            class="bg-tv-red text-white font-manchete text-center text-sm uppercase py-1 tracking-widest">
+                            Matéria do Domingo Espetacular (RECORD TV)
                         </p>
+                        <div class="video-container">
+                            <iframe id="yt-iframe" data-src="https://www.youtube.com/embed/2uMN22sk-7E?rel=0"
+                                frameborder="0" allowfullscreen loading="lazy"
+                                title="Matéria do Domingo Espetacular sobre o Escândalo do Pix"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                            </iframe>
+                        </div>
+                        <div class="bg-gray-900 p-2 text-center border-t-2 border-tv-yellow">
+                            <div
+                                class="flex items-center justify-center gap-2 text-tv-yellow animate-pulse font-manchete text-xs uppercase tracking-widest">
+                                <i class="fas fa-gavel" aria-hidden="true"></i>
+                                <span>PROCESSO EM SEGREDO DE JUSTIÇA</span>
+                                <i class="fas fa-gavel" aria-hidden="true"></i>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="bg-white border-2 border-tv-black p-4 shadow-sm mb-4">
-                    <h3 class="font-manchete text-xl text-tv-blue mb-2 uppercase border-b-2 border-gray-200">
-                        📂 RELATO DOS FATOS (DENÚNCIA MP-BA):
-                    </h3>
-                    <p class="text-xs md:text-sm font-mono text-gray-800 text-justify mb-2 leading-relaxed">
-                        Segundo o <strong>Ministério Público da Bahia</strong>, a organização criminosa atuou entre 2022
-                        e 2023. Aproveitando-se da vulnerabilidade de famílias pobres e crianças com câncer no programa
-                        <em>"Balanço Geral"</em>, os acusados desviavam doações.
-                    </p>
-                    <p class="text-xs md:text-sm font-mono text-gray-800 text-justify leading-relaxed">
-                        <span class="bg-red-100 text-red-800 px-1 font-bold">O GOLPE:</span> A chave Pix exibida na tela
-                        não era da família, mas de "laranjas" ligados ao repórter e editor.
-                    </p>
-                </div>
+                <!-- Valores Section -->
+                <section aria-labelledby="valores-title">
+                    <h3 id="valores-title" class="sr-only">Valores do esquema</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                        <div class="bg-white p-3 border-2 border-gray-300 shadow-inner">
+                            <p class="text-[10px] text-gray-500 font-mono uppercase font-black">Total Arrecadado pelas
+                                Campanhas</p>
+                            <p class="font-manchete text-3xl text-green-700 leading-none" aria-label="543 mil reais">R$
+                                543.089,66</p>
+                        </div>
+                        <div class="bg-white p-3 border-4 border-tv-red shadow-lg animate-pulse">
+                            <p class="text-[10px] text-tv-red font-black uppercase tracking-tighter">Valor Desviado pela
+                                Quadrilha (75%)</p>
+                            <p class="font-manchete text-3xl text-tv-red leading-none" aria-label="407 mil reais">R$
+                                407.143,78</p>
+                        </div>
+                    </div>
+                </section>
 
-                <div class="bg-white border-2 border-tv-black p-4 shadow-[4px_4px_0px_rgba(0,0,0,0.2)]">
-                    <h3 class="font-manchete text-xl text-tv-red mb-2 border-b-2 border-gray-200 uppercase">
-                        🚨 OS 12 DENUNCIADOS:
-                    </h3>
-                    <ul class="text-xs md:text-sm space-y-2 font-mono text-gray-800">
-                        <li class="font-bold text-black border-l-4 border-tv-red pl-2">1. Marcelo Valter Amorim Matos
-                            Lyrio Castro <span
-                                class="text-red-600 font-bold text-[10px] uppercase ml-1 bg-red-100 px-1 rounded">Líder</span>
-                        </li>
-                        <li class="font-bold text-black border-l-4 border-tv-red pl-2">2. Jamerson Birindiba Oliveira
-                            <span
-                                class="text-red-600 font-bold text-[10px] uppercase ml-1 bg-red-100 px-1 rounded">Líder</span>
-                        </li>
-                        <li class="font-bold text-black border-l-4 border-tv-blue pl-2">3. Lucas Costa Santos <span
-                                class="text-blue-800 font-bold text-[10px] uppercase ml-1 bg-blue-100 px-1 rounded">Operador</span>
-                        </li>
-                        <li class="pl-2 border-l-2 border-gray-300">4. Carlos Eduardo do Sacramento Marques Santiago de
-                            Jesus</li>
-                        <li class="pl-2 border-l-2 border-gray-300">5. Jakson da Silva de Jesus</li>
-                        <li class="pl-2 border-l-2 border-gray-300">6. Daniele Cristina da Silva Monteiro</li>
-                        <li class="pl-2 border-l-2 border-gray-300">7. Debora Cristina da Silva Monteiro</li>
-                        <li class="pl-2 border-l-2 border-gray-300">8. Rute Cruz da Costa</li>
-                        <li class="pl-2 border-l-2 border-gray-300">9. Gerson Santos Santana Junior</li>
-                        <li class="pl-2 border-l-2 border-gray-300">10. Eneida Sena Couto</li>
-                        <li class="pl-2 border-l-2 border-gray-300">11. Thais Pacheco da Costa</li>
-                        <li class="pl-2 border-l-2 border-gray-300">12. Alessandra Silva Oliveira de Jesus</li>
-                    </ul>
-                </div>
+                <!-- Réus Section -->
+                <section aria-labelledby="reus-title">
+                    <div class="bg-white border-2 border-tv-black p-4 shadow-[4px_4px_0px_rgba(0,0,0,0.2)]">
+                        <h3 id="reus-title"
+                            class="font-manchete text-xl text-tv-red mb-3 border-b-2 border-gray-200 uppercase">
+                            🚨 OS 12 RÉUS DENUNCIADOS:
+                        </h3>
+                        <ol class="text-[10px] md:text-xs space-y-2 font-mono text-gray-800">
+                            <li class="font-bold border-l-4 border-tv-red pl-2">
+                                1. Marcelo Valter Amorim Matos Lyrio Castro
+                                <span class="bg-red-600 text-white px-1 ml-1 uppercase text-[9px]">Apropriação Indébita
+                                    e Org. Criminosa</span>
+                            </li>
+                            <li class="font-bold border-l-4 border-tv-red pl-2">
+                                2. Jamerson Birindiba Oliveira
+                                <span class="bg-red-600 text-white px-1 ml-1 uppercase text-[9px]">Apropriação Indébita
+                                    e Lavagem de Dinheiro</span>
+                            </li>
+                            <li class="font-bold border-l-4 border-tv-blue pl-2">
+                                3. Lucas Costa Santos
+                                <span class="bg-blue-600 text-white px-1 ml-1 uppercase text-[9px]">Intermediação e
+                                    Coação de Vítimas</span>
+                            </li>
+                            <li class="pl-2 border-l-2 border-gray-300 italic">
+                                4. Carlos Eduardo Sacramento M. S. de Jesus
+                                <span class="text-gray-400 font-normal"> - Associação Criminosa / Lavagem</span>
+                            </li>
+                            <li class="pl-2 border-l-2 border-gray-300 italic">
+                                5. Jakson da Silva de Jesus
+                                <span class="text-gray-400 font-normal"> - Associação Criminosa / Lavagem</span>
+                            </li>
+                            <li class="pl-2 border-l-2 border-gray-300 italic">
+                                6. Daniele Cristina da Silva Monteiro
+                                <span class="text-gray-400 font-normal"> - Associação Criminosa / Lavagem</span>
+                            </li>
+                            <li class="pl-2 border-l-2 border-gray-300 italic">
+                                7. Debora Cristina da Silva Monteiro
+                                <span class="text-gray-400 font-normal"> - Associação Criminosa / Lavagem</span>
+                            </li>
+                            <li class="pl-2 border-l-2 border-gray-300 italic">
+                                8. Rute Cruz da Costa
+                                <span class="text-gray-400 font-normal"> - Associação Criminosa / Lavagem</span>
+                            </li>
+                            <li class="pl-2 border-l-2 border-gray-300 italic">
+                                9. Gerson Santos Santana Junior
+                                <span class="text-gray-400 font-normal"> - Associação Criminosa / Lavagem</span>
+                            </li>
+                            <li class="pl-2 border-l-2 border-gray-300 italic">
+                                10. Eneida Sena Couto
+                                <span class="text-gray-400 font-normal"> - Associação Criminosa / Lavagem</span>
+                            </li>
+                            <li class="pl-2 border-l-2 border-gray-300 italic">
+                                11. Thais Pacheco da Costa
+                                <span class="text-gray-400 font-normal"> - Associação Criminosa / Lavagem</span>
+                            </li>
+                            <li class="pl-2 border-l-2 border-gray-300 italic">
+                                12. Alessandra Silva Oliveira de Jesus
+                                <span class="text-gray-400 font-normal"> - Associação Criminosa / Lavagem</span>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
 
-                <div class="mt-4 pt-4 border-t-2 border-dashed border-gray-300">
-                    <p class="font-manchete text-base text-black mb-2">FONTES (CLIQUE PARA CONFERIR):</p>
-                    <ul class="space-y-1 text-xs font-mono text-blue-700 underline decoration-dotted">
-                        <li><a href="https://www.mpba.mp.br/noticia/74077" target="_blank">➤ MP-BA: Justiça aceita
-                                denúncia contra 12 acusados</a></li>
-                        <li><a href="https://veja.abril.com.br/coluna/veja-gente/o-esquema-de-doacoes-de-pix-desviadas-por-reporter-da-record/"
-                                target="_blank">➤ VEJA: O esquema de doações desviadas</a></li>
-                        <li><a href="https://www.metropoles.com/colunas/fabia-oliveira/vitimas-do-jornalista-marcelo-castro-revela-detalhes-do-golpe-do-pix"
-                                target="_blank">➤ Metrópoles: Vítimas revelam detalhes</a></li>
-                        <li><a href="https://www.portaldosjornalistas.com.br/marcelo-castro-acusado-de-aplicar-golpe-do-pix-em-pessoas-pobres-volta-a-pedir-dinheiro-durante-programa/"
-                                target="_blank">➤ Portal dos Jornalistas: Reincidência no SBT</a></li>
-                    </ul>
-                </div>
+                <!-- Fontes Section -->
+                <section aria-labelledby="fontes-title">
+                    <div class="bg-gray-200 p-4 border-t-2 border-dashed border-gray-400">
+                        <h3 id="fontes-title"
+                            class="font-manchete text-base text-black mb-2 uppercase tracking-tighter">
+                            Fontes de Informação (Links Oficiais):
+                        </h3>
+                        <ul class="space-y-1 text-[10px] font-mono text-blue-800 underline">
+                            <li>
+                                <a href="https://www.mpba.mp.br/noticia/74077" target="_blank"
+                                    rel="noopener noreferrer">
+                                    ➤ MP-BA: Justiça aceita denúncia oficial
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://veja.abril.com.br/coluna/veja-gente/o-esquema-de-doacoes-de-pix-desviadas-por-reporter-da-record/"
+                                    target="_blank" rel="noopener noreferrer">
+                                    ➤ VEJA: O esquema de desvios na TV
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.metropoles.com/colunas/fabia-oliveira/vitimas-do-jornalista-marcelo-castro-revela-detalhes-do-golpe-do-pix"
+                                    target="_blank" rel="noopener noreferrer">
+                                    ➤ METRÓPOLES: Vítimas revelam detalhes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.portaldosjornalistas.com.br/marcelo-castro-acusado-de-aplicar-golpe-do-pix-em-pessoas-pobres-volta-a-pedir-dinheiro-durante-programa/"
+                                    target="_blank" rel="noopener noreferrer">
+                                    ➤ PORTAL JORNALISTAS: Atuação na TV Aratu (SBT)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Footer do Modal -->
+                <footer class="mt-8 border-t-4 border-black pt-6 bg-gray-900 -mx-6 px-6 pb-6 text-center">
+                    <p class="font-manchete text-tv-yellow text-lg uppercase tracking-[3px]">Carlos Henrique Tourinho
+                        Santana</p>
+                    <p class="font-typewriter text-white text-[10px] italic mb-4">"Minhas escolhas podem custar caro,
+                        mas abandonar o que eu acredito custaria muito mais."</p>
+                    <nav class="flex justify-center gap-6 text-gray-400 text-xs font-bold uppercase"
+                        aria-label="Links sociais">
+                        <a href="https://www.instagram.com/henrique.ntxa/" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-white transition-smooth">Instagram</a>
+                        <a href="https://github.com/henriquetourinho/kdopix" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-green-500 transition-smooth">GitHub</a>
+                        <a href="mailto:henriquetourinho@riseup.net"
+                            class="hover:text-red-500 transition-smooth">Email</a>
+                    </nav>
+                </footer>
 
             </div>
         </div>
     </div>
 
+    <!-- Main Content -->
     <main
-        class="relative z-10 w-full max-w-3xl border-[12px] border-[#1a1a1a] bg-[#202020] shadow-[0_0_50px_rgba(0,0,0,0.8)] md:rounded-xl overflow-hidden mb-20">
+        class="relative z-10 w-full max-w-3xl border-[12px] border-[#1a1a1a] bg-[#202020] shadow-[0_0_80px_rgba(0,0,0,0.9)] md:rounded-xl overflow-hidden mb-20 mx-4">
 
-        <div
+        <!-- Header Bar -->
+        <header
             class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black flex justify-between items-center px-4 py-2 font-manchete uppercase border-b-4 border-black relative z-20">
             <div class="flex items-center gap-3">
-                <span
-                    class="bg-red-600 text-white px-3 py-0.5 rounded shadow-sm text-sm md:text-base animate-pulse shadow-inner">AO
-                    VIVO</span>
-                <span class="text-sm md:text-base tracking-tight font-bold">SALVADOR/BA</span>
+                <span class="bg-red-600 text-white px-3 py-0.5 rounded shadow-sm text-sm animate-pulse font-black"
+                    aria-label="Transmissão ao vivo">AO VIVO</span>
+                <span class="text-sm font-bold tracking-tight">SALVADOR / BAHIA</span>
             </div>
-            <div class="text-xl tracking-widest font-mono font-black opacity-80" id="clock">12:00</div>
-        </div>
+            <time class="text-xl font-mono font-black opacity-90" id="clock" datetime="">12:00</time>
+        </header>
 
-        <div class="relative w-full aspect-video bg-black group overflow-hidden">
-            <div
-                class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-10 bg-[length:100%_4px,6px_100%] pointer-events-none">
-            </div>
-
+        <!-- Hero Image -->
+        <div class="relative w-full aspect-video bg-black overflow-hidden">
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] z-10 pointer-events-none"
+                aria-hidden="true"></div>
             <img src="media/juca.webp"
-                class="w-full h-full object-cover opacity-90 filter contrast-125 saturate-150 transform scale-105"
-                alt="Imagem Ilustrativa">
-
-            <div
-                class="absolute top-4 right-4 bg-tv-red text-white font-manchete text-3xl px-6 py-1 border-4 border-white transform rotate-2 shadow-[4px_4px_0px_black] z-20 animate-pulse">
+                class="w-full h-full object-cover filter contrast-125 saturate-150 transform scale-105"
+                alt="Imagem relacionada ao caso de Marcelo Castro e o Escândalo do Pix na Bahia" loading="eager">
+            <div class="absolute top-4 right-4 bg-tv-red text-white font-manchete text-3xl px-6 py-1 border-4 border-white transform rotate-2 shadow-xl z-20 animate-pulse"
+                aria-label="Conteúdo exclusivo">
                 EXCLUSIVO
             </div>
         </div>
 
+        <!-- Title Section -->
         <div class="relative z-30 -mt-2">
-            <div
-                class="bg-tv-yellow text-black font-manchete text-4xl md:text-6xl uppercase leading-none p-4 text-center border-t-4 border-black border-b-4 border-tv-red shadow-lg relative overflow-hidden">
-                <span class="relative z-10 drop-shadow-sm">ESCÂNDALO DO PIX</span>
-            </div>
+            <h1
+                class="bg-tv-yellow text-black font-manchete text-4xl md:text-6xl uppercase leading-none p-4 text-center border-t-4 border-black border-b-4 border-tv-red shadow-2xl overflow-hidden">
+                <span>ESCÂNDALO DO PIX NA <span class="text-red-600">BAHIA</span></span>
+            </h1>
 
-            <div
-                class="blue-gradient text-white font-tv text-xl font-bold p-2 flex items-center border-b-4 border-black">
+            <!-- Breaking News Ticker -->
+            <div class="blue-gradient text-white font-tv text-xl font-bold p-2 flex items-center border-b-4 border-black"
+                role="marquee" aria-label="Notícias urgentes">
                 <span
                     class="bg-tv-red px-2 mr-2 animate-pisca text-white text-sm font-black border border-white/20">URGENTE</span>
                 <div class="overflow-hidden w-full whitespace-nowrap">
-                    <p class="animate-[marquee_20s_linear_infinite] uppercase">
-                        MP-BA denuncia 12 pessoas por desvio de doações /// Justiça bloqueia R$ 600 mil em bens ///
-                        "Laranjas" recebiam Pix de crianças com câncer ///
+                    <p class="animate-marquee uppercase font-black text-sm md:text-base">
+                        MP-BA DENUNCIA 12 PESSOAS POR DESVIO DE DOAÇÕES /// JUSTIÇA BLOQUEIA R$ 600 MIL EM BENS /// R$
+                        407 MIL DESVIADOS DE CRIANÇAS COM CÂNCER /// MARCELO CASTRO E JAMERSON LIDERAVAM ESQUEMA ///
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="grid grid-cols-2 bg-gray-900 border-t-2 border-gray-700">
+        <!-- Action Buttons -->
+        <nav class="grid grid-cols-2 bg-gray-900 border-t-2 border-gray-700">
             <button onclick="toggleSound()" id="play-btn"
-                class="group relative bg-black text-tv-yellow font-manchete text-2xl py-5 hover:bg-gray-800 transition-colors uppercase border-r border-gray-700 overflow-hidden">
-                <span class="relative z-10 flex items-center justify-center gap-2"><span>🔊</span> <span
-                        id="btn-text">OUVIR ÁUDIO</span></span>
+                class="bg-black text-tv-yellow font-manchete text-2xl py-6 hover:bg-gray-800 uppercase border-r border-gray-700 transition-smooth"
+                aria-label="Controlar áudio da página">
+                <span aria-hidden="true">🔊</span> <span id="btn-text">OUVIR ÁUDIO</span>
             </button>
-
             <button onclick="toggleModal()"
-                class="group bg-tv-red text-white font-manchete text-2xl py-5 hover:bg-red-800 transition-colors uppercase flex items-center justify-center gap-2 shadow-[inset_0_0_20px_rgba(0,0,0,0.3)]">
-                <span>⚖️</span> CAPIVARA
+                class="bg-tv-red text-white font-manchete text-2xl py-6 hover:bg-red-800 uppercase transition-smooth shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]"
+                aria-label="Abrir dossiê completo do caso">
+                <span aria-hidden="true">⚖️</span> CAPIVARA
             </button>
-        </div>
+        </nav>
     </main>
 
-    <div
-        class="fixed bottom-0 w-full bg-tv-yellow text-black font-manchete py-1 text-center text-sm md:text-lg border-t-4 border-black z-0">
-        CENA DO CRIME /// NÃO ULTRAPASSE /// CENA DO CRIME /// NÃO ULTRAPASSE
-    </div>
+    <!-- Footer Bar -->
+    <footer
+        class="fixed bottom-0 w-full bg-tv-yellow text-black font-manchete py-1 text-center text-sm md:text-lg border-t-4 border-black z-0 uppercase tracking-widest"
+        aria-label="Aviso de cena do crime">
+        CENA DO CRIME /// NÃO ULTRAPASSE /// CENA DO CRIME
+    </footer>
 
-    <audio id="audio-player" loop>
+    <!-- Audio Element -->
+    <audio id="audio-player" preload="none">
         <source src="media/kdopix.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
     </audio>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        const styleSheet = document.createElement("style");
-        styleSheet.innerText = `
-            @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        `;
-        document.head.appendChild(styleSheet);
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
-        function createMoney() {
-            const money = document.createElement('div');
-            money.innerText = '💸';
-            money.classList.add('money');
-            money.style.left = Math.random() * 95 + 'vw';
-            money.style.animationDuration = Math.random() * 2 + 3 + 's';
-            document.body.appendChild(money);
-            setTimeout(() => money.remove(), 4000);
-        }
-        setInterval(createMoney, 400);
-
-        const overlay = document.getElementById('start-screen');
-        const enterBtn = document.getElementById('enter-btn');
-        const modal = document.getElementById('modal-processo');
-        const audio = document.getElementById('audio-player');
-        const btnText = document.getElementById('btn-text');
-        const btn = document.getElementById('play-btn');
-        let playing = false;
-
-        // Entrar no site
-        enterBtn.addEventListener('click', () => {
-            overlay.classList.add('hidden');
-            playAudio();
-        });
-
-        function toggleModal() {
-            modal.classList.toggle('hidden');
-        }
-
-        function playAudio() {
-            audio.play().then(() => {
-                playing = true;
-                btnText.innerText = "SILENCIAR";
-                btn.classList.add('bg-gray-800', 'text-gray-400');
-            }).catch(console.log);
-        }
-
-        function toggleSound() {
-            if (playing) {
-                audio.pause();
-                playing = false;
-                btnText.innerText = "OUVIR ÁUDIO";
-                btn.classList.remove('bg-gray-800', 'text-gray-400');
-            } else {
-                playAudio();
-            }
-        }
-
-        setInterval(() => {
-            document.getElementById('clock').innerText = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
-        }, 1000);
-    </script>
 </body>
 
 </html>
