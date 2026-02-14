@@ -211,28 +211,41 @@ function toggleSound() {
  * Share page on WhatsApp with strategic message
  */
 function shareWhatsApp() {
-    // Mensagem estratégica e viral com a nova polêmica
-    const message = `🚨 *URGENTE: ESCÂNDALO DO PIX NA BAHIA* 🚨
+    // Mensagem estratégica e viral com TODAS as polêmicas
+    const message = `🚨 *ESCÂNDALO DO PIX NA BAHIA* 🚨
 
-💰 R$ 407 MIL DESVIADOS de doações para crianças com câncer!
+💰 R$ 407 MIL DESVIADOS de crianças com câncer!
 
 ⚖️ 12 RÉUS DENUNCIADOS pelo MP-BA
-🎙️ Jornalistas da Record Bahia envolvidos
 
-🚔 *POLÊMICA NOVA:*
-Delegado-Geral da PC-BA HOMENAGEIA réu do Pix com "moeda institucional" enquanto vítimas esperam justiça há 2 ANOS!
+🚔 *BOMBA: OS AMIGUINHOS DO JUCA*
+📅 JULHO/2025: Delegado-Geral da PC-BA VISITA réu e entrega "moeda institucional"
 
-😡 *ISSO VAI FICAR ASSIM?*
-• Julgamento adiado pela 2ª vez
-• Programa cresceu 85% em audiência
-• Apenas 1 preso até agora
+😱 *PIOROU EM NOVEMBRO:*
+Marcelo Castro VOLTOU A PEDIR PIX na TV!
+Record pede investigação à Justiça
 
-📂 Veja o DOSSIÊ COMPLETO + VÍDEO:
+⏰ *JUSTIÇA LENTA:*
+• Audiência adiada pela 3ª vez
+• Motivo: "falta de auditório"  
+• Nova data: MAIO/2026
+• Apenas 1 preso de 12 réus
+
+📺 *ENQUANTO ISSO:*
+Programa cresceu 85% em audiência
+Vítimas esperam há quase 2 ANOS
+
+📂 *VEJA O DOSSIÊ COMPLETO:*
+✅ Timeline abril-novembro/2025
+✅ VÍDEO do delegado com o réu
+✅ Nomes dos 12 réus
+✅ Valores desviados
+
 👉 https://kdopix.com.br
 
-⚠️ COMPARTILHE! As vítimas precisam de voz!
+⚠️ COMPARTILHE! ISSO NÃO PODE FICAR ASSIM!
 
-#KdOPix #EscândaloDoPix #Bahia #Justiça #PoliciaCivilBA`;
+#KdOPix #PoliciaCivilBA #JustiçaParaAsVítimas`;
 
     // URL encode da mensagem
     const encodedMessage = encodeURIComponent(message);
@@ -244,7 +257,7 @@ Delegado-Geral da PC-BA HOMENAGEIA réu do Pix com "moeda institucional" enquant
     window.open(whatsappURL, '_blank', 'noopener,noreferrer');
 
     // Analytics (opcional - pode adicionar tracking aqui)
-    console.log('📱 WhatsApp share clicked');
+    console.log('📱 WhatsApp share clicked - November 2025 update');
 }
 
 // ============================================
