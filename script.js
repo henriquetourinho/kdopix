@@ -70,13 +70,13 @@ function prefersReducedMotion() {
  */
 function updateClock() {
     if (!elements.clock) return;
-    
+
     const now = new Date();
-    const timeString = now.toLocaleTimeString('pt-BR', { 
-        hour: '2-digit', 
-        minute: '2-digit' 
+    const timeString = now.toLocaleTimeString('pt-BR', {
+        hour: '2-digit',
+        minute: '2-digit'
     });
-    
+
     elements.clock.textContent = timeString;
     elements.clock.setAttribute('datetime', now.toISOString());
 }
@@ -86,7 +86,7 @@ function updateClock() {
  */
 function loadIframe() {
     if (state.iframeLoaded || !elements.iframe) return;
-    
+
     const src = elements.iframe.getAttribute('data-src');
     if (src) {
         elements.iframe.src = src;
@@ -107,23 +107,23 @@ function createMoney() {
     if (prefersReducedMotion() || state.moneyCount >= CONFIG.maxMoneyElements) {
         return;
     }
-    
+
     state.moneyCount++;
-    
+
     const money = document.createElement('div');
     money.className = 'money';
     money.textContent = '💸';
     money.setAttribute('aria-hidden', 'true');
-    
+
     // Random positioning
     money.style.left = Math.random() * 95 + 'vw';
-    
+
     // Random animation duration
     const duration = Math.random() * 2 + 3;
     money.style.animationDuration = duration + 's';
-    
+
     document.body.appendChild(money);
-    
+
     // Cleanup after animation
     setTimeout(() => {
         money.remove();
@@ -146,14 +146,15 @@ function startMoneyAnimation() {
 
 /**
  * Handle audio ended event
- * Automatically switch to loop audio
+ * Play policia.mp3 once after kdopix.mp3 ends, then stop
  */
 function handleAudioEnded() {
     if (this.currentSrc.includes('kdopix.mp3')) {
         this.src = CONFIG.audioFiles.loop;
-        this.loop = true;
+        this.loop = false; // Play only once
         this.play().catch(console.error);
     }
+    // If policia.mp3 ends, do nothing (audio stops)
 }
 
 /**
@@ -161,7 +162,7 @@ function handleAudioEnded() {
  */
 function playAudio() {
     if (!elements.audioPlayer) return;
-    
+
     elements.audioPlayer.play()
         .then(() => {
             state.isAudioPlaying = true;
@@ -180,10 +181,10 @@ function playAudio() {
  */
 function pauseAudio() {
     if (!elements.audioPlayer) return;
-    
+
     elements.audioPlayer.pause();
     state.isAudioPlaying = false;
-    
+
     if (elements.btnText) {
         elements.btnText.textContent = "OUVIR ÁUDIO";
     }
@@ -194,7 +195,7 @@ function pauseAudio() {
  */
 function toggleSound() {
     if (!elements.audioPlayer) return;
-    
+
     if (state.isAudioPlaying || !elements.audioPlayer.paused) {
         pauseAudio();
     } else {
@@ -232,13 +233,13 @@ function shareWhatsApp() {
 
     // URL encode da mensagem
     const encodedMessage = encodeURIComponent(message);
-    
+
     // URL do WhatsApp Web/App
     const whatsappURL = `https://wa.me/?text=${encodedMessage}`;
-    
+
     // Abrir em nova aba
     window.open(whatsappURL, '_blank', 'noopener,noreferrer');
-    
+
     // Analytics (opcional - pode adicionar tracking aqui)
     console.log('📱 WhatsApp share clicked');
 }
@@ -252,18 +253,18 @@ function shareWhatsApp() {
  */
 function toggleModal() {
     if (!elements.modal) return;
-    
+
     state.modalOpen = !state.modalOpen;
     elements.modal.classList.toggle('hidden');
-    
+
     // Load iframe when modal opens
     if (state.modalOpen) {
         loadIframe();
     }
-    
+
     // Manage body scroll
     document.body.style.overflow = state.modalOpen ? 'hidden' : 'auto';
-    
+
     // Focus management for accessibility
     if (state.modalOpen) {
         const closeBtn = elements.modal.querySelector('button');
@@ -300,16 +301,16 @@ function handleModalBackdropClick(event) {
  */
 function handleEnterClick() {
     if (!elements.startScreen) return;
-    
+
     // Hide start screen
     elements.startScreen.classList.add('hidden');
-    
+
     // Setup and play audio
     if (elements.audioPlayer) {
         elements.audioPlayer.src = CONFIG.audioFiles.main;
         playAudio();
     }
-    
+
     // Allow body scroll
     document.body.style.overflow = 'auto';
 }
@@ -326,20 +327,20 @@ function setupEventListeners() {
     if (elements.enterBtn) {
         elements.enterBtn.addEventListener('click', handleEnterClick);
     }
-    
+
     // Audio ended event
     if (elements.audioPlayer) {
         elements.audioPlayer.addEventListener('ended', handleAudioEnded);
     }
-    
+
     // Keyboard events
     document.addEventListener('keydown', handleEscapeKey);
-    
+
     // Modal backdrop click
     if (elements.modal) {
         elements.modal.addEventListener('click', handleModalBackdropClick);
     }
-    
+
     // Clock update interval
     setInterval(updateClock, 1000);
 }
@@ -353,22 +354,22 @@ function setupEventListeners() {
  */
 function init() {
     console.log('🚨 KD O PIX - Iniciando aplicação...');
-    
+
     // Cache DOM elements
     cacheDOMElements();
-    
+
     // Setup event listeners
     setupEventListeners();
-    
+
     // Start animations
     startMoneyAnimation();
-    
+
     // Initial clock update
     updateClock();
-    
+
     // Prevent body scroll on start screen
     document.body.style.overflow = 'hidden';
-    
+
     console.log('✅ Aplicação inicializada com sucesso');
 }
 
