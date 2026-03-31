@@ -2,878 +2,2077 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ESCÂNDALO DO PIX NA BAHIA - Dossiê Marcelo Castro e Juca</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="URGENTE: Dossiê completo sobre o Escândalo do Pix na Record Bahia. Veja os 12 réus denunciados pelo MP-BA, crimes de estelionato e os R$ 407 mil desviados de doações.">
-    <meta name="keywords"
-        content="Marcelo Castro, Juca, Alô Juca, Golpe do Pix, Record Bahia, TV Aratu, Desvio de Doações, Bahia, Salvador, MP-BA, Justiça, Kd o Pix, Jamerson Oliveira, Balanço Geral, Escândalo Pix Bahia, Crime Bahia, Marcelo Castro Record, Juca SBT">
-    <meta name="author" content="Carlos Henrique Tourinho Santana">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://kdopix.com.br/">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="🚨 URGENTE: Escândalo do Pix na Bahia - Dossiê Completo">
-    <meta property="og:description"
-        content="Acesse a 'Capivara Completa' dos 12 réus. Valores, nomes e provas do esquema que parou a Bahia. O site que eles não querem que você veja.">
-    <meta property="og:url" content="https://kdopix.com.br/">
-    <meta property="og:image" content="https://kdopix.com.br/media/juca.webp">
-    <meta property="og:site_name" content="KD O PIX?">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="🚨 URGENTE: Escândalo do Pix na Bahia - Dossiê Completo">
-    <meta name="twitter:description"
-        content="Acesse a 'Capivara Completa' dos 12 réus. Valores, nomes e provas do esquema que parou a Bahia.">
-    <meta name="twitter:image" content="https://kdopix.com.br/media/juca.webp">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "Escândalo do Pix na Bahia: MP-BA denuncia 12 pessoas por desvio de doações",
-      "image": ["https://kdopix.com.br/media/juca.webp"],
-      "datePublished": "2026-02-14T12:00:00-03:00",
-      "author": {
-          "@type": "Person",
-          "name": "Carlos Henrique Tourinho Santana",
-          "url": "https://github.com/henriquetourinho/kdopix"
-        },
-      "publisher": {
-        "@type": "Organization",
-        "name": "KD O PIX? - Dossiê Independente",
-        "logo": { "@type": "ImageObject", "url": "https://kdopix.com.br/media/icon.png" }
-      },
-      "description": "Dossiê aberto sobre o desvio de doações no programa Balanço Geral da Record Bahia envolvendo jornalistas e laranjas."
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KD O PIX? — Dossiê Completo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=DM+Sans:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --border: #222;
+      --red: #ff2d2d;
+      --yellow: #ffe600;
+      --green: #00ff88;
+      --blue: #4dabf7;
+      --white: #f0f0f0;
+      --muted: #666;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-body: 'DM Sans', sans-serif;
     }
-    </script>
 
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://www.youtube.com">
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- Stylesheets -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@700&family=Special+Elite&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    html {
+      scroll-behavior: smooth;
+    }
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'manchete': ['Anton', 'sans-serif'],
-                        'tv': ['"Roboto Condensed"', 'sans-serif'],
-                        'typewriter': ['"Special Elite"', 'monospace'],
-                    },
-                    colors: {
-                        'tv-red': '#d60000',
-                        'tv-yellow': '#ffcc00',
-                        'tv-blue': '#003399',
-                        'tv-black': '#101010',
-                    },
-                    animation: {
-                        'sirene': 'sirene 0.8s infinite',
-                        'pisca': 'pisca 0.5s step-end infinite',
-                        'marquee': 'marquee 20s linear infinite',
-                    }
-                }
-            }
-        }
-    </script>
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      cursor: crosshair;
+    }
 
-    <style>
-        /* Base Styles */
-        body {
-            background-color: #000;
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
+    /* ===== NOISE OVERLAY ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
 
-        /* Animations */
-        @keyframes sirene {
-            0% {
-                background-color: rgba(0, 51, 153, 0.15);
-            }
+    /* ===== SCANLINES ===== */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 4px);
+      pointer-events: none;
+      z-index: 9998;
+    }
 
-            50% {
-                background-color: rgba(214, 0, 0, 0.15);
-            }
+    /* ===== MONEY EMOJI ===== */
+    .money {
+      position: fixed;
+      top: -50px;
+      font-size: 20px;
+      animation: fall linear forwards;
+      z-index: 5;
+      opacity: 0.5;
+      pointer-events: none;
+    }
 
-            100% {
-                background-color: rgba(0, 51, 153, 0.15);
-            }
-        }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
-        @keyframes pisca {
+    /* ===== START SCREEN ===== */
+    #start-screen {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.8s ease, visibility 0.8s;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
 
-            0%,
-            49% {
-                opacity: 1;
-            }
+    #start-screen.exiting {
+      opacity: 0;
+      pointer-events: none;
+    }
 
-            50%,
-            100% {
-                opacity: 0.3;
-            }
-        }
+    #start-screen.hidden {
+      display: none;
+      visibility: hidden;
+    }
 
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
+    .start-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--red);
+      letter-spacing: 4px;
+      margin-bottom: 24px;
+      border: 1px solid var(--red);
+      padding: 4px 12px;
+      animation: blink 1s step-end infinite;
+    }
 
-            100% {
-                transform: translateX(-100%);
-            }
-        }
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
 
-        @keyframes fall {
-            to {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
+    .start-title {
+      font-family: var(--font-display);
+      font-size: clamp(50px, 15vw, 140px);
+      color: var(--yellow);
+      line-height: 0.85;
+      text-transform: uppercase;
+      margin: 0;
+      text-shadow: 0 0 40px rgba(255, 204, 0, 0.5);
+    }
 
-        .bg-sirene {
-            animation: sirene 0.8s 1;
-            animation-fill-mode: forwards;
-        }
+    .start-sub {
+      font-family: var(--font-mono);
+      font-size: clamp(10px, 3vw, 14px);
+      color: var(--muted);
+      letter-spacing: 2px;
+      line-height: 1.8;
+      margin-top: 24px;
+      max-width: 400px;
+    }
 
-        .animate-pisca {
-            animation: pisca 0.5s step-end infinite;
-        }
+    #enter-btn {
+      margin-top: 40px;
+      background: var(--red);
+      color: #000;
+      border: none;
+      font-family: var(--font-display);
+      font-size: 24px;
+      padding: 16px 48px;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.1s;
+    }
 
-        /* Money Animation - Optimized */
-        .money {
-            position: fixed;
-            top: -50px;
-            font-size: 24px;
-            animation: fall linear forwards;
-            z-index: 5;
-            opacity: 0.6;
-            pointer-events: none;
-            will-change: transform;
-        }
+    #enter-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 2px solid var(--red);
+      transform: translate(4px, 4px);
+      transition: transform 0.1s;
+    }
 
-        /* Video Container */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
+    #enter-btn:hover {
+      transform: translate(-2px, -2px);
+    }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+    #enter-btn:hover::after {
+      transform: translate(6px, 6px);
+    }
 
-        /* Gradients */
-        .blue-gradient {
-            background: linear-gradient(180deg, #003399 0%, #001a4d 100%);
-        }
+    #enter-btn:active {
+      transform: translate(4px, 4px);
+    }
 
-        /* Custom Scrollbar */
-        .custom-scroll::-webkit-scrollbar {
-            width: 8px;
-        }
+    #enter-btn:active::after {
+      transform: translate(0, 0);
+    }
 
-        .custom-scroll::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
+    /* ===== MAIN LAYOUT ===== */
+    #main-content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 16px 120px;
+    }
 
-        .custom-scroll::-webkit-scrollbar-thumb {
-            background: #d60000;
-            border-radius: 4px;
-        }
+    /* ===== TOP BAR ===== */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .custom-scroll::-webkit-scrollbar-thumb:hover {
-            background: #a00000;
-        }
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+    }
 
-        /* Focus Styles for Accessibility */
-        button:focus-visible,
-        a:focus-visible {
-            outline: 3px solid #ffcc00;
-            outline-offset: 2px;
-        }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      animation: pulse-dot 1.2s ease-in-out infinite;
+    }
 
-        /* Loading State */
-        .loading {
-            opacity: 0.6;
-            pointer-events: none;
-        }
+    @keyframes pulse-dot {
 
-        /* Smooth Transitions */
-        .transition-smooth {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
 
-        /* Reduced Motion Support */
-        @media (prefers-reduced-motion: reduce) {
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+      }
+    }
 
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+    .topbar-clock {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--yellow);
+      letter-spacing: 2px;
+    }
 
-            .money {
-                display: none;
-            }
-        }
+    /* ===== TICKER ===== */
+    .ticker-wrap {
+      background: var(--red);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 6px 0;
+    }
 
-        /* WhatsApp Button Styles */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            z-index: 100;
-            animation: pulse-whatsapp 2s infinite;
-        }
+    .ticker-inner {
+      display: inline-flex;
+      animation: ticker 28s linear infinite;
+    }
 
-        @keyframes pulse-whatsapp {
+    .ticker-inner span {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0 40px;
+      color: #000;
+    }
 
-            0%,
-            100% {
-                transform: scale(1);
-            }
+    @keyframes ticker {
+      0% {
+        transform: translateX(0);
+      }
 
-            50% {
-                transform: scale(1.1);
-            }
-        }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
 
-        .whatsapp-float:hover {
-            transform: scale(1.15) !important;
-        }
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: #000;
+      overflow: hidden;
+      margin-top: 0;
+    }
 
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                bottom: 60px;
-                right: 15px;
-            }
-        }
-    </style>
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.2) saturate(1.3) brightness(0.7);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 60%);
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      padding: 4px 10px;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    .hero-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px;
+    }
+
+    .hero-title h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 8vw, 72px);
+      line-height: 0.95;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .hero-title h1 em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    /* ===== SECTION WRAPPER ===== */
+    section {
+      margin-top: 2px;
+    }
+
+    /* ===== COUNTER SECTION ===== */
+    .counter-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 24px 20px;
+    }
+
+    .counter-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .counter-value {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 12vw, 80px);
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -1px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .counter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+
+    .counter-card {
+      background: var(--surface2);
+      padding: 16px;
+      border-left: 3px solid var(--border);
+    }
+
+    .counter-card.accent-red {
+      border-color: var(--red);
+    }
+
+    .counter-card.accent-yellow {
+      border-color: var(--yellow);
+    }
+
+    .counter-card.accent-green {
+      border-color: var(--green);
+    }
+
+    .counter-card.accent-blue {
+      border-color: var(--blue);
+    }
+
+    .counter-card .num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .counter-card.accent-red .num {
+      color: var(--red);
+    }
+
+    .counter-card.accent-yellow .num {
+      color: var(--yellow);
+    }
+
+    .counter-card.accent-green .num {
+      color: var(--green);
+    }
+
+    .counter-card.accent-blue .num {
+      color: var(--blue);
+    }
+
+    .counter-card .desc {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* ===== ACTION BUTTONS ===== */
+    .action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+      margin-top: 2px;
+    }
+
+    .action-btn {
+      background: var(--surface);
+      border: none;
+      color: var(--white);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 16px 8px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .action-btn .icon {
+      font-size: 20px;
+    }
+
+    .action-btn:hover {
+      background: var(--surface2);
+      color: var(--yellow);
+    }
+
+    .action-btn.green:hover {
+      color: var(--green);
+    }
+
+    .action-btn.red:hover {
+      color: var(--red);
+    }
+
+    /* ===== TIMELINE ===== */
+    .timeline-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px 0 0;
+    }
+
+    .section-header {
+      padding: 0 20px 16px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+
+    /* Horizontal scroll timeline */
+    .timeline-scroll {
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 0 20px 20px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--red) var(--surface2);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .timeline-scroll::-webkit-scrollbar {
+      height: 3px;
+    }
+
+    .timeline-scroll::-webkit-scrollbar-track {
+      background: var(--surface2);
+    }
+
+    .timeline-scroll::-webkit-scrollbar-thumb {
+      background: var(--red);
+    }
+
+    .timeline-track {
+      display: flex;
+      gap: 0;
+      width: max-content;
+      position: relative;
+      padding-top: 12px;
+    }
+
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 16px;
+      right: 16px;
+      height: 2px;
+      background: linear-gradient(to right, var(--red), var(--yellow), var(--green), var(--blue));
+    }
+
+    .tl-item {
+      width: 200px;
+      padding: 0 12px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .tl-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      margin: 0 auto 12px;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.2s;
+    }
+
+    .tl-item:hover .tl-dot {
+      transform: scale(1.4);
+    }
+
+    .tl-item:nth-child(1) .tl-dot {
+      background: var(--red);
+      box-shadow: 0 0 10px var(--red);
+    }
+
+    .tl-item:nth-child(2) .tl-dot {
+      background: #ff6b00;
+      box-shadow: 0 0 10px #ff6b00;
+    }
+
+    .tl-item:nth-child(3) .tl-dot {
+      background: var(--yellow);
+      box-shadow: 0 0 10px var(--yellow);
+    }
+
+    .tl-item:nth-child(4) .tl-dot {
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+    }
+
+    .tl-item:nth-child(5) .tl-dot {
+      background: var(--blue);
+      box-shadow: 0 0 10px var(--blue);
+    }
+
+    .tl-date {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .tl-item:nth-child(1) .tl-date {
+      color: var(--red);
+    }
+
+    .tl-item:nth-child(2) .tl-date {
+      color: #ff6b00;
+    }
+
+    .tl-item:nth-child(3) .tl-date {
+      color: var(--yellow);
+    }
+
+    .tl-item:nth-child(4) .tl-date {
+      color: var(--green);
+    }
+
+    .tl-item:nth-child(5) .tl-date {
+      color: var(--blue);
+    }
+
+    .tl-title {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .tl-desc {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .tl-source {
+      margin-top: 6px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--border);
+      border-top: 1px solid var(--border);
+      padding-top: 4px;
+    }
+
+    .timeline-hint {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    .timeline-hint span {
+      animation: slide-hint 1.5s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    @keyframes slide-hint {
+
+      0%,
+      100% {
+        transform: translateX(0)
+      }
+
+      50% {
+        transform: translateX(6px)
+      }
+    }
+
+    /* ===== RÉUS SECTION ===== */
+    .reus-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+
+    .reus-grid-new {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 16px;
+    }
+
+    @media(max-width:480px) {
+      .reus-grid-new {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .reu-card-new {
+      background: var(--surface2);
+      padding: 10px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      cursor: default;
+      transition: background 0.15s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .reu-card-new:hover {
+      background: #222;
+    }
+
+    .reu-card-new.lider {
+      border-color: var(--red);
+    }
+
+    .reu-card-new.inter {
+      border-color: var(--blue);
+    }
+
+    .reu-card-new.assoc {
+      border-color: var(--border);
+    }
+
+    .reu-num-new {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    .reu-photo-new {
+      width: 56px;
+      height: 56px;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #222;
+    }
+
+    .reu-photo-new img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(60%) contrast(1.1);
+      transition: filter 0.2s;
+    }
+
+    .reu-card-new:hover .reu-photo-new img {
+      filter: grayscale(20%) contrast(1.2);
+    }
+
+    .reu-name-new {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--white);
+      text-align: center;
+      line-height: 1.3;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    /* ENHANCED REU CARDS */
+    .reu-card-new {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reu-card-new::after {
+      content: 'ABRIR FICHA';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 45, 45, 0.8);
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 2;
+    }
+
+    .reu-card-new:hover::after {
+      opacity: 1;
+    }
+
+    .reu-card-new:hover .reu-photo-new img {
+      transform: scale(1.1);
+      filter: grayscale(0%);
+    }
+
+    /* SUSPECT MODAL SPECIFIC */
+    #suspect-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.98);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      backdrop-filter: blur(4px);
+    }
+
+    .suspect-modal-content {
+      background: #050505;
+      border: 1px solid var(--red);
+      max-width: 500px;
+      width: 100%;
+      max-height: 95vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 0 50px rgba(255, 45, 45, 0.2);
+    }
+
+    @media(max-width:600px) {
+      .suspect-modal-content {
+        max-width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        border: none;
+      }
+
+      .suspect-info-body {
+        padding: 15px;
+      }
+
+      .suspect-modal-header h2 {
+        font-size: 18px;
+      }
+    }
+
+    .suspect-modal-header {
+      padding: 12px 16px;
+      background: var(--red);
+      color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .suspect-modal-header h2 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+
+    .suspect-photo-big {
+      width: 100%;
+      aspect-ratio: 1/1;
+      background: #111;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .suspect-photo-big img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.1) brightness(0.9);
+    }
+
+    .suspect-photo-big::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 100% 2px, 3px 100%;
+      pointer-events: none;
+    }
+
+    .suspect-info-body {
+      padding: 20px;
+    }
+
+    .suspect-tag-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .suspect-status-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 4px 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--white);
+    }
+
+    .suspect-status-badge.red {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .suspect-details-grid {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .suspect-label {
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .suspect-value {
+      color: var(--white);
+    }
+
+    .suspect-description {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    .scanning-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--red);
+      box-shadow: 0 0 10px var(--red);
+      z-index: 5;
+      animation: scan 2s linear infinite;
+    }
+
+    @keyframes scan {
+      0% {
+        top: 0;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    .reu-tag {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      padding: 2px 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .reu-card-new.lider .reu-tag {
+      background: var(--red);
+      color: #000;
+    }
+
+    .reu-card-new.inter .reu-tag {
+      background: var(--blue);
+      color: #000;
+    }
+
+    .reu-card-new.assoc .reu-tag {
+      background: var(--border);
+      color: var(--muted);
+    }
+
+    /* ===== MÍDIA SECTION ===== */
+    .midia-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+
+    .midia-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 16px;
+    }
+
+    .midia-card {
+      background: var(--surface2);
+      padding: 14px;
+      border-left: 2px solid var(--border);
+      cursor: default;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .midia-card:hover {
+      background: #1e1e1e;
+    }
+
+    .midia-card.g1 {
+      border-color: #00a8e0;
+    }
+
+    .midia-card.folha {
+      border-color: var(--white);
+    }
+
+    .midia-card.metro {
+      border-color: var(--yellow);
+    }
+
+    .midia-card.dados {
+      border-color: var(--green);
+    }
+
+    .midia-source {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .midia-card.g1 .midia-source {
+      color: #00a8e0;
+    }
+
+    .midia-card.folha .midia-source {
+      color: var(--white);
+    }
+
+    .midia-card.metro .midia-source {
+      color: var(--yellow);
+    }
+
+    .midia-card.dados .midia-source {
+      color: var(--green);
+    }
+
+    .midia-text {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: #aaa;
+      line-height: 1.5;
+    }
+
+    .midia-date {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ===== PONTOS SECTION ===== */
+    .pontos-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+
+    .ponto-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .ponto-item:last-child {
+      border-bottom: none;
+    }
+
+    .ponto-num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--red);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 40px;
+    }
+
+    .ponto-text {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.5;
+      padding-top: 4px;
+    }
+
+    .ponto-text strong {
+      color: var(--white);
+    }
+
+    /* ===== VIDEO SECTION ===== */
+    .video-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-top: 16px;
+      background: #000;
+      border: 1px solid var(--border);
+    }
+
+    .video-wrap iframe,
+    .video-wrap video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ===== SOURCES SECTION ===== */
+    .sources-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+
+    .source-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: padding-left 0.15s;
+    }
+
+    .source-link:last-child {
+      border-bottom: none;
+    }
+
+    .source-link:hover {
+      padding-left: 6px;
+    }
+
+    .source-arrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    .source-info {
+      flex: 1;
+    }
+
+    .source-name {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .source-desc {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ===== SHARE SECTION ===== */
+    .share-section {
+      background: #0a1a0d;
+      border: 1px solid #1a3d20;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .share-title {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--green);
+      letter-spacing: 3px;
+      margin-bottom: 6px;
+    }
+
+    .share-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #4a7a50;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    #share-btn {
+      background: var(--green);
+      color: #000;
+      border: none;
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: 3px;
+      padding: 14px 40px;
+      cursor: pointer;
+      width: 100%;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+
+    #share-btn:hover {
+      opacity: 0.9;
+      transform: scale(0.99);
+    }
+
+    #share-count {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #4a7a50;
+      margin-top: 12px;
+      letter-spacing: 1px;
+    }
+
+    #share-count strong {
+      color: var(--green);
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--yellow);
+      background-image:
+        repeating-linear-gradient(45deg,
+          transparent, transparent 20px,
+          rgba(0, 0, 0, 0.08) 20px, rgba(0, 0, 0, 0.08) 40px);
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-align: center;
+      padding: 10px 0;
+      text-transform: uppercase;
+      z-index: 100;
+      overflow: hidden;
+      box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.6);
+      border-top: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .footer-text {
+      display: inline-flex;
+      animation: ticker 15s linear infinite;
+      white-space: nowrap;
+    }
+
+    .footer-text span {
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-text span::after {
+      content: '///';
+      color: rgba(0, 0, 0, 0.3);
+      font-family: var(--font-mono);
+      font-size: 10px;
+    }
+
+    /* ===== FLOATING ZAP ===== */
+    #zap-float {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 100;
+      background: #25d366;
+      color: #fff;
+      border: none;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-size: 26px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(37, 211, 102, 0.4);
+      animation: float-btn 2.5s ease-in-out infinite;
+      transition: transform 0.15s;
+    }
+
+    #zap-float:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes float-btn {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    #zap-float.visible {
+      display: flex;
+    }
+
+    /* ===== STATUS BAR ===== */
+    .status-bar {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .s-red {
+      background: var(--red);
+    }
+
+    .s-yellow {
+      background: var(--yellow);
+    }
+
+    .s-green {
+      background: var(--green);
+    }
+
+    /* ===== GLITCH KEYFRAMES ===== */
+    @keyframes glitch1 {
+
+      0%,
+      100% {
+        clip-path: inset(0 0 95% 0);
+        transform: translateX(-2px)
+      }
+
+      20% {
+        clip-path: inset(30% 0 60% 0);
+        transform: translateX(2px)
+      }
+
+      40% {
+        clip-path: inset(60% 0 20% 0);
+        transform: translateX(-1px)
+      }
+
+      60% {
+        clip-path: inset(80% 0 5% 0);
+        transform: translateX(3px)
+      }
+
+      80% {
+        clip-path: inset(10% 0 80% 0);
+        transform: translateX(-2px)
+      }
+    }
+
+    @keyframes glitch2 {
+
+      0%,
+      100% {
+        clip-path: inset(50% 0 30% 0);
+        transform: translateX(2px)
+      }
+
+      25% {
+        clip-path: inset(10% 0 70% 0);
+        transform: translateX(-2px)
+      }
+
+      50% {
+        clip-path: inset(70% 0 10% 0);
+        transform: translateX(1px)
+      }
+
+      75% {
+        clip-path: inset(20% 0 60% 0);
+        transform: translateX(-3px)
+      }
+    }
+
+    .glitch-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch-wrapper::before,
+    .glitch-wrapper::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+    }
+
+    .glitch-wrapper::before {
+      color: var(--red);
+      animation: glitch1 4s infinite linear;
+      opacity: 0.6;
+    }
+
+    .glitch-wrapper::after {
+      color: #00f5ff;
+      animation: glitch2 3.5s infinite linear;
+      opacity: 0.6;
+    }
+
+    /* ===== AUDIO PILL ===== */
+    #audio-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      cursor: pointer;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      transition: border-color 0.15s, color 0.15s;
+      width: fit-content;
+    }
+
+    #audio-pill:hover,
+    #audio-pill.playing {
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    .wave {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+      height: 16px;
+    }
+
+    .wave span {
+      display: block;
+      width: 3px;
+      background: currentColor;
+      border-radius: 2px;
+    }
+
+    #audio-pill.playing .wave span:nth-child(1) {
+      animation: wave-bar 0.8s ease-in-out infinite;
+      height: 4px;
+    }
+
+    #audio-pill.playing .wave span:nth-child(2) {
+      animation: wave-bar 0.8s ease-in-out 0.1s infinite;
+      height: 4px;
+    }
+
+    #audio-pill.playing .wave span:nth-child(3) {
+      animation: wave-bar 0.8s ease-in-out 0.2s infinite;
+      height: 4px;
+    }
+
+    #audio-pill.playing .wave span:nth-child(4) {
+      animation: wave-bar 0.8s ease-in-out 0.3s infinite;
+      height: 4px;
+    }
+
+    #audio-pill:not(.playing) .wave span {
+      height: 4px;
+    }
+
+    @keyframes wave-bar {
+
+      0%,
+      100% {
+        height: 4px;
+      }
+
+      50% {
+        height: 14px;
+      }
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      height: 2px;
+      background: linear-gradient(to right, var(--red), var(--yellow), var(--green));
+      margin: 2px 0;
+    }
+
+    /* Responsive */
+    @media(max-width:480px) {
+      .midia-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .counter-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
 </head>
 
-<body class="bg-sirene min-h-screen flex flex-col items-center justify-center relative font-sans">
+<body>
 
-    <!-- Start Screen -->
-    <div id="start-screen"
-        class="fixed inset-0 z-50 bg-tv-black flex flex-col items-center justify-center p-4 overflow-y-auto"
-        role="dialog" aria-labelledby="start-title" aria-modal="true">
-        <div class="text-center mb-8 relative">
-            <h1 id="start-title"
-                class="font-manchete text-6xl md:text-9xl text-tv-yellow uppercase tracking-tighter leading-none animate-pulse">
-                PLANTÃO<br><span class="text-white">URGENTE</span>
-            </h1>
-            <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-md h-1 bg-tv-red shadow-[0_0_15px_red]"
-                aria-hidden="true"></div>
-        </div>
-
-        <button id="enter-btn"
-            class="mb-12 bg-red-600 text-white font-manchete text-2xl px-10 py-4 border-4 border-white uppercase shadow-[8px_8px_0px_white] hover:translate-y-1 transition-smooth animate-bounce focus:animate-none"
-            aria-label="Clique para entrar e visualizar o dossiê completo">
-            CLIQUE PARA ENTRAR NO DOSSIÊ
-        </button>
-
-        <div
-            class="max-w-2xl w-full border-t border-gray-800 pt-8 text-center bg-black/40 p-6 rounded-lg backdrop-blur-sm">
-            <blockquote
-                class="font-typewriter text-tv-yellow text-sm md:text-lg italic mb-6 tracking-widest leading-relaxed">
-                "Minhas escolhas podem custar caro, mas abandonar o que eu acredito custaria muito mais."
-            </blockquote>
-            <div class="flex flex-col items-center gap-4">
-                <div
-                    class="flex items-center gap-3 uppercase font-bold text-white tracking-widest text-xs md:text-sm border-2 px-4 py-2 border-tv-red rounded-sm">
-                    <i class="fas fa-user-secret text-tv-red" aria-hidden="true"></i>
-                    <span>Carlos Henrique Tourinho Santana</span>
-                </div>
-                <nav class="flex gap-8 text-gray-400 text-sm" aria-label="Links de contato">
-                    <a href="https://www.instagram.com/henrique.ntxa/" target="_blank" rel="noopener noreferrer"
-                        class="hover:text-tv-yellow transition-smooth">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://wiki.debian.org/henriquetourinho" target="_blank" rel="noopener noreferrer"
-                        class="hover:text-tv-red transition-smooth">
-                        <i class="fab fa-linux" aria-hidden="true"></i>
-                        <span>Wiki Debian</span>
-                    </a>
-                    <a href="/cdn-cgi/l/email-protection#abc3cec5d9c2dadecedfc4ded9c2c5c3c4ebd9c2d8cededb85c5cedf"
-                        class="hover:text-white transition-smooth">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <span>Email</span>
-                    </a>
-                </nav>
-            </div>
-        </div>
+  <!-- START SCREEN -->
+  <div id="start-screen">
+    <div class="start-tag">⚠ CONTEÚDO URGENTE</div>
+    <div style="text-align:center">
+      <div class="glitch-wrapper" data-text="KD O PIX?">
+        <h1 class="start-title"><span>KD O PIX?</span></h1>
+      </div>
+      <p class="start-sub" style="margin-top:16px">ESCÂNDALO NA BAHIA<br>R$ 407 MIL DESVIADOS<br>12 RÉUS • DOSSIÊ
+        COMPLETO</p>
     </div>
+    <button id="enter-btn" onclick="enterSite()">ENTRAR NO DOSSIÊ</button>
+    <p
+      style="font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:2px;text-align:center;max-width:300px">
+      CARLOS HENRIQUE TOURINHO SANTANA<br>DOSSIÊ INDEPENDENTE • FONTES PÚBLICAS
+    </p>
+  </div>
 
-    <!-- Modal Processo -->
-    <div id="modal-processo"
-        class="hidden fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 backdrop-blur-md overflow-y-auto"
-        role="dialog" aria-labelledby="modal-title" aria-modal="true">
-        <div
-            class="bg-white w-full max-w-2xl border-4 border-tv-red shadow-2xl relative my-auto flex flex-col max-h-[90vh]">
+  <!-- AUDIO -->
+  <audio id="audio-player" preload="none">
+    <source src="media/kdopix.mp3" type="audio/mpeg">
+  </audio>
 
-            <header
-                class="bg-tv-black text-white p-4 flex justify-between items-center border-b-4 border-tv-yellow shrink-0">
-                <h2 id="modal-title" class="font-manchete text-2xl text-tv-yellow uppercase">Capivara Completa</h2>
-                <button onclick="toggleModal()"
-                    class="text-white hover:text-tv-red font-bold text-xl px-2 transition-smooth"
-                    aria-label="Fechar modal">
-                    ✕ FECHAR
-                </button>
-            </header>
-
-            <div class="p-6 font-tv text-tv-black space-y-6 bg-gray-50 overflow-y-auto custom-scroll grow text-black">
-
-                <!-- Video Section -->
-                <section aria-labelledby="video-title">
-                    <div class="border-4 border-black bg-black shadow-lg">
-                        <p id="video-title"
-                            class="bg-tv-red text-white font-manchete text-center text-sm uppercase py-1 tracking-widest">
-                            Matéria do Domingo Espetacular (RECORD TV)
-                        </p>
-                        <div class="video-container">
-                            <iframe id="yt-iframe" data-src="https://www.youtube.com/embed/2uMN22sk-7E?rel=0"
-                                frameborder="0" allowfullscreen loading="lazy"
-                                title="Matéria do Domingo Espetacular sobre o Escândalo do Pix"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                            </iframe>
-                        </div>
-                        <div class="bg-gray-900 p-2 text-center border-t-2 border-tv-yellow">
-                            <div
-                                class="flex items-center justify-center gap-2 text-tv-yellow animate-pulse font-manchete text-xs uppercase tracking-widest">
-                                <i class="fas fa-gavel" aria-hidden="true"></i>
-                                <span>PROCESSO EM SEGREDO DE JUSTIÇA</span>
-                                <i class="fas fa-gavel" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Valores Section -->
-                <section aria-labelledby="valores-title">
-                    <h3 id="valores-title" class="sr-only">Valores do esquema</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
-                        <div class="bg-white p-3 border-2 border-gray-300 shadow-inner">
-                            <p class="text-[10px] text-gray-500 font-mono uppercase font-black">Total Arrecadado pelas
-                                Campanhas</p>
-                            <p class="font-manchete text-3xl text-green-700 leading-none" aria-label="543 mil reais">R$
-                                543.089,66</p>
-                        </div>
-                        <div class="bg-white p-3 border-4 border-tv-red shadow-lg animate-pulse">
-                            <p class="text-[10px] text-tv-red font-black uppercase tracking-tighter">Valor Desviado pela
-                                Quadrilha (75%)</p>
-                            <p class="font-manchete text-3xl text-tv-red leading-none" aria-label="407 mil reais">R$
-                                407.143,78</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Réus Section -->
-                <section aria-labelledby="reus-title">
-                    <div class="bg-white border-2 border-tv-black p-4 shadow-[4px_4px_0px_rgba(0,0,0,0.2)]">
-                        <h3 id="reus-title"
-                            class="font-manchete text-xl text-tv-red mb-3 border-b-2 border-gray-200 uppercase">
-                            ⚖️ AS 12 PESSOAS DENUNCIADAS PELO MP-BA:
-                        </h3>
-                        <p class="text-[10px] text-gray-600 mb-3 italic">Denúncia aceita pela Justiça. Processo em
-                            segredo de justiça. Presunção de inocência garantida.</p>
-                        <ol class="text-[10px] md:text-xs space-y-2 font-mono text-gray-800">
-                            <li class="font-bold border-l-4 border-tv-red pl-2">
-                                1. Marcelo Valter Amorim Matos Lyrio Castro
-                                <span class="bg-red-600 text-white px-1 ml-1 uppercase text-[9px]">Apropriação Indébita
-                                    e Org. Criminosa</span>
-                            </li>
-                            <li class="font-bold border-l-4 border-tv-red pl-2">
-                                2. Jamerson Birindiba Oliveira
-                                <span class="bg-red-600 text-white px-1 ml-1 uppercase text-[9px]">Apropriação Indébita
-                                    e Lavagem de Dinheiro</span>
-                            </li>
-                            <li class="font-bold border-l-4 border-tv-blue pl-2">
-                                3. Lucas Costa Santos
-                                <span class="bg-blue-600 text-white px-1 ml-1 uppercase text-[9px]">Intermediação e
-                                    Coação de Vítimas</span>
-                            </li>
-                            <li class="pl-2 border-l-2 border-gray-300 italic">
-                                4. Carlos Eduardo Sacramento M. S. de Jesus
-                                <span class="text-gray-400 font-normal"> - Denunciado(a) por associação criminosa /
-                                    lavagem</span>
-                            </li>
-                            <li class="pl-2 border-l-2 border-gray-300 italic">
-                                5. Jakson da Silva de Jesus
-                                <span class="text-gray-400 font-normal"> - Denunciado(a) por associação criminosa /
-                                    lavagem</span>
-                            </li>
-                            <li class="pl-2 border-l-2 border-gray-300 italic">
-                                6. Daniele Cristina da Silva Monteiro
-                                <span class="text-gray-400 font-normal"> - Denunciado(a) por associação criminosa /
-                                    lavagem</span>
-                            </li>
-                            <li class="pl-2 border-l-2 border-gray-300 italic">
-                                7. Debora Cristina da Silva Monteiro
-                                <span class="text-gray-400 font-normal"> - Denunciado(a) por associação criminosa /
-                                    lavagem</span>
-                            </li>
-                            <li class="pl-2 border-l-2 border-gray-300 italic">
-                                8. Rute Cruz da Costa
-                                <span class="text-gray-400 font-normal"> - Denunciado(a) por associação criminosa /
-                                    lavagem</span>
-                            </li>
-                            <li class="pl-2 border-l-2 border-gray-300 italic">
-                                9. Gerson Santos Santana Junior
-                                <span class="text-gray-400 font-normal"> - Denunciado(a) por associação criminosa /
-                                    lavagem</span>
-                            </li>
-                            <li class="pl-2 border-l-2 border-gray-300 italic">
-                                10. Eneida Sena Couto
-                                <span class="text-gray-400 font-normal"> - Denunciado(a) por associação criminosa /
-                                    lavagem</span>
-                            </li>
-                            <li class="pl-2 border-l-2 border-gray-300 italic">
-                                11. Thais Pacheco da Costa
-                                <span class="text-gray-400 font-normal"> - Denunciado(a) por associação criminosa /
-                                    lavagem</span>
-                            </li>
-                            <li class="pl-2 border-l-2 border-gray-300 italic">
-                                12. Alessandra Silva Oliveira de Jesus
-                                <span class="text-gray-400 font-normal"> - Denunciado(a) por associação criminosa /
-                                    lavagem</span>
-                            </li>
-                        </ol>
-                        <p class="text-[9px] text-gray-500 mt-3 italic">Fonte: MP-BA (notícia 74077) | Status: Denúncia
-                            aceita, processo em tramitação</p>
-                    </div>
-                </section>
-
-                <!-- Fontes Section -->
-                <section aria-labelledby="fontes-title">
-                    <div class="bg-gray-200 p-4 border-t-2 border-dashed border-gray-400">
-                        <h3 id="fontes-title"
-                            class="font-manchete text-base text-black mb-2 uppercase tracking-tighter">
-                            Fontes de Informação (Links Oficiais):
-                        </h3>
-                        <ul class="space-y-1 text-[10px] font-mono text-blue-800 underline">
-                            <li>
-                                <a href="https://www.mpba.mp.br/noticia/74077" target="_blank"
-                                    rel="noopener noreferrer">
-                                    ➤ MP-BA: Justiça aceita denúncia oficial
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://veja.abril.com.br/coluna/veja-gente/o-esquema-de-doacoes-de-pix-desviadas-por-reporter-da-record/"
-                                    target="_blank" rel="noopener noreferrer">
-                                    ➤ VEJA: O esquema de desvios na TV
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.metropoles.com/colunas/fabia-oliveira/vitimas-do-jornalista-marcelo-castro-revela-detalhes-do-golpe-do-pix"
-                                    target="_blank" rel="noopener noreferrer">
-                                    ➤ METRÓPOLES: Vítimas revelam detalhes
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.portaldosjornalistas.com.br/marcelo-castro-acusado-de-aplicar-golpe-do-pix-em-pessoas-pobres-volta-a-pedir-dinheiro-durante-programa/"
-                                    target="_blank" rel="noopener noreferrer">
-                                    ➤ PORTAL JORNALISTAS: Atuação na TV Aratu (SBT)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- OS AMIGUINHOS DO JUCA Section - VERSÃO JORNALÍSTICA CORRIGIDA -->
-                <section aria-labelledby="amiguinhos-title"
-                    class="bg-gradient-to-r from-red-900 to-black p-6 -mx-6 border-y-8 border-yellow-400">
-                    <div class="text-center mb-4">
-                        <h3 id="amiguinhos-title"
-                            class="font-manchete text-3xl text-yellow-400 uppercase mb-2 animate-pulse">
-                            📋 CRONOLOGIA DAS CONTROVÉRSIAS
-                        </h3>
-                        <p class="text-white font-tv text-sm uppercase tracking-widest">
-                            ⚠️ Eventos documentados: Abril a Novembro de 2025 ⚠️
-                        </p>
-                    </div>
-
-                    <!-- Timeline -->
-                    <div class="bg-white p-4 mb-4 border-4 border-yellow-400">
-                        <h4 class="font-manchete text-red-600 text-center uppercase text-xl mb-3">📅 LINHA DO TEMPO</h4>
-
-                        <div class="space-y-3 text-xs">
-                            <div class="flex gap-3 border-l-4 border-blue-600 pl-3 bg-blue-50 p-2">
-                                <span class="font-black text-blue-600 shrink-0">ABR/2025:</span>
-                                <div>
-                                    <p><strong>André Viana toma posse</strong> como Delegado-Geral da PC-BA.</p>
-                                    <p class="text-[10px] text-gray-500 mt-1">Fonte: ADPEB (08/04/2025)</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-3 border-l-4 border-red-600 pl-3 bg-red-50 p-2">
-                                <span class="font-black text-red-600 shrink-0">JUL/2025:</span>
-                                <div>
-                                    <p>Delegado-Geral <strong>visita programa "Alô Juca"</strong> e entrega moeda
-                                        institucional ao apresentador Marcelo Castro, <strong>denunciado pelo
-                                            MP-BA</strong> em processo que corre em segredo de justiça.</p>
-                                    <p class="text-[10px] text-gray-500 mt-1">Fonte: G1 Bahia (15/07/2025) | Vídeo
-                                        disponível abaixo</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-3 border-l-4 border-yellow-600 pl-3 bg-yellow-50 p-2">
-                                <span class="font-black text-yellow-700 shrink-0">NOV/2025:</span>
-                                <div>
-                                    <p>Segundo reportagem da Folha de S.Paulo, apresentador <strong>volta a solicitar
-                                            doações via Pix</strong> durante programa. Record TV manifesta preocupação.
-                                    </p>
-                                    <p class="text-[10px] text-gray-500 mt-1">Fonte: Folha de S.Paulo (25/11/2025)</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-3 border-l-4 border-purple-600 pl-3 bg-purple-50 p-2">
-                                <span class="font-black text-purple-600 shrink-0">18/NOV:</span>
-                                <div>
-                                    <p>Audiência judicial <strong>adiada pela terceira vez</strong>. Tribunal cita
-                                        "falta de auditório". Reagendada para maio/2026.</p>
-                                    <p class="text-[10px] text-gray-500 mt-1">Fonte: G1 Bahia (18/11/2025)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- DOCUMENTO: Video -->
-                    <div class="bg-white p-3 mb-4 border-l-4 border-blue-600">
-                        <p class="font-black text-blue-600 text-xs uppercase mb-2">📹 DOCUMENTO: REGISTRO AUDIOVISUAL
-                        </p>
-                        <div class="bg-black border-4 border-yellow-400 shadow-2xl">
-                            <div class="bg-red-600 text-white font-tv text-center text-xs uppercase py-1">
-                                Visita do Delegado-Geral ao programa Alô Juca (11/07/2025)
-                            </div>
-
-                            <video controls class="w-full" poster="media/delegado.webp" preload="metadata">
-                                <source src="media/delegado.mp4" type="video/mp4">
-                                Seu navegador não suporta vídeo.
-                            </video>
-
-                            <div class="bg-gray-100 p-2 text-[10px] text-gray-700">
-                                <p><strong>Data:</strong> 11 de julho de 2025</p>
-                                <p><strong>Local:</strong> Estúdios da TV Aratu/SBT</p>
-                                <p><strong>Contexto:</strong> Delegado-Geral André Viana em visita ao programa "Alô
-                                    Juca", apresentado por Marcelo Castro</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CONTEXTO JUDICIAL -->
-                    <div class="bg-white p-4 border-4 border-purple-600 mb-4">
-                        <p class="font-black text-purple-600 uppercase text-sm mb-2">⚖️ CONTEXTO JUDICIAL</p>
-                        <div class="space-y-2 text-xs text-gray-800">
-                            <p><strong>Status do processo:</strong> Denúncia aceita pelo MP-BA em 2023</p>
-                            <p><strong>Réus denunciados:</strong> 12 pessoas</p>
-                            <p><strong>Acusações (segundo MP-BA):</strong> Apropriação indébita, organização criminosa,
-                                lavagem de dinheiro</p>
-                            <p><strong>Valores estimados:</strong> R$ 407.143,78 (segundo denúncia do MP-BA)</p>
-                            <p><strong>Situação atual:</strong> Processo em segredo de justiça. Audiência reagendada
-                                para maio/2026</p>
-                            <p class="text-[10px] text-gray-500 mt-2">Fonte: MP-BA (notícia 74077)</p>
-                        </div>
-                    </div>
-
-                    <!-- REPERCUSSÃO NA IMPRENSA -->
-                    <div class="bg-white border-4 border-orange-600 p-4 mb-4">
-                        <p class="font-black text-orange-600 uppercase text-sm mb-3">📰 REPERCUSSÃO NA IMPRENSA</p>
-
-                        <div class="space-y-3 text-xs font-tv text-gray-800">
-                            <div class="bg-orange-50 p-3 border-l-4 border-orange-600">
-                                <p class="font-black text-orange-600 uppercase mb-1">G1 BAHIA (15/07/2025)</p>
-                                <p>"Visita gerou reações nas redes sociais. Usuários questionaram a entrega da moeda
-                                    institucional."</p>
-                            </div>
-
-                            <div class="bg-yellow-50 p-3 border-l-4 border-yellow-600">
-                                <p class="font-black text-yellow-700 uppercase mb-1">FOLHA DE S.PAULO (25/11/2025)</p>
-                                <p>"Apresentador acusado de golpe do Pix volta a pedir dinheiro em programa."</p>
-                            </div>
-
-                            <div class="bg-blue-50 p-3 border-l-4 border-blue-600">
-                                <p class="font-black text-blue-600 uppercase mb-1">METRÓPOLES (17/11/2025)</p>
-                                <p>Apresentador declara: "Querem me calar, mas eu tenho aqui comigo Deus."</p>
-                            </div>
-
-                            <div class="bg-green-50 p-3 border-l-4 border-green-600">
-                                <p class="font-black text-green-600 uppercase mb-1">DADOS DE AUDIÊNCIA</p>
-                                <p>Programa registrou crescimento de 85% no Ibope (3,9 → 7,2 pontos), segundo dados de
-                                    mercado.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ANÁLISE: O QUE CHAMA ATENÇÃO -->
-                    <div
-                        class="bg-gradient-to-r from-gray-700 to-gray-900 text-white p-4 border-4 border-gray-400 mb-4">
-                        <p class="font-manchete text-yellow-400 uppercase text-sm mb-3">🔍 PONTOS QUE CHAMAM ATENÇÃO:
-                        </p>
-                        <ul class="text-xs space-y-2 list-disc list-inside">
-                            <li>Visita institucional a apresentador denunciado em processo criminal</li>
-                            <li>Retomada de pedidos de doação via Pix durante tramitação do processo</li>
-                            <li>Três adiamentos sucessivos da audiência judicial</li>
-                            <li>Crescimento expressivo de audiência do programa durante o período</li>
-                            <li>Apenas 1 dos 12 denunciados em prisão preventiva</li>
-                        </ul>
-                    </div>
-
-                    <!-- Box Final -->
-                    <div class="bg-gradient-to-r from-red-600 to-red-800 text-white p-4 text-center">
-                        <p class="font-manchete text-xl uppercase mb-2">⚖️ O PROCESSO SEGUE EM ANDAMENTO</p>
-                        <p class="text-xs">Próxima audiência: Maio de 2026 | Processo em segredo de justiça</p>
-                        <p class="text-xs mt-2 italic">Presunção de inocência garantida até trânsito em julgado</p>
-                    </div>
-
-                    <!-- Fontes Completas -->
-                    <div class="mt-4 bg-gradient-to-r from-gray-50 to-gray-100 p-4 border-2 border-gray-400 rounded-lg">
-                        <h4
-                            class="text-gray-800 font-manchete text-sm uppercase mb-3 text-center border-b border-gray-300 pb-2">
-                            📚 Fontes Consultadas
-                        </h4>
-
-                        <div class="space-y-3 text-[10px]">
-                            <!-- Fontes Oficiais -->
-                            <div>
-                                <p class="font-black text-blue-700 uppercase mb-1">⚖️ Fontes Oficiais:</p>
-                                <ul class="space-y-1 text-blue-600">
-                                    <li>
-                                        <a href="https://www.mpba.mp.br/noticia/74077" target="_blank"
-                                            rel="noopener noreferrer" class="hover:underline">
-                                            → MP-BA: Justiça aceita denúncia (notícia 74077)
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.adpeb.com.br/noticias/novo-delegado-geral-toma-posse-oficialmente/"
-                                            target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                            → ADPEB: Posse do Delegado-Geral (08/04/2025)
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Grandes Veículos -->
-                            <div>
-                                <p class="font-black text-red-700 uppercase mb-1">📰 Grandes Veículos:</p>
-                                <ul class="space-y-1 text-red-600">
-                                    <li>
-                                        <a href="https://g1.globo.com/ba/bahia/noticia/2025/07/15/jornalista-denunciado-por-golpe-do-pix-viraliza.ghtml"
-                                            target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                            → G1 Bahia: Polêmica da moeda institucional (15/07/2025)
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://g1.globo.com/ba/bahia/noticia/2025/11/18/juiz-adia-audiencia-do-golpe-do-pix.ghtml"
-                                            target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                            → G1 Bahia: Audiência adiada pela 3ª vez (18/11/2025)
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://f5.folha.uol.com.br/colunistas/outro-canal/2025/11/apresentador-acusado-de-dar-golpe-do-pix-em-pessoas-pobres-volta-a-pedir-dinheiro-em-programa.shtml"
-                                            target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                            → Folha de S.Paulo: Volta a pedir dinheiro (25/11/2025)
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://veja.abril.com.br/coluna/veja-gente/o-esquema-de-doacoes-de-pix-desviadas-por-reporter-da-record/"
-                                            target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                            → Veja: Esquema de desvios na TV
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Portais Especializados -->
-                            <div>
-                                <p class="font-black text-purple-700 uppercase mb-1">📱 Portais Especializados:</p>
-                                <ul class="space-y-1 text-purple-600">
-                                    <li>
-                                        <a href="https://www.metropoles.com/colunas/fabia-oliveira/vitimas-do-jornalista-marcelo-castro-revela-detalhes-do-golpe-do-pix"
-                                            target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                            → Metrópoles: Vítimas revelam detalhes
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.portaldosjornalistas.com.br/marcelo-castro-acusado-de-aplicar-golpe-do-pix-em-pessoas-pobres-volta-a-pedir-dinheiro-durante-programa/"
-                                            target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                            → Portal dos Jornalistas: Atuação na TV Aratu
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Nota de Transparência -->
-                        <div class="mt-3 pt-3 border-t border-gray-300">
-                            <p class="text-[9px] text-gray-600 italic text-center">
-                                ℹ️ Todas as informações foram extraídas de fontes públicas e veículos de imprensa.
-                                Este site não possui vínculo com nenhuma das partes envolvidas.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="bg-green-600 p-4 -mx-6 text-center border-y-4 border-green-800">
-                    <button onclick="shareWhatsApp()"
-                        class="w-full bg-white hover:bg-green-50 text-green-600 font-manchete text-2xl py-4 px-6 uppercase transition-smooth shadow-lg border-4 border-green-800 flex items-center justify-center gap-3">
-                        <i class="fab fa-whatsapp text-4xl" aria-hidden="true"></i>
-                        <span>COMPARTILHAR NO ZAP</span>
-                        <i class="fas fa-share-nodes text-2xl" aria-hidden="true"></i>
-                    </button>
-                    <p class="text-white text-xs mt-2 font-bold uppercase tracking-wider">👆 Espalhe a verdade!
-                        Compartilhe com seus grupos!</p>
-                </section>
-
-                <!-- Footer do Modal -->
-                <footer class="mt-8 border-t-4 border-black pt-6 bg-gray-900 -mx-6 px-6 pb-6 text-center">
-                    <p class="font-manchete text-tv-yellow text-lg uppercase tracking-[3px]">Carlos Henrique Tourinho
-                        Santana</p>
-                    <p class="font-typewriter text-white text-[10px] italic mb-4">"Minhas escolhas podem custar caro,
-                        mas abandonar o que eu acredito custaria muito mais."</p>
-                    <nav class="flex justify-center gap-6 text-gray-400 text-xs font-bold uppercase"
-                        aria-label="Links sociais">
-                        <a href="https://www.instagram.com/henrique.ntxa/" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-white transition-smooth">Instagram</a>
-                        <a href="https://github.com/henriquetourinho/kdopix" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-green-500 transition-smooth">GitHub</a>
-                        <a href="/cdn-cgi/l/email-protection#68000d061a01191d0d1c071d1a01060007281a011b0d1d1846060d1c"
-                            class="hover:text-red-500 transition-smooth">Email</a>
-                    </nav>
-                </footer>
-
-            </div>
-        </div>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="live-dot"></div>
+      <span>AO VIVO · SALVADOR/BA</span>
     </div>
-
-    <!-- Main Content -->
-    <main
-        class="relative z-10 w-full max-w-3xl border-[12px] border-[#1a1a1a] bg-[#202020] shadow-[0_0_80px_rgba(0,0,0,0.9)] md:rounded-xl overflow-hidden mb-20 mx-4">
-
-        <!-- Header Bar -->
-        <header
-            class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black flex justify-between items-center px-4 py-2 font-manchete uppercase border-b-4 border-black relative z-20">
-            <div class="flex items-center gap-3">
-                <span class="bg-red-600 text-white px-3 py-0.5 rounded shadow-sm text-sm animate-pulse font-black"
-                    aria-label="Transmissão ao vivo">AO VIVO</span>
-                <span class="text-sm font-bold tracking-tight">SALVADOR / BAHIA</span>
-            </div>
-            <time class="text-xl font-mono font-black opacity-90" id="clock" datetime="">12:00</time>
-        </header>
-
-        <!-- Hero Image -->
-        <div class="relative w-full aspect-video bg-black overflow-hidden">
-            <div class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] z-10 pointer-events-none"
-                aria-hidden="true"></div>
-            <img src="media/juca.webp"
-                class="w-full h-full object-cover filter contrast-125 saturate-150 transform scale-105"
-                alt="Imagem relacionada ao caso de Marcelo Castro e o Escândalo do Pix na Bahia" loading="eager">
-            <div class="absolute top-4 right-4 bg-tv-red text-white font-manchete text-3xl px-6 py-1 border-4 border-white transform rotate-2 shadow-xl z-20 animate-pulse"
-                aria-label="Conteúdo exclusivo">
-                EXCLUSIVO
-            </div>
-        </div>
-
-        <!-- Title Section -->
-        <div class="relative z-30 -mt-2">
-            <h1
-                class="bg-tv-yellow text-black font-manchete text-4xl md:text-6xl uppercase leading-none p-4 text-center border-t-4 border-black border-b-4 border-tv-red shadow-2xl overflow-hidden">
-                <span>ESCÂNDALO DO PIX NA <span class="text-red-600">BAHIA</span></span>
-            </h1>
-
-            <!-- Breaking News Ticker -->
-            <div class="blue-gradient text-white font-tv text-xl font-bold p-2 flex items-center border-b-4 border-black"
-                role="marquee" aria-label="Notícias urgentes">
-                <span
-                    class="bg-tv-red px-2 mr-2 animate-pisca text-white text-sm font-black border border-white/20">URGENTE</span>
-                <div class="overflow-hidden w-full whitespace-nowrap">
-                    <p class="animate-marquee uppercase font-black text-sm md:text-base">
-                        MP-BA DENUNCIA 12 PESSOAS POR DESVIO DE DOAÇÕES /// JUSTIÇA BLOQUEIA R$ 600 MIL EM BENS /// R$
-                        407 MIL DESVIADOS DE CRIANÇAS COM CÂNCER /// MARCELO CASTRO E JAMERSON LIDERAVAM ESQUEMA ///
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <nav class="grid grid-cols-3 bg-gray-900 border-t-2 border-gray-700">
-            <button onclick="toggleSound()" id="play-btn"
-                class="bg-black text-tv-yellow font-manchete text-xl md:text-2xl py-6 hover:bg-gray-800 uppercase border-r border-gray-700 transition-smooth"
-                aria-label="Controlar áudio da página">
-                <span aria-hidden="true">🔊</span> <span id="btn-text" class="hidden md:inline">OUVIR ÁUDIO</span><span
-                    class="md:hidden">ÁUDIO</span>
-            </button>
-            <button onclick="shareWhatsApp()"
-                class="bg-green-600 text-white font-manchete text-xl md:text-2xl py-6 hover:bg-green-700 uppercase border-r border-gray-700 transition-smooth shadow-[inset_0_0_30px_rgba(0,0,0,0.3)]"
-                aria-label="Compartilhar no WhatsApp">
-                <span aria-hidden="true">📱</span> <span class="hidden md:inline">COMPARTILHAR</span><span
-                    class="md:hidden">ZAP</span>
-            </button>
-            <button onclick="toggleModal()"
-                class="bg-tv-red text-white font-manchete text-xl md:text-2xl py-6 hover:bg-red-800 uppercase transition-smooth shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]"
-                aria-label="Abrir dossiê completo do caso">
-                <span aria-hidden="true">⚖️</span> <span class="hidden md:inline">CAPIVARA</span><span
-                    class="md:hidden">DOSSIÊ</span>
-            </button>
-        </nav>
-    </main>
-
-    <!-- Floating WhatsApp Button (hidden initially) -->
-    <button id="whatsapp-float" onclick="shareWhatsApp()"
-        class="whatsapp-float bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 md:w-20 md:h-20 items-center justify-center shadow-2xl border-4 border-white transition-smooth hidden"
-        aria-label="Compartilhar escândalo no WhatsApp" title="Compartilhar no WhatsApp">
-        <i class="fab fa-whatsapp text-4xl md:text-5xl" aria-hidden="true"></i>
+    <button id="audio-pill" onclick="toggleSound()">
+      <div class="wave">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <span id="audio-label">ÁUDIO</span>
     </button>
+    <div class="topbar-clock" id="clock">00:00</div>
+  </div>
 
-    <!-- Footer Bar -->
-    <footer
-        class="fixed bottom-0 w-full bg-tv-yellow text-black font-manchete py-1 text-center text-sm md:text-lg border-t-4 border-black z-0 uppercase tracking-widest"
-        aria-label="Aviso de cena do crime">
-        CENA DO CRIME /// NÃO ULTRAPASSE /// CENA DO CRIME
-    </footer>
+  <!-- TICKER -->
+  <div class="ticker-wrap" aria-label="Notícias urgentes">
+    <div class="ticker-inner">
+      <span>MP-BA DENUNCIA 12 PESSOAS POR DESVIO DE DOAÇÕES</span>
+      <span>///</span>
+      <span>JUSTIÇA BLOQUEIA R$ 600 MIL EM BENS</span>
+      <span>///</span>
+      <span>R$ 407 MIL DESVIADOS DE CRIANÇAS COM CÂNCER</span>
+      <span>///</span>
+      <span>AUDIÊNCIA ADIADA PELA 3ª VEZ — MAIO/2026</span>
+      <span>///</span>
+      <span>APENAS 1 PRESO DE 12 RÉUS</span>
+      <span>///</span>
+      <!-- duplicate for infinite loop -->
+      <span>MP-BA DENUNCIA 12 PESSOAS POR DESVIO DE DOAÇÕES</span>
+      <span>///</span>
+      <span>JUSTIÇA BLOQUEIA R$ 600 MIL EM BENS</span>
+      <span>///</span>
+      <span>R$ 407 MIL DESVIADOS DE CRIANÇAS COM CÂNCER</span>
+      <span>///</span>
+      <span>AUDIÊNCIA ADIADA PELA 3ª VEZ — MAIO/2026</span>
+      <span>///</span>
+      <span>APENAS 1 PRESO DE 12 RÉUS</span>
+      <span>///</span>
+    </div>
+  </div>
 
-    <!-- Audio Element -->
-    <audio id="audio-player" preload="none">
-        <source src="media/kdopix.mp3" type="audio/mpeg">
-        Seu navegador não suporta o elemento de �
+  <!-- MAIN CONTENT -->
+  <div id="main-content">
 
-        <!-- Audio Element -->
-        <audio id="audio-player" preload="none">
-            <source src="media/kdopix.mp3" type="audio/mpeg">
-            Seu navegador não suporta o elemento de áudio.
-        </audio>
+    <!-- HERO -->
+    <section class="hero">
+      <img src="media/juca.webp" alt="Escândalo do Pix na Bahia">
+      <div class="hero-overlay"></div>
+      <div class="hero-badge">EXCLUSIVO</div>
+      <div class="hero-title">
+        <h1>ESCÂNDALO DO PIX<br><em>NA BAHIA</em></h1>
+      </div>
+    </section>
 
-        <!-- JavaScript -->
-        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-        <script src="script.js"></script>
+    <div class="divider"></div>
 
-        <script defer
-            src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-            integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-            data-cf-beacon='{"version":"2024.11.0","token":"21216bffc7a24cc7b2dd7732bdcc5d4d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-            crossorigin="anonymous"></script>
+    <!-- STATUS -->
+    <div class="status-bar">
+      <div class="status-item">
+        <div class="status-dot s-red"></div> 12 RÉUS DENUNCIADOS
+      </div>
+      <div class="status-item">
+        <div class="status-dot s-yellow"></div> PROCESSO Nº 74077
+      </div>
+      <div class="status-item">
+        <div class="status-dot s-green"></div> FONTES PÚBLICAS
+      </div>
+    </div>
+
+    <!-- COUNTER -->
+    <section class="counter-section" style="margin-top:2px">
+      <div class="counter-label">💸 Total desviado da quadrilha (75%)</div>
+      <div class="counter-value" id="main-counter">R$ 0,00</div>
+      <div style="margin-top:4px;font-family:var(--font-mono);font-size:10px;color:var(--muted)">de R$ 543.089,66
+        arrecadados</div>
+
+      <div class="counter-grid" style="margin-top:16px">
+        <div class="counter-card accent-red">
+          <div class="num" id="counter-reus">0</div>
+          <div class="desc">RÉUS<br>DENUNCIADOS</div>
+        </div>
+        <div class="counter-card accent-yellow">
+          <div class="num" id="counter-adiamentos">0</div>
+          <div class="desc">AUDIÊNCIAS<br>ADIADAS</div>
+        </div>
+        <div class="counter-card accent-green">
+          <div class="num" id="counter-presos">0</div>
+          <div class="desc">RÉUS<br>PRESOS</div>
+        </div>
+        <div class="counter-card accent-blue">
+          <div class="num" id="counter-ibope">0%</div>
+          <div class="desc">AUMENTO DE<br>AUDIÊNCIA</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTION BUTTONS -->
+    <div class="action-row">
+      <button class="action-btn" onclick="toggleSound()">
+        <span class="icon">🔊</span>
+        <span>ÁUDIO</span>
+      </button>
+      <button class="action-btn green" onclick="shareWhatsApp()">
+        <span class="icon">📱</span>
+        <span>ZAP</span>
+      </button>
+      <button class="action-btn red" onclick="toggleModal()">
+        <span class="icon">⚖️</span>
+        <span>DOSSIÊ</span>
+      </button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- TIMELINE HORIZONTAL -->
+    <section class="timeline-section" style="margin-top:2px">
+      <div class="section-header">
+        <span class="section-title">TIMELINE</span>
+        <span class="section-tag">ABR → NOV 2025</span>
+      </div>
+      <div class="timeline-scroll" id="timeline-scroll">
+        <div class="timeline-track">
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">ABR / 2025</div>
+            <div class="tl-title">Novo Delegado-Geral toma posse</div>
+            <div class="tl-desc">André Viana assume o comando da Polícia Civil da Bahia.</div>
+            <div class="tl-source">Fonte: ADPEB (08/04/2025)</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">JUL / 2025</div>
+            <div class="tl-title">Delegado visita programa "Alô Juca"</div>
+            <div class="tl-desc">Delegado-Geral entrega moeda institucional a apresentador denunciado pelo MP-BA. Vídeo
+              viraliza.</div>
+            <div class="tl-source">Fonte: G1 Bahia (15/07/2025)</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">NOV / 2025</div>
+            <div class="tl-title">Volta a pedir Pix ao vivo</div>
+            <div class="tl-desc">Apresentador retoma pedidos de doação via Pix durante transmissão. Record manifesta
+              preocupação.</div>
+            <div class="tl-source">Fonte: Folha de S.Paulo (25/11/2025)</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">18 NOV / 2025</div>
+            <div class="tl-title">Audiência adiada pela 3ª vez</div>
+            <div class="tl-desc">Tribunal cita "falta de auditório". Nova data: maio/2026. Processo segue em segredo de
+              justiça.</div>
+            <div class="tl-source">Fonte: G1 Bahia (18/11/2025)</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">MAI / 2026</div>
+            <div class="tl-title">Próxima audiência</div>
+            <div class="tl-desc">Data reagendada. 11 de 12 réus permanecem em liberdade aguardando julgamento.</div>
+            <div class="tl-source">Status atual do processo</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="timeline-hint">
+        <span>→</span> arraste para ver tudo
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- RÉUS -->
+    <section class="reus-section" style="margin-top:2px">
+      <div class="section-header" style="padding-bottom:0">
+        <span class="section-title">12 RÉUS</span>
+        <span class="section-tag">MP-BA Nº 74077</span>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:9px;color:var(--muted);padding:8px 0 0;letter-spacing:1px">
+        ⚠ PRESUNÇÃO DE INOCÊNCIA GARANTIDA. FONTES PÚBLICAS.
+      </p>
+      <div class="reus-grid-new">
+
+        <div class="reu-card-new lider" onclick="openSuspectModal('1')">
+          <span class="reu-num-new">#01</span>
+          <div class="reu-photo-new"><img src="media/perfil/1.png" onerror="this.src='media/perfil/juca.png'"
+              alt="Marcelo Castro" loading="lazy"></div>
+          <div class="reu-name-new">Marcelo Valter A. M. L. Castro</div>
+          <span class="reu-tag">LIDERANÇA</span>
+        </div>
+
+        <div class="reu-card-new lider" onclick="openSuspectModal('2')">
+          <span class="reu-num-new">#02</span>
+          <div class="reu-photo-new"><img src="media/perfil/2.png" onerror="this.src='media/perfil/janderson.png'"
+              alt="Jamerson Oliveira" loading="lazy"></div>
+          <div class="reu-name-new">Jamerson Birindiba Oliveira</div>
+          <span class="reu-tag">LIDERANÇA</span>
+        </div>
+
+        <div class="reu-card-new inter" onclick="openSuspectModal('3')">
+          <span class="reu-num-new">#03</span>
+          <div class="reu-photo-new"><img src="media/perfil/3.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Lucas Costa Santos" loading="lazy"></div>
+          <div class="reu-name-new">Lucas Costa Santos</div>
+          <span class="reu-tag">INTERM.</span>
+        </div>
+
+        <div class="reu-card-new assoc" onclick="openSuspectModal('4')">
+          <span class="reu-num-new">#04</span>
+          <div class="reu-photo-new"><img src="media/perfil/4.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Carlos Eduardo" loading="lazy"></div>
+          <div class="reu-name-new">Carlos Eduardo S. M. S. de Jesus</div>
+          <span class="reu-tag">ASSOCIADO</span>
+        </div>
+
+        <div class="reu-card-new assoc" onclick="openSuspectModal('5')">
+          <span class="reu-num-new">#05</span>
+          <div class="reu-photo-new"><img src="media/perfil/5.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Jakson de Jesus" loading="lazy"></div>
+          <div class="reu-name-new">Jakson da Silva de Jesus</div>
+          <span class="reu-tag">ASSOCIADO</span>
+        </div>
+
+        <div class="reu-card-new assoc" onclick="openSuspectModal('6')">
+          <span class="reu-num-new">#06</span>
+          <div class="reu-photo-new"><img src="media/perfil/6.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Daniele Monteiro" loading="lazy"></div>
+          <div class="reu-name-new">Daniele Cristina S. Monteiro</div>
+          <span class="reu-tag">ASSOCIADO</span>
+        </div>
+
+        <div class="reu-card-new assoc" onclick="openSuspectModal('7')">
+          <span class="reu-num-new">#07</span>
+          <div class="reu-photo-new"><img src="media/perfil/7.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Debora Monteiro" loading="lazy"></div>
+          <div class="reu-name-new">Debora Cristina S. Monteiro</div>
+          <span class="reu-tag">ASSOCIADO</span>
+        </div>
+
+        <div class="reu-card-new assoc" onclick="openSuspectModal('8')">
+          <span class="reu-num-new">#08</span>
+          <div class="reu-photo-new"><img src="media/perfil/8.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Rute Cruz" loading="lazy"></div>
+          <div class="reu-name-new">Rute Cruz da Costa</div>
+          <span class="reu-tag">ASSOCIADO</span>
+        </div>
+
+        <div class="reu-card-new assoc" onclick="openSuspectModal('9')">
+          <span class="reu-num-new">#09</span>
+          <div class="reu-photo-new"><img src="media/perfil/9.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Gerson Santana" loading="lazy"></div>
+          <div class="reu-name-new">Gerson Santos Santana Jr.</div>
+          <span class="reu-tag">ASSOCIADO</span>
+        </div>
+
+        <div class="reu-card-new assoc" onclick="openSuspectModal('10')">
+          <span class="reu-num-new">#10</span>
+          <div class="reu-photo-new"><img src="media/perfil/10.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Eneida Couto" loading="lazy"></div>
+          <div class="reu-name-new">Eneida Sena Couto</div>
+          <span class="reu-tag">ASSOCIADO</span>
+        </div>
+
+        <div class="reu-card-new assoc" onclick="openSuspectModal('11')">
+          <span class="reu-num-new">#11</span>
+          <div class="reu-photo-new"><img src="media/perfil/11.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Thais Pacheco" loading="lazy"></div>
+          <div class="reu-name-new">Thais Pacheco da Costa</div>
+          <span class="reu-tag">ASSOCIADO</span>
+        </div>
+
+        <div class="reu-card-new assoc" onclick="openSuspectModal('12')">
+          <span class="reu-num-new">#12</span>
+          <div class="reu-photo-new"><img src="media/perfil/12.png" onerror="this.src='media/perfil/padrao.png'"
+              alt="Alessandra Oliveira" loading="lazy"></div>
+          <div class="reu-name-new">Alessandra S. Oliveira de Jesus</div>
+          <span class="reu-tag">ASSOCIADO</span>
+        </div>
+
+      </div>
+
+      <div style="display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
+        <span style="font-family:var(--font-mono);font-size:9px;color:var(--red)">■ LIDERANÇA</span>
+        <span style="font-family:var(--font-mono);font-size:9px;color:var(--blue)">■ INTERMEDIÁRIO</span>
+        <span style="font-family:var(--font-mono);font-size:9px;color:var(--muted)">■ ASSOCIADO</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- MÍDIA -->
+    <section class="midia-section" style="margin-top:2px">
+      <div class="section-header" style="padding-bottom:0">
+        <span class="section-title">REPERCUSSÃO</span>
+        <span class="section-tag">IMPRENSA NACIONAL</span>
+      </div>
+      <div class="midia-grid">
+        <div class="midia-card g1">
+          <div class="midia-source">G1 BAHIA</div>
+          <div class="midia-text">Polêmica da visita do delegado gerou reações nas redes sociais.</div>
+          <div class="midia-date">15/07/2025</div>
+        </div>
+        <div class="midia-card folha">
+          <div class="midia-source">FOLHA DE S.PAULO</div>
+          <div class="midia-text">Acusado de golpe volta a pedir dinheiro em programa ao vivo.</div>
+          <div class="midia-date">25/11/2025</div>
+        </div>
+        <div class="midia-card metro">
+          <div class="midia-source">METRÓPOLES</div>
+          <div class="midia-text">Apresentador declara: "Querem me calar, mas eu tenho Deus comigo."</div>
+          <div class="midia-date">17/11/2025</div>
+        </div>
+        <div class="midia-card dados">
+          <div class="midia-source">AUDIÊNCIA</div>
+          <div class="midia-text">Programa cresceu 85% no Ibope durante o período — de 3,9 para 7,2 pontos.</div>
+          <div class="midia-date">Dados de mercado</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PONTOS DE ATENÇÃO -->
+    <section class="pontos-section" style="margin-top:2px">
+      <div class="section-header">
+        <span class="section-title">O QUE CHAMA ATENÇÃO</span>
+      </div>
+      <div class="ponto-item">
+        <div class="ponto-num">01</div>
+        <div class="ponto-text"><strong>Visita institucional</strong> a apresentador denunciado em processo criminal
+          ativo</div>
+      </div>
+      <div class="ponto-item">
+        <div class="ponto-num">02</div>
+        <div class="ponto-text"><strong>Retomada de pedidos</strong> de doação via Pix durante tramitação do processo
+        </div>
+      </div>
+      <div class="ponto-item">
+        <div class="ponto-num">03</div>
+        <div class="ponto-text"><strong>Três adiamentos</strong> sucessivos da audiência judicial — último por "falta de
+          auditório"</div>
+      </div>
+      <div class="ponto-item">
+        <div class="ponto-num">04</div>
+        <div class="ponto-text"><strong>Crescimento de 85%</strong> de audiência do programa durante o período do caso
+        </div>
+      </div>
+      <div class="ponto-item">
+        <div class="ponto-num">05</div>
+        <div class="ponto-text">Apenas <strong>1 dos 12</strong> denunciados está em prisão preventiva</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- VÍDEOS -->
+    <section class="video-section" style="margin-top:2px">
+      <div class="section-header" style="padding-bottom:0">
+        <span class="section-title">DOCUMENTOS</span>
+        <span class="section-tag">AUDIOVISUAL</span>
+      </div>
+
+      <div
+        style="margin-top:12px;font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:2px;padding:4px 0">
+        📺 MATÉRIA — DOMINGO ESPETACULAR (RECORD TV)
+      </div>
+      <div class="video-wrap">
+        <iframe id="yt-iframe" data-src="https://www.youtube.com/embed/2uMN22sk-7E?rel=0" frameborder="0"
+          allowfullscreen loading="lazy" title="Domingo Espetacular — Escândalo do Pix">
+        </iframe>
+      </div>
+
+      <div
+        style="margin-top:12px;font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:2px;padding:4px 0">
+        📹 DELEGADO VISITA PROGRAMA ALÔ JUCA (11/07/2025)
+      </div>
+      <div class="video-wrap">
+        <video controls poster="media/delegado.webp" preload="metadata">
+          <source src="media/delegado.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FONTES -->
+    <section class="sources-section" style="margin-top:2px">
+      <div class="section-header">
+        <span class="section-title">FONTES</span>
+        <span class="section-tag">DOCUMENTADAS</span>
+      </div>
+      <a href="https://www.mpba.mp.br/noticia/74077" target="_blank" rel="noopener noreferrer" class="source-link">
+        <span class="source-arrow">→</span>
+        <div class="source-info">
+          <div class="source-name">MP-BA • OFICIAL</div>
+          <div class="source-desc">Justiça aceita denúncia — Notícia 74077</div>
+        </div>
+      </a>
+      <a href="https://g1.globo.com/ba/bahia/noticia/2025/07/15/jornalista-denunciado-por-golpe-do-pix-viraliza.ghtml"
+        target="_blank" rel="noopener noreferrer" class="source-link">
+        <span class="source-arrow">→</span>
+        <div class="source-info">
+          <div class="source-name">G1 BAHIA</div>
+          <div class="source-desc">Polêmica da moeda institucional (15/07/2025)</div>
+        </div>
+      </a>
+      <a href="https://f5.folha.uol.com.br/colunistas/outro-canal/2025/11/apresentador-acusado-de-dar-golpe-do-pix-em-pessoas-pobres-volta-a-pedir-dinheiro-em-programa.shtml"
+        target="_blank" rel="noopener noreferrer" class="source-link">
+        <span class="source-arrow">→</span>
+        <div class="source-info">
+          <div class="source-name">FOLHA DE S.PAULO</div>
+          <div class="source-desc">Volta a pedir dinheiro em programa (25/11/2025)</div>
+        </div>
+      </a>
+      <a href="https://veja.abril.com.br/coluna/veja-gente/o-esquema-de-doacoes-de-pix-desviadas-por-reporter-da-record/"
+        target="_blank" rel="noopener noreferrer" class="source-link">
+        <span class="source-arrow">→</span>
+        <div class="source-info">
+          <div class="source-name">VEJA</div>
+          <div class="source-desc">Esquema de desvios na TV Record</div>
+        </div>
+      </a>
+      <a href="https://www.metropoles.com/colunas/fabia-oliveira/vitimas-do-jornalista-marcelo-castro-revela-detalhes-do-golpe-do-pix"
+        target="_blank" rel="noopener noreferrer" class="source-link">
+        <span class="source-arrow">→</span>
+        <div class="source-info">
+          <div class="source-name">METRÓPOLES</div>
+          <div class="source-desc">Vítimas revelam detalhes do golpe do Pix</div>
+        </div>
+      </a>
+      <a href="https://github.com/henriquetourinho/kdopix" target="_blank" rel="noopener noreferrer"
+        class="source-link">
+        <span class="source-arrow">→</span>
+        <div class="source-info">
+          <div class="source-name">GITHUB • CÓDIGO ABERTO</div>
+          <div class="source-desc">Repositório público deste dossiê</div>
+        </div>
+      </a>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- COMPARTILHAR -->
+    <section class="share-section" style="margin-top:2px">
+      <div class="share-title">ESPALHA</div>
+      <div class="share-sub">ISSO NÃO PODE SER ESQUECIDO</div>
+      <button id="share-btn" onclick="shareWhatsApp()">📱 COMPARTILHAR NO ZAP</button>
+      <div id="share-count">💬 <strong id="share-num">2.847</strong> pessoas já compartilharam</div>
+    </section>
+
+    <!-- FOOTER CRÉDITO -->
+    <div style="padding:24px 20px;text-align:center;border-top:1px solid var(--border);margin-top:2px">
+      <p style="font-family:var(--font-display);font-size:18px;color:var(--yellow);letter-spacing:3px">CARLOS HENRIQUE
+        TOURINHO SANTANA</p>
+      <p style="font-family:var(--font-mono);font-size:9px;color:var(--muted);margin-top:6px;line-height:1.8">
+        "Minhas escolhas podem custar caro,<br>mas abandonar o que eu acredito custaria muito mais."
+      </p>
+      <div style="display:flex;justify-content:center;gap:24px;margin-top:16px">
+        <a href="https://www.instagram.com/henrique.ntxa/" target="_blank" rel="noopener noreferrer"
+          style="font-family:var(--font-mono);font-size:10px;color:var(--muted);text-decoration:none;letter-spacing:1px;transition:color 0.15s"
+          onmouseover="this.style.color='#f0f0f0'" onmouseout="this.style.color='#666'">INSTAGRAM</a>
+        <a href="https://github.com/henriquetourinho/kdopix" target="_blank" rel="noopener noreferrer"
+          style="font-family:var(--font-mono);font-size:10px;color:var(--muted);text-decoration:none;letter-spacing:1px;transition:color 0.15s"
+          onmouseover="this.style.color='#00ff88'" onmouseout="this.style.color='#666'">GITHUB</a>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:9px;color:#333;margin-top:16px">
+        ℹ️ Informações extraídas de fontes públicas. Site sem vínculo com nenhuma das partes.
+      </p>
+    </div>
+
+  </div><!-- end main-content -->
+
+  <!-- MODAL SUSPEITO -->
+  <div id="suspect-modal-overlay" onclick="closeSuspectModal(event)">
+    <div class="suspect-modal-content" onclick="event.stopPropagation()">
+      <div class="scanning-bar"></div>
+      <div class="suspect-modal-header">
+        <h2 id="s-modal-title">FICHA CRIMINAL</h2>
+        <button onclick="closeSuspectModal()"
+          style="background:none;border:none;color:#000;font-weight:bold;cursor:pointer;font-family:var(--font-mono)">✕</button>
+      </div>
+      <div class="suspect-photo-big">
+        <img id="s-modal-photo" src="" alt="Foto do Réu">
+      </div>
+      <div class="suspect-info-body">
+        <div class="suspect-tag-row">
+          <span class="suspect-status-badge" id="s-modal-role">LIDERANÇA</span>
+          <span class="suspect-status-badge red" id="s-modal-status">EM LIBERDADE</span>
+        </div>
+        <div class="suspect-details-grid">
+          <div class="suspect-label">NOME:</div>
+          <div class="suspect-value" id="s-modal-name">MARCELO CASTRO</div>
+          <div class="suspect-label">PROCESSO:</div>
+          <div class="suspect-value">MP-BA 74077</div>
+        </div>
+        <div class="suspect-description" id="s-modal-desc">
+          Carregando informações do banco de dados...
+        </div>
+        <button onclick="shareWhatsApp()"
+          style="width:100%;background:var(--green);color:#000;border:none;font-family:var(--font-display);font-size:18px;letter-spacing:2px;padding:12px;margin-top:20px;cursor:pointer">
+          📱 COMPARTILHAR HISTÓRICO
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING ZAP -->
+  <button id="zap-float" onclick="shareWhatsApp()" title="Compartilhar no WhatsApp"
+    aria-label="Compartilhar no WhatsApp">📱</button>
+
+  <!-- FOOTER FIXO -->
+  <footer class="site-footer">
+    <div class="footer-text">
+      <span>CENA DO CRIME</span>
+      <span>NÃO ULTRAPASSE</span>
+      <span>CENA DO CRIME</span>
+      <span>NÃO ULTRAPASSE</span>
+      <span>CENA DO CRIME</span>
+      <span>NÃO ULTRAPASSE</span>
+      <span>CENA DO CRIME</span>
+      <span>NÃO ULTRAPASSE</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
