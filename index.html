@@ -4,7 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KD O PIX? — Dossiê Completo</title>
+  <title>KD O PIX? — Dossiê Completo: Marcelo Castro & Alô Juca</title>
+  <meta name="description"
+    content="Dossiê Investigativo Completo: O Escândalo do Pix na Record TV Itapoan / Bahia. Tudo sobre Marcelo Castro, Alô Juca, Jamerson Oliveira e os R$ 407 mil desviados de doações.">
+  <meta name="keywords"
+    content="Marcelo Castro, Alô Juca, Escândalo do Pix, Record TV Itapoan, Balanço Geral, Pix Record, Bahia, MP-BA, Estelionato, Jamerson Oliveira, Juca do Pix, TV Itapoan, Caso PixRecord">
+  <meta name="author" content="Dossiê Independente">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="KD O PIX? — Dossiê Completo: Escândalo do Pix na Bahia">
+  <meta property="og:description"
+    content="Investigação detalhada, vídeos e o diagrama de vínculos dos 12 réus do Escândalo do Pix na Record TV.">
+  <meta property="og:type" content="website">
+
+  <!-- JSON-LD for Search Engines & AI -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Dossiê Completo: Escândalo do Pix na Record TV Bahia",
+    "description": "Investigação sobre o desvio de R$ 407.000,00 de doações via Pix no programa Balanço Geral da Record TV Itapoan, envolvendo Marcelo Castro e Jamerson Oliveira.",
+    "about": [
+      { "@type": "Person", "name": "Marcelo Castro", "jobTitle": "Apresentador / Repórter" },
+      { "@type": "Person", "name": "Jamerson Oliveira", "jobTitle": "Editor" },
+      { "@type": "Organization", "name": "Record TV Itapoan" }
+    ],
+    "keywords": "Escândalo do Pix, Marcelo Castro, Alô Juca, Bahia, MP-BA"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=DM+Sans:wght@400;500;700;900&display=swap"
@@ -799,14 +828,175 @@
     }
 
     .suspect-modal-content {
-      background: #050505;
+      background: #0a0a0a;
       border: 1px solid var(--red);
       max-width: 500px;
       width: 100%;
       max-height: 95vh;
       overflow-y: auto;
       position: relative;
-      box-shadow: 0 0 50px rgba(255, 45, 45, 0.2);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--red);
+      color: var(--white);
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      line-height: 1;
+    }
+
+    .status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 8px 12px;
+      background: #0d0d0d;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .s-red {
+      background: var(--red);
+      box-shadow: 0 0 6px var(--red);
+    }
+
+    .s-yellow {
+      background: var(--yellow);
+      box-shadow: 0 0 6px var(--yellow);
+    }
+
+    .s-green {
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+    }
+
+    /* Leaflet dark background */
+    #tactical-map {
+      background: #0d0d0d;
+    }
+
+    .leaflet-container {
+      background: #0d0d0d !important;
+    }
+
+    /* Recommendation Section */
+    .rec-section {
+      padding: 16px 12px;
+    }
+
+    .rec-card {
+      display: flex;
+      gap: 14px;
+      background: #0d0d0d;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--yellow);
+      padding: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rec-card:before {
+      content: 'RECOMENDAÇÃO';
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--yellow);
+      letter-spacing: 2px;
+    }
+
+    .rec-poster {
+      width: 90px;
+      flex-shrink: 0;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    .rec-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .rec-platform {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: #e50914;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .rec-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: var(--white);
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .rec-desc {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .rec-recommender {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--yellow);
+      letter-spacing: 1px;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+    }
+
+    .rec-question {
+      margin-top: 14px;
+      background: #111;
+      border: 1px solid var(--red);
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    .rec-question strong {
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
     @media(max-width:600px) {
@@ -828,14 +1018,16 @@
 
     .suspect-modal-header {
       padding: 12px 16px;
-      background: var(--red);
-      color: #000;
+      background: rgba(255, 45, 45, 0.4);
+      color: var(--white);
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 10;
+      border-bottom: 1px solid var(--red);
+      backdrop-filter: blur(10px);
     }
 
     .suspect-modal-header h2 {
@@ -870,7 +1062,9 @@
     }
 
     .suspect-info-body {
-      padding: 20px;
+      padding: 24px;
+      background: #0a0a0a !important;
+      position: relative;
     }
 
     .suspect-tag-row {
@@ -1218,129 +1412,61 @@
       color: var(--green);
     }
 
-    /* ===== FOOTER ===== */
+    /* ===== CENA DO CRIME (YELLOW TAPE) ===== */
     .site-footer {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: var(--yellow);
-      background-image:
-        repeating-linear-gradient(45deg,
-          transparent, transparent 20px,
-          rgba(0, 0, 0, 0.08) 20px, rgba(0, 0, 0, 0.08) 40px);
-      color: #000;
+      height: 32px;
+      overflow: hidden;
+      z-index: 9999;
+      pointer-events: none;
+      background: #f0ca1d;
+      border-top: 2px solid #1a1a1a;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-tape {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: tape-scroll 18s linear infinite;
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 900;
       letter-spacing: 3px;
-      text-align: center;
-      padding: 10px 0;
-      text-transform: uppercase;
-      z-index: 100;
-      overflow: hidden;
-      box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.6);
-      border-top: 2px solid rgba(0, 0, 0, 0.1);
+      color: #1a1a1a;
+      gap: 0;
     }
 
-    .footer-text {
-      display: inline-flex;
-      animation: ticker 15s linear infinite;
-      white-space: nowrap;
+    .footer-tape span {
+      padding: 0 20px;
+      display: inline-block;
     }
 
-    .footer-text span {
-      padding: 0 30px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
+    .footer-tape .sep {
+      color: #000;
+      padding: 0 8px;
     }
 
-    .footer-text span::after {
-      content: '///';
-      color: rgba(0, 0, 0, 0.3);
-      font-family: var(--font-mono);
-      font-size: 10px;
-    }
+    @keyframes tape-scroll {
+      0% {
+        transform: translateX(0);
+      }
 
-    /* ===== FLOATING ZAP ===== */
-    #zap-float {
-      position: fixed;
-      bottom: 40px;
-      right: 20px;
-      z-index: 100;
-      background: #25d366;
-      color: #fff;
-      border: none;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      font-size: 26px;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 24px rgba(37, 211, 102, 0.4);
-      animation: float-btn 2.5s ease-in-out infinite;
-      transition: transform 0.15s;
-    }
-
-    #zap-float:hover {
-      transform: scale(1.1);
-    }
-
-    @keyframes float-btn {
-
-      0%,
       100% {
-        transform: translateY(0);
+        transform: translateX(-50%);
       }
-
-      50% {
-        transform: translateY(-5px);
-      }
-    }
-
-    #zap-float.visible {
-      display: flex;
-    }
-
-    /* ===== STATUS BAR ===== */
-    .status-bar {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .status-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--muted);
     }
 
     .status-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-    }
-
-    .s-red {
-      background: var(--red);
-    }
-
-    .s-yellow {
-      background: var(--yellow);
-    }
-
-    .s-green {
-      background: var(--green);
+      flex-shrink: 0;
     }
 
     /* ===== GLITCH KEYFRAMES ===== */
@@ -1507,8 +1633,364 @@
       margin: 2px 0;
     }
 
+    /* ===== EVIDENCE VAULT REDESIGN ===== */
+    .vault-section {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      background-image:
+        radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.02) 1px, transparent 0);
+      background-size: 20px 20px;
+      padding: 32px 20px;
+      border: 1px solid var(--border);
+    }
+
+    .confidential-seal {
+      position: absolute;
+      top: 15px;
+      right: -30px;
+      background: rgba(255, 45, 45, 0.1);
+      color: var(--red);
+      border: 1px solid var(--red);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      padding: 4px 40px;
+      transform: rotate(20deg);
+      pointer-events: none;
+      letter-spacing: 2px;
+      z-index: 5;
+      text-transform: uppercase;
+      box-shadow: 0 0 15px rgba(255, 45, 45, 0.2);
+    }
+
+    .vault-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .evidence-folder {
+      background: #111;
+      border: 1px solid #333;
+      padding: 18px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: 0 4px 0 #000;
+      overflow: hidden;
+    }
+
+    .evidence-folder::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0.03), transparent);
+      pointer-events: none;
+    }
+
+    .evidence-folder:hover {
+      border-color: var(--yellow);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 230, 0, 0.2);
+    }
+
+    .folder-scanning {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(255, 230, 0, 0.4);
+      box-shadow: 0 0 10px var(--yellow);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .evidence-folder:hover .folder-scanning {
+      animation: scan-vertical 2s linear infinite;
+      opacity: 1;
+    }
+
+    @keyframes scan-vertical {
+      0% {
+        top: 0;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    .folder-tab {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: var(--yellow);
+    }
+
+    .folder-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    }
+
+    .folder-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      flex-grow: 1;
+      letter-spacing: 0.5px;
+    }
+
+    .folder-meta {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--muted);
+      margin-top: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* AUTH MODAL */
+    #auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .auth-box {
+      background: #0a0a0a;
+      border: 1px solid var(--red);
+      width: 100%;
+      max-width: 400px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(255, 45, 45, 0.2);
+    }
+
+    .auth-box h3 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--red);
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+    }
+
+    .auth-box p {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    #auth-input {
+      width: 100%;
+      background: #111;
+      border: 1px solid #333;
+      padding: 14px;
+      color: var(--white);
+      font-family: var(--font-mono);
+      font-size: 16px;
+      text-align: center;
+      outline: none;
+      margin-bottom: 20px;
+      border-radius: 0;
+    }
+
+    #auth-input:focus {
+      border-color: var(--red);
+    }
+
+    .auth-error {
+      color: var(--red);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      margin-bottom: 16px;
+      display: none;
+      animation: blink 0.2s step-end infinite;
+    }
+
+    /* TELEGRAM CARD */
+    .telegram-section {
+      background: linear-gradient(135deg, rgba(0, 136, 204, 0.1), rgba(0, 0, 0, 0.4));
+      border: 1px solid rgba(0, 136, 204, 0.3);
+      padding: 32px 24px;
+      margin-top: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .telegram-section::before {
+      content: '📡';
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      font-size: 120px;
+      opacity: 0.05;
+      transform: rotate(-15deg);
+    }
+
+    .tg-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: #0088cc;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tg-desc {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--white);
+      line-height: 1.6;
+      max-width: 500px;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .tg-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #0088cc;
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 32px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+    }
+
+    .tg-btn:hover {
+      background: #00aaff;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 136, 204, 0.6);
+    }
+
+    /* ===== RELATIONSHIP MAP ===== */
+    .map-section {
+      background: #050505;
+      padding: 32px 20px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .map-container {
+      width: 100%;
+      height: 450px;
+      position: relative;
+      background: radial-gradient(circle at center, #111 0%, #000 100%);
+      border: 1px solid #222;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .map-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .node {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid var(--muted);
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      cursor: pointer;
+      transition: all 0.3s;
+      overflow: hidden;
+    }
+
+    .node img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .node:hover {
+      border-color: var(--yellow);
+      transform: scale(1.1);
+      box-shadow: 0 0 15px var(--yellow);
+      z-index: 20;
+    }
+
+    .node:hover img {
+      opacity: 1;
+    }
+
+    .node.principal {
+      width: 80px;
+      height: 80px;
+      border-color: var(--red);
+      box-shadow: 0 0 20px rgba(255, 45, 45, 0.3);
+    }
+
+    .node-label {
+      position: absolute;
+      bottom: -20px;
+      white-space: nowrap;
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 2px 4px;
+    }
+
+    .map-connection {
+      position: absolute;
+      background: var(--muted);
+      height: 1px;
+      transform-origin: left center;
+      opacity: 0.2;
+      pointer-events: none;
+      z-index: 5;
+    }
+
     /* Responsive */
     @media(max-width:480px) {
+      .vault-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .midia-grid {
         grid-template-columns: 1fr;
       }
@@ -1516,6 +1998,102 @@
       .counter-grid {
         grid-template-columns: 1fr 1fr;
       }
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .search-container {
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--white);
+      font-family: var(--font-mono);
+      padding: 12px 15px;
+      padding-left: 40px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 10px rgba(255, 45, 45, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ===== TACTICAL MAP ===== */
+    .tactical-map-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background-image: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+    }
+
+    .map-svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: var(--red);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 15px var(--red);
+      animation: pulse-hotspot 2.s infinite;
+    }
+
+    .hotspot::after {
+      content: attr(data-label);
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--red);
+      white-space: nowrap;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px #000;
+    }
+
+    @keyframes pulse-hotspot {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+      }
+    }
+
+    .map-tooltip {
+      background: rgba(0, 0, 0, 0.8) !important;
+      border: 1px solid var(--red) !important;
+      color: var(--white) !important;
+      font-family: var(--font-mono) !important;
+      font-size: 10px !important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
   </style>
 </head>
@@ -1720,11 +2298,27 @@
 
     <div class="divider"></div>
 
+    <!-- MAPA TÁTICO -->
+    <section class="map-tactical-section" style="margin-top:2px">
+      <div class="section-header">
+        <span class="section-title">MAPA DOS DESVIOS</span>
+        <span class="section-tag">GEOLOCALIZAÇÃO TÁTICA</span>
+      </div>
+      <div id="tactical-map" style="height: 380px; z-index: 1; background: #0d0d0d;"></div>
+    </section>
+
+    <div class="divider"></div>
+
     <!-- RÉUS -->
     <section class="reus-section" style="margin-top:2px">
       <div class="section-header" style="padding-bottom:0">
         <span class="section-title">12 RÉUS</span>
         <span class="section-tag">MP-BA Nº 74077</span>
+      </div>
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="suspect-search" class="search-input" placeholder="FILTRAR POR NOME OU CARGO..."
+          oninput="filterSuspects()">
       </div>
       <p style="font-family:var(--font-mono);font-size:9px;color:var(--muted);padding:8px 0 0;letter-spacing:1px">
         ⚠ PRESUNÇÃO DE INOCÊNCIA GARANTIDA. FONTES PÚBLICAS.
@@ -1838,6 +2432,22 @@
 
     <div class="divider"></div>
 
+    <!-- MAPA DE RELACIONAMENTOS -->
+    <section class="map-section" style="margin-top:2px">
+      <div class="section-header" style="padding-bottom:10px">
+        <span class="section-title">DIAGRAMA DE VÍNCULOS</span>
+        <span class="section-tag">ESTRUTURA DENUNCIADA</span>
+      </div>
+      <p style="font-family:var(--font-mono); font-size:10px; color:var(--muted); margin-bottom:20px">Explore as
+        conexões entre as lideranças e os associados conforme o inquérito policial.</p>
+
+      <div class="map-container" id="relationship-map">
+        <div class="map-grid-overlay"></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
     <!-- MÍDIA -->
     <section class="midia-section" style="margin-top:2px">
       <div class="section-header" style="padding-bottom:0">
@@ -1903,6 +2513,101 @@
 
     <div class="divider"></div>
 
+    <!-- RECOMENDAÇÃO DE SÉRIE -->
+    <section style="margin-top:2px">
+      <div class="section-header">
+        <span class="section-title">RECOMENDAÇÃO</span>
+        <span class="section-tag">PARA O JUCA</span>
+      </div>
+      <div class="rec-section">
+        <a href="https://www.netflix.com/title/80217946" target="_blank" rel="noopener noreferrer"
+          style="text-decoration:none; display:block;">
+          <div class="rec-card">
+            <img class="rec-poster" src="media/bandidos_na_tv.jpg" alt="Bandidos na TV - Netflix"
+              onerror="this.style.display='none'">
+            <div class="rec-body">
+              <div class="rec-platform">🎬 NETFLIX ORIGINAL</div>
+              <div class="rec-title">BANDIDOS NA TV</div>
+              <div class="rec-desc">
+                Documentário que expõe como apresentadores e profissionais de TV cometem crimes ao vivo — usando a
+                câmera como instrumento de manipulação e lucro ilícito sobre a boa-fé do público.
+              </div>
+              <div class="rec-recommender">▶ Recomendado por: CARLOS HENRIQUE TOURINHO SANTANA</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Pergunta do autor ao Juca -->
+        <div
+          style="display:flex; gap:12px; margin-top:14px; align-items:flex-start; background:#0d0d0d; border:1px solid var(--border); border-left: 4px solid var(--red); padding:14px;">
+          <img src="media/henriquetourinho.png" alt="Carlos Henrique"
+            style="width:52px; height:52px; border-radius:50%; object-fit:cover; border:2px solid var(--red); flex-shrink:0;"
+            onerror="this.src='media/perfil/padrao.png'">
+          <div>
+            <div
+              style="font-family:var(--font-mono);font-size:9px;color:var(--red);letter-spacing:2px;margin-bottom:6px;">
+              PERGUNTA DO AUTOR • CARLOS HENRIQUE TOURINHO SANTANA</div>
+            <p style="font-family:var(--font-mono);font-size:12px;color:#ddd;line-height:1.7;margin:0;">
+              Juca, a série é perfeita pra você assistir antes da próxima audiência.<br><br>
+              Mas preciso te perguntar diretamente: <strong style="color:var(--yellow);">você pretende se candidatar a
+                deputado estadual ou federal?</strong><br><br>
+              Seria pelo <strong style="color:#fff;">PL, União Brasil</strong> ou outro partido? Porque, com o processo
+              em andamento, o eleitor precisa saber com quem está votando. 🗳️
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- COFRE DE EVIDÊNCIAS -->
+    <section class="vault-section" style="margin-top:2px">
+      <div class="confidential-seal">RESTRITO</div>
+      <div class="section-header" style="padding-bottom:10px">
+        <span class="section-title">COFRE DE EVIDÊNCIAS</span>
+        <span class="section-tag">CONFIDENCIAL</span>
+      </div>
+      <div class="vault-grid">
+        <div class="evidence-folder" onclick="openEvidence('resumo')">
+          <div class="folder-scanning"></div>
+          <div class="folder-tab" style="background: var(--red); width: 100%"></div>
+          <span class="folder-icon">📕</span>
+          <span class="folder-title">RESUMO DOS DELITOS (MP-BA)</span>
+          <span class="folder-meta">SÍNTESE ATUALIZADA</span>
+        </div>
+        <div class="evidence-folder" onclick="openEvidence('denuncia')">
+          <div class="folder-scanning"></div>
+          <div class="folder-tab"></div>
+          <span class="folder-icon">📂</span>
+          <span class="folder-title">DENÚNCIA INTEGRAL</span>
+          <span class="folder-meta">PDF • 4.2MB</span>
+        </div>
+        <div class="evidence-folder" onclick="openEvidence('transacoes')">
+          <div class="folder-scanning"></div>
+          <div class="folder-tab" style="background: var(--red)"></div>
+          <span class="folder-icon">📊</span>
+          <span class="folder-title">FLUXO DE CAIXA DESVIADO</span>
+          <span class="folder-meta">XLSX • 1.8MB</span>
+        </div>
+        <div class="evidence-folder" onclick="openEvidence('audiencia')">
+          <div class="folder-scanning"></div>
+          <div class="folder-tab" style="background: var(--blue)"></div>
+          <span class="folder-icon">⚖️</span>
+          <span class="folder-title">AUTOS DA AUDIÊNCIA</span>
+          <span class="folder-meta">DOCX • 850KB</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaflet Resources -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <div class="divider"></div>
+
     <!-- VÍDEOS -->
     <section class="video-section" style="margin-top:2px">
       <div class="section-header" style="padding-bottom:0">
@@ -1915,8 +2620,8 @@
         📺 MATÉRIA — DOMINGO ESPETACULAR (RECORD TV)
       </div>
       <div class="video-wrap">
-        <iframe id="yt-iframe" data-src="https://www.youtube.com/embed/2uMN22sk-7E?rel=0" frameborder="0"
-          allowfullscreen loading="lazy" title="Domingo Espetacular — Escândalo do Pix">
+        <iframe id="yt-iframe" src="https://www.youtube.com/embed/tXxi3Uy1Jrk?rel=0" frameborder="0" allowfullscreen
+          loading="lazy" title="Domingo Espetacular — Escândalo do Pix">
         </iframe>
       </div>
 
@@ -1928,6 +2633,25 @@
         <video controls poster="media/delegado.webp" preload="metadata">
           <source src="media/delegado.mp4" type="video/mp4">
         </video>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CANAL TELEGRAM -->
+    <section class="telegram-section">
+      <div class="tg-title">
+        <span>📡</span> CANAL DE INTEL
+      </div>
+      <div class="tg-desc">
+        Acompanhe em tempo real o maior escândalo de fraudes da história do jornalismo baiano. Documentos exclusivos do
+        MP-BA, rastreio de transações e atualizações diretas sobre os 12 réus.
+      </div>
+      <a href="https://t.me/kd_o_pix" target="_blank" rel="noopener noreferrer" class="tg-btn">
+        ENTRAR NO CANAL
+      </a>
+      <div style="margin-top:20px; font-family:var(--font-mono); font-size:9px; color:rgba(255,255,255,0.4)">
+        @KD_O_PIX • ALERTA DE VAZAMENTOS
       </div>
     </section>
 
@@ -1994,8 +2718,17 @@
     <section class="share-section" style="margin-top:2px">
       <div class="share-title">ESPALHA</div>
       <div class="share-sub">ISSO NÃO PODE SER ESQUECIDO</div>
-      <button id="share-btn" onclick="shareWhatsApp()">📱 COMPARTILHAR NO ZAP</button>
-      <div id="share-count">💬 <strong id="share-num">2.847</strong> pessoas já compartilharam</div>
+      <button id="share-btn" onclick="shareWhatsApp()"
+        style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp"
+          viewBox="0 0 16 16" style="color: #25D366;">
+          <path
+            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232">
+          </path>
+        </svg>
+        COMPARTILHAR NO ZAP
+      </button>
+      <div id="share-count">💬 <strong id="share-num">4.925</strong> pessoas já compartilharam</div>
     </section>
 
     <!-- FOOTER CRÉDITO -->
@@ -2023,14 +2756,11 @@
   <!-- MODAL SUSPEITO -->
   <div id="suspect-modal-overlay" onclick="closeSuspectModal(event)">
     <div class="suspect-modal-content" onclick="event.stopPropagation()">
-      <div class="scanning-bar"></div>
       <div class="suspect-modal-header">
-        <h2 id="s-modal-title">FICHA CRIMINAL</h2>
-        <button onclick="closeSuspectModal()"
-          style="background:none;border:none;color:#000;font-weight:bold;cursor:pointer;font-family:var(--font-mono)">✕</button>
-      </div>
-      <div class="suspect-photo-big">
-        <img id="s-modal-photo" src="" alt="Foto do Réu">
+        <div class="suspect-photo-big">
+          <img id="s-modal-photo" src="media/perfil/padrao.png" alt="Foto do Réu">
+        </div>
+        <button class="close-modal" onclick="closeSuspectModal()" aria-label="Fechar">×</button>
       </div>
       <div class="suspect-info-body">
         <div class="suspect-tag-row">
@@ -2044,33 +2774,52 @@
           <div class="suspect-value">MP-BA 74077</div>
         </div>
         <div class="suspect-description" id="s-modal-desc">
-          Carregando informações do banco de dados...
+          Carregando informações...
         </div>
-        <button onclick="shareWhatsApp()"
-          style="width:100%;background:var(--green);color:#000;border:none;font-family:var(--font-display);font-size:18px;letter-spacing:2px;padding:12px;margin-top:20px;cursor:pointer">
-          📱 COMPARTILHAR HISTÓRICO
-        </button>
       </div>
     </div>
   </div>
 
-  <!-- FLOATING ZAP -->
-  <button id="zap-float" onclick="shareWhatsApp()" title="Compartilhar no WhatsApp"
-    aria-label="Compartilhar no WhatsApp">📱</button>
+  <!-- FLOATING TELEGRAM -->
+  aria-label="Entrar no Telegram">�</button>
 
   <!-- FOOTER FIXO -->
   <footer class="site-footer">
-    <div class="footer-text">
-      <span>CENA DO CRIME</span>
-      <span>NÃO ULTRAPASSE</span>
-      <span>CENA DO CRIME</span>
-      <span>NÃO ULTRAPASSE</span>
-      <span>CENA DO CRIME</span>
-      <span>NÃO ULTRAPASSE</span>
-      <span>CENA DO CRIME</span>
-      <span>NÃO ULTRAPASSE</span>
+    <div class="footer-tape">
+      <span>CENA DO CRIME</span><span class="sep">///</span>
+      <span>NÃO ULTRAPASSE</span><span class="sep">///</span>
+      <span>CENA DO CRIME</span><span class="sep">///</span>
+      <span>NÃO ULTRAPASSE</span><span class="sep">///</span>
+      <span>CENA DO CRIME</span><span class="sep">///</span>
+      <span>NÃO ULTRAPASSE</span><span class="sep">///</span>
+      <span>CENA DO CRIME</span><span class="sep">///</span>
+      <span>NÃO ULTRAPASSE</span><span class="sep">///</span>
+      <span>CENA DO CRIME</span><span class="sep">///</span>
+      <span>NÃO ULTRAPASSE</span><span class="sep">///</span>
+      <span>CENA DO CRIME</span><span class="sep">///</span>
+      <span>NÃO ULTRAPASSE</span><span class="sep">///</span>
+      <span>CENA DO CRIME</span><span class="sep">///</span>
+      <span>NÃO ULTRAPASSE</span><span class="sep">///</span>
+      <span>CENA DO CRIME</span><span class="sep">///</span>
+      <span>NÃO ULTRAPASSE</span><span class="sep">///</span>
     </div>
   </footer>
+
+  <!-- AUTH MODAL -->
+  <div id="auth-overlay">
+    <div class="auth-box">
+      <div class="folder-icon" style="font-size:48px;margin-bottom:20px">🔒</div>
+      <h3>ACESSO RESTRITO</h3>
+      <p>ESTE ARQUIVO EXIGE CREDENCIAIS DE NÍVEL 4.<br>INSIRA O CÓDIGO DE IDENTIFICAÇÃO:</p>
+      <input type="password" id="auth-input" placeholder="********" autocomplete="off">
+      <div id="auth-error" class="auth-error">⚠ CREDENCIAIS INVÁLIDAS • TENTATIVA REGISTRADA</div>
+      <button onclick="checkAuth()"
+        style="width:100%;background:var(--red);color:#000;border:none;font-family:var(--font-display);font-size:20px;padding:12px;cursor:pointer;letter-spacing:2px">AUTENTICAR</button>
+      <button onclick="closeAuth()"
+        style="margin-top:16px;background:none;border:none;color:var(--muted);font-family:var(--font-mono);font-size:10px;cursor:pointer;letter-spacing:1px">ABORTAR
+        ACESSO</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

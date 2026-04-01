@@ -1,5 +1,5 @@
 // ============================================
-// KD O PIX - JavaScript Module
+// KD O PIX - JavaScript Module v2.4 (RECOVERY)
 // Author: Carlos Henrique Tourinho Santana
 // ============================================
 
@@ -20,7 +20,7 @@ const state = {
     suspectModalOpen: false,
     currentSuspectId: null,
     iframeLoaded: false,
-    shareCount: 2847
+    shareCount: parseInt(localStorage.getItem('kdopix_shares')) || 4925
 };
 
 // ============================================
@@ -114,7 +114,44 @@ const SUSPECT_DATA = {
 };
 
 // ============================================
-// CLOCK
+// TOOLS & SFX
+// ============================================
+function playClick() {
+    if (!state.audioPlaying) return;
+    try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(150, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.1);
+    } catch (e) {
+        console.warn("SFX blocked by browser policy");
+    }
+}
+
+function filterSuspects() {
+    const query = document.getElementById('suspect-search').value.toLowerCase();
+    const cards = document.querySelectorAll('.reu-card-new');
+    cards.forEach(card => {
+        const name = card.querySelector('.reu-name-new').textContent.toLowerCase();
+        const tag = card.querySelector('.reu-tag').textContent.toLowerCase();
+        if (name.includes(query) || tag.includes(query)) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// ============================================
+// CLOCK & COUNTERS
 // ============================================
 function updateClock() {
     const el = document.getElementById('clock');
@@ -124,21 +161,18 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// ============================================
-// ANIMATED COUNTERS
-// ============================================
 function animateCounter(el, target, duration, prefix, suffix, decimals) {
     if (!el) return;
     const start = performance.now();
     const update = (now) => {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
+        const eased = 1 - Math.pow(progress - 1, 4);
         const val = target * eased;
         if (decimals) {
             el.textContent = prefix + val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + suffix;
         } else {
-            el.textContent = prefix + Math.floor(val) + suffix;
+            el.textContent = prefix + Math.floor(val).toLocaleString('pt-BR') + suffix;
         }
         if (progress < 1) requestAnimationFrame(update);
     };
@@ -150,7 +184,6 @@ function startCounters() {
     setTimeout(() => animateCounter(document.getElementById('counter-reus'), 12, 1000, '', '', false), 300);
     setTimeout(() => animateCounter(document.getElementById('counter-adiamentos'), 3, 800, '', '×', false), 500);
     setTimeout(() => animateCounter(document.getElementById('counter-presos'), 1, 600, '', '', false), 700);
-    setTimeout(() => animateCounter(document.getElementById('counter-ibope'), 85, 1200, '', '%', false), 900);
 }
 
 function animateShareCount() {
@@ -233,10 +266,24 @@ function toggleModal() {
     }
 }
 
-// SUSPECT MODAL
+// Special audio for Marcelo Castro
+let marceloAudio = null;
+
 function openSuspectModal(id) {
     const data = SUSPECT_DATA[id];
     if (!data) return;
+
+    // Marcelo Castro (id=1) gets a special looped audio
+    if (id === '1') {
+        if (!marceloAudio) {
+            marceloAudio = new Audio('media/parar_de_cheirar.mp3');
+            marceloAudio.loop = true;
+        }
+        marceloAudio.currentTime = 0;
+        marceloAudio.play().catch(() => { });
+    } else {
+        playClick();
+    }
 
     state.currentSuspectId = id;
     const overlay = document.getElementById('suspect-modal-overlay');
@@ -246,31 +293,38 @@ function openSuspectModal(id) {
     const status = document.getElementById('s-modal-status');
     const desc = document.getElementById('s-modal-desc');
 
-    desc.textContent = "Acessando arquivos do MP-BA...";
-    photo.src = data.photo;
-    photo.onerror = () => { photo.src = 'media/perfil/padrao.png'; };
-    name.textContent = data.name;
-    role.textContent = data.role;
-    status.textContent = data.status;
+    if (desc) desc.textContent = "ACESSANDO ARQUIVOS DO MP-BA...";
+
+    if (photo) {
+        photo.src = data.photo;
+        photo.onerror = () => { photo.src = 'media/perfil/padrao.png'; };
+    }
+    if (name) name.textContent = data.name;
+    if (role) role.textContent = data.role;
+    if (status) status.textContent = data.status;
 
     setTimeout(() => {
-        desc.textContent = data.desc;
-    }, 600);
+        if (desc) desc.textContent = data.desc;
+    }, 800);
 
-    overlay.style.display = 'flex';
+    if (overlay) overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     state.suspectModalOpen = true;
 }
 
-function closeSuspectModal(e) {
+function closeSuspectModal() {
+    // Stop Marcelo Castro's special audio if playing
+    if (marceloAudio) {
+        marceloAudio.pause();
+        marceloAudio.currentTime = 0;
+    }
     const overlay = document.getElementById('suspect-modal-overlay');
-    overlay.style.display = 'none';
+    if (overlay) overlay.style.display = 'none';
     document.body.style.overflow = 'auto';
     state.suspectModalOpen = false;
     state.currentSuspectId = null;
 }
 
-// Global key events
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
         if (state.modalOpen) toggleModal();
@@ -278,9 +332,6 @@ document.addEventListener('keydown', e => {
     }
 });
 
-// ============================================
-// ENTER SITE
-// ============================================
 function enterSite() {
     const screen = document.getElementById('start-screen');
     if (!screen) return;
@@ -292,39 +343,180 @@ function enterSite() {
             audioEl.src = CONFIG.audioFiles.main;
             playAudio();
         }
-        const zap = document.getElementById('zap-float');
-        if (zap) zap.classList.add('visible');
         setTimeout(startCounters, 300);
         setTimeout(animateShareCount, 400);
     }, 600);
 }
 
 // ============================================
-// WHATSAPP
+// SHARE & AUTH
 // ============================================
 function shareWhatsApp() {
     state.shareCount++;
-    const numEl = document.getElementById('share-num');
-    if (numEl) numEl.textContent = state.shareCount.toLocaleString('pt-BR');
+    localStorage.setItem('kdopix_shares', state.shareCount);
+    const el = document.getElementById('share-num');
+    if (el) el.textContent = state.shareCount.toLocaleString('pt-BR');
 
-    let msg = "";
-    if (state.suspectModalOpen && state.currentSuspectId) {
-        const data = SUSPECT_DATA[state.currentSuspectId];
-        msg = `🚨 *FICHA CRIMINAL: ${data.name.toUpperCase()}* 🚨\n\n📌 *Caso:* Escândalo do Pix na Bahia\n👤 *Função:* ${data.role}\n⚖️ *Status:* ${data.status}\n\n📂 *Dossiê Completo:* \n👉 https://kdopix.com.br\n\n⚠️ NÃO DEIXE ESSE CASO CAIR NO ESQUECIMENTO!`;
-    } else {
-        msg = `🚨 *ESCÂNDALO DO PIX NA BAHIA* 🚨\n\n💰 R$ 407 MIL DESVIADOS de crianças com câncer!\n\n⚖️ 12 RÉUS DENUNCIADOS pelo MP-BA\n\n🚔 Delegado-Geral da PC-BA VISITOU réu e entregou "moeda institucional"\n\n😱 Marcelo Castro VOLTOU A PEDIR PIX na TV!\n\n⏰ Audiência adiada pela 3ª vez — Maio/2026\n\n📂 DOSSIÊ COMPLETO:\n👉 https://kdopix.com.br\n\n⚠️ COMPARTILHE!`;
-    }
-
-    window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+    const text = "Acesse o Dossiê Completo: Escândalo do Pix na Record TV - Tudo sobre Marcelo Castro e os 12 réus denunciados pelo MP-BA. Não deixe cair no esquecimento! https://kdopix.com.br";
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
 }
 
-// Expoing to window
+function openEvidence(type) {
+    const overlay = document.getElementById('auth-overlay');
+    const input = document.getElementById('auth-input');
+    const error = document.getElementById('auth-error');
+    if (!overlay || !input) return;
+
+    input.value = "";
+    if (error) error.style.display = 'none';
+    overlay.style.display = 'flex';
+    input.focus();
+}
+
+function closeAuth() {
+    const overlay = document.getElementById('auth-overlay');
+    if (overlay) overlay.style.display = 'none';
+}
+
+function checkAuth() {
+    const input = document.getElementById('auth-input');
+    const error = document.getElementById('auth-error');
+    const box = document.querySelector('.auth-box');
+    const pass = input.value.trim().toLowerCase();
+
+    if (pass === 'jucadrogado') {
+        if (box) {
+            box.innerHTML = `
+                <div class="folder-icon" style="font-size:48px;margin-bottom:20px">🔓</div>
+                <h3 style="color:var(--green)">ACESSO AUTORIZADO</h3>
+                <p style="color:#fff; font-size:14px; margin-top:20px">
+                    AUTENTICAÇÃO NÍVEL 4 CONFIRMADA.<br><br>
+                    <span style="color:var(--muted); font-size:11px">
+                    ESTE ARQUIVO ESTÁ SOB SIGILO JUDICIAL.<br>
+                    DOWNLOAD LIBERADO APÓS AUDIÊNCIA (MAIO/2026).
+                    </span>
+                </p>
+                <button onclick="closeAuth()" style="margin-top:24px;width:100%;background:var(--green);color:#000;border:none;font-family:var(--font-display);font-size:18px;padding:12px;cursor:pointer">FECHAR</button>
+            `;
+        }
+    } else {
+        if (error) error.style.display = 'block';
+        input.value = "";
+        input.focus();
+    }
+}
+
+// ============================================
+// RELATIONSHIP MAP
+// ============================================
+function initRelationshipMap() {
+    const container = document.getElementById('relationship-map');
+    if (!container) return;
+
+    const nodes = [
+        { id: '1', name: 'Marcelo Castro', type: 'principal', x: 50, y: 32 },
+        { id: '2', name: 'Jamerson', type: 'principal', x: 50, y: 68 },
+        { id: '3', name: 'Cardoso', type: 'intermediary', x: 25, y: 50 },
+        { id: '4', name: 'L. Brandão', type: 'intermediary', x: 75, y: 50 },
+        { id: '5', name: 'Felipe', type: 'assoc', x: 10, y: 30 },
+        { id: '6', name: 'F. Bispo', type: 'assoc', x: 90, y: 30 },
+        { id: '7', name: 'Debora', type: 'assoc', x: 10, y: 70 },
+        { id: '8', name: 'Rute', type: 'assoc', x: 90, y: 70 },
+        { id: '9', name: 'Gerson', type: 'assoc', x: 30, y: 15 },
+        { id: '10', name: 'Eneida', type: 'assoc', x: 70, y: 15 },
+        { id: '11', name: 'Thais', type: 'assoc', x: 30, y: 85 },
+        { id: '12', name: 'Alessandra', type: 'assoc', x: 70, y: 85 }
+    ];
+
+    const connections = [
+        ['1', '2'], ['1', '3'], ['1', '4'], ['2', '3'], ['2', '4'],
+        ['3', '5'], ['3', '7'], ['3', '9'], ['3', '11'],
+        ['4', '6'], ['4', '8'], ['4', '10'], ['4', '12']
+    ];
+
+    container.querySelectorAll('.node, .map-connection').forEach(el => el.remove());
+    const w = container.offsetWidth;
+    const h = container.offsetHeight;
+    if (w === 0) return;
+
+    nodes.forEach(node => {
+        const data = SUSPECT_DATA[node.id];
+        const photo = data ? data.photo : 'media/perfil/padrao.png';
+        const div = document.createElement('div');
+        div.className = `node ${node.type === 'principal' ? 'principal' : ''}`;
+        div.style.left = `${node.x}%`; div.style.top = `${node.y}%`;
+        div.style.transform = 'translate(-50%, -50%)';
+        div.innerHTML = `<img src="${photo}" onerror="this.src='media/perfil/padrao.png'"><div class="node-label">${node.name}</div>`;
+        div.onclick = () => openSuspectModal(node.id);
+        container.appendChild(div);
+    });
+
+    connections.forEach(([id1, id2]) => {
+        const n1 = nodes.find(n => n.id === id1); const n2 = nodes.find(n => n.id === id2);
+        const line = document.createElement('div'); line.className = 'map-connection';
+        const x1 = (n1.x / 100) * w; const y1 = (n1.y / 100) * h;
+        const x2 = (n2.x / 100) * w; const y2 = (n2.y / 100) * h;
+        const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+        line.style.width = `${length}px`; line.style.left = `${x1}px`; line.style.top = `${y1}px`;
+        line.style.transform = `rotate(${angle}deg)`;
+        container.appendChild(line);
+    });
+}
+
+function initTacticalMap() {
+    const mapEl = document.getElementById('tactical-map');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    const map = L.map('tactical-map', {
+        center: [-12.9714, -38.5014],
+        zoom: 12,
+        zoomControl: false,
+        attributionControl: false
+    });
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19
+    }).addTo(map);
+
+    const redIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: "<div style='background-color:var(--red); width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 15px var(--red); opacity: 0.8; animation: pulse 2s infinite;'></div>",
+        iconSize: [12, 12],
+        iconAnchor: [6, 6]
+    });
+
+    const hotspots = [
+        { lat: -12.9847, lng: -38.5028, label: "FEDERAÇÃO / RECORD TV" },
+        { lat: -12.9811, lng: -38.4812, label: "BROTAS / QG OPERAÇÃO" },
+        { lat: -12.9333, lng: -38.4833, label: "SUBÚRBIO / VÍTIMAS" }
+    ];
+
+    hotspots.forEach(pt => {
+        L.marker([pt.lat, pt.lng], { icon: redIcon })
+            .addTo(map)
+            .bindTooltip(pt.label, { permanent: true, direction: 'bottom', className: 'map-tooltip' });
+    });
+}
+
+// Exposing to window
 window.enterSite = enterSite;
 window.toggleSound = toggleSound;
 window.toggleModal = toggleModal;
 window.openSuspectModal = openSuspectModal;
 window.closeSuspectModal = closeSuspectModal;
 window.shareWhatsApp = shareWhatsApp;
+window.openEvidence = openEvidence;
+window.checkAuth = checkAuth;
+window.closeAuth = closeAuth;
+window.filterSuspects = filterSuspects;
 
-// Init
+// Final Initialization
 document.body.style.overflow = 'hidden';
+setTimeout(() => {
+    initRelationshipMap();
+    initTacticalMap();
+}, 1500);
+window.addEventListener('resize', () => {
+    initRelationshipMap();
+});
