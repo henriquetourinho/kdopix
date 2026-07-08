@@ -360,7 +360,7 @@ Este projeto está sob a licença **MIT** - veja o arquivo [LICENSE](LICENSE) pa
 ### 📫 Contato
 
 - 📧 Email: [henriquetourinho@riseup.net](mailto:henriquetourinho@riseup.net)
-- 📱 Instagram: [@henrique.ntxa](https://www.instagram.com/henrique.ntxa/)
+- 📱 Instagram: [@henrique_ntxa](https://www.instagram.com/henrique_ntxa/)
 - 💻 GitHub: [henriquetourinho](https://github.com/henriquetourinho)
 - 🐧 Wiki Debian: [henriquetourinho](https://wiki.debian.org/henriquetourinho)
 
