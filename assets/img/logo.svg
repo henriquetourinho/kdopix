@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 120" role="img" aria-labelledby="title desc">
+  <title id="title">KD O PIX?</title>
+  <desc id="desc">Identidade visual do dossiê satírico KD O PIX?</desc>
+  <rect width="460" height="120" rx="8" fill="#0b0d10"/>
+  <path d="M8 8h444v104H8z" fill="none" stroke="#f7d31f" stroke-width="4"/>
+  <path d="M18 18h74v12H18zM368 90h74v12h-74z" fill="#d62d2d"/>
+  <text x="28" y="83" fill="#f5f1e8" font-family="Arial Black, Impact, sans-serif" font-size="63" letter-spacing="-3">KD O</text>
+  <text x="220" y="83" fill="#f7d31f" font-family="Arial Black, Impact, sans-serif" font-size="63" letter-spacing="-4">PIX?</text>
+  <text x="30" y="105" fill="#929aa5" font-family="Arial, sans-serif" font-size="10" letter-spacing="4">DOSSIÊ INDEPENDENTE</text>
+</svg>
