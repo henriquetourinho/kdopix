@@ -1,0 +1,17 @@
+{
+  "name": "KD O PIX?",
+  "short_name": "KD O PIX?",
+  "description": "Dossiê satírico e independente baseado em fontes públicas.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050608",
+  "theme_color": "#050608",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

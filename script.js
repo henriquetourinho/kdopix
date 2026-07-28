@@ -345,11 +345,6 @@ function enterSite() {
         }
         setTimeout(startCounters, 300);
         setTimeout(animateShareCount, 400);
-        // Inicia mapa e diagrama APÓS conteúdo estar visível
-        setTimeout(() => {
-            initRelationshipMapWhenReady();
-            initTacticalMapWhenReady();
-        }, 200);
     }, 600);
 }
 
@@ -518,49 +513,10 @@ window.filterSuspects = filterSuspects;
 
 // Final Initialization
 document.body.style.overflow = 'hidden';
-
-// Diagrama: inicializa com retry via ResizeObserver para garantir dimensões
-function initRelationshipMapWhenReady() {
-    const container = document.getElementById('relationship-map');
-    if (!container) return;
-
-    // Se já tem dimensão, inicializa direto
-    if (container.offsetWidth > 0) {
-        initRelationshipMap();
-        return;
-    }
-
-    // Caso contrário, espera o container ter dimensão real
-    const ro = new ResizeObserver((entries) => {
-        for (const entry of entries) {
-            if (entry.contentRect.width > 0) {
-                ro.disconnect();
-                initRelationshipMap();
-                break;
-            }
-        }
-    });
-    ro.observe(container);
-}
-
-// Mapa: inicializa com polling até Leaflet estar disponível
-function initTacticalMapWhenReady() {
-    if (typeof L !== 'undefined') {
-        initTacticalMap();
-    } else {
-        let tries = 0;
-        const interval = setInterval(() => {
-            tries++;
-            if (typeof L !== 'undefined') {
-                clearInterval(interval);
-                initTacticalMap();
-            } else if (tries > 20) {
-                clearInterval(interval); // desiste após 10s
-            }
-        }, 500);
-    }
-}
-
+setTimeout(() => {
+    initRelationshipMap();
+    initTacticalMap();
+}, 1500);
 window.addEventListener('resize', () => {
     initRelationshipMap();
 });

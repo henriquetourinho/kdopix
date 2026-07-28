@@ -1,44 +1,4 @@
-# robots.txt para kdopix.com.br
-
-# Permitir acesso de todos os bots
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://kdopix.com.br/sitemap.xml
-
-# Otimizações específicas para bots de busca
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-# Bloquear bots maliciosos conhecidos
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-# Bloquear scrapers agressivos
-User-agent: ia_archiver
-Disallow: /
-
-User-agent: Zealbot
-Disallow: /
-
-User-agent: MSIECrawler
-Disallow: /

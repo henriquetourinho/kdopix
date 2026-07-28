@@ -134,7 +134,7 @@
         <span>⚠ CONTEÚDO URGENTE • SALVADOR/BA</span>
         <img class="dossier-gate-logo" src="${logo}" alt="KD O PIX? — Dossiê independente">
         <h2 id="gate-title">A denúncia vai entrar no ar.</h2>
-        <p>Sátira jornalística • fontes públicas • presunção de inocência</p>
+        <p>Sátira jornalística • fontes públicas • liberdade artística</p>
         <div class="dossier-gate-actions">
           <button class="button button-primary" type="button" data-gate-enter>Entrar com áudio</button>
           <button class="button button-ghost" type="button" data-gate-silent>Entrar sem áudio</button>
@@ -352,20 +352,28 @@
   // Real Google Maps location switcher.
   const mapFrame = $('[data-map-frame]');
   const mapButtons = $$('[data-map-location]');
-  const mapTitle = $('[data-map-title]');
-  const mapAddress = $('[data-map-address]');
+  const mapTitle = $('[data-map-detail-title]');
+  const mapAddress = $('[data-map-detail-address]');
   const mapExternal = $('[data-map-external]');
   const loadMapLocation = (button) => {
     if (!mapFrame || !button) return;
     const query = button.dataset.mapQuery || '';
     const title = button.dataset.mapTitle || '';
     const address = button.dataset.mapAddress || '';
-    mapButtons.forEach(item => item.classList.toggle('is-active', item === button));
-    mapFrame.src = `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+    const embedUrl = button.dataset.mapEmbed || `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+    const externalUrl = button.dataset.mapExternalUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+
+    mapButtons.forEach(item => {
+      const isActive = item === button;
+      item.classList.toggle('is-active', isActive);
+      item.setAttribute('aria-selected', String(isActive));
+    });
+
+    mapFrame.src = embedUrl;
     mapFrame.title = `Google Maps — ${title}`;
     if (mapTitle) mapTitle.textContent = title;
     if (mapAddress) mapAddress.textContent = address;
-    if (mapExternal) mapExternal.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    if (mapExternal) mapExternal.href = externalUrl;
   };
   mapButtons.forEach(button => button.addEventListener('click', () => loadMapLocation(button)));
   if (mapFrame && mapButtons.length) loadMapLocation(mapButtons.find(button => button.classList.contains('is-active')) || mapButtons[0]);

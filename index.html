@@ -3,7 +3,439 @@
 <html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>KD O PIX? — Dossiê satírico e linha do tempo</title><meta content="Sátira jornalística e dossiê público sobre o caso das doações via Pix na Bahia." name="description"/><meta content="Henrique Tourinho" name="author"/><meta content="index,follow,max-image-preview:large" name="robots"/>
 <link href="https://kdopix.com.br/" rel="canonical"/><meta content="website" property="og:type"/><meta content="KD O PIX?" property="og:site_name"/><meta content="KD O PIX? — Dossiê satírico e linha do tempo" property="og:title"/><meta content="Sátira jornalística e dossiê público sobre o caso das doações via Pix na Bahia." property="og:description"/><meta content="https://kdopix.com.br/" property="og:url"/><meta content="https://kdopix.com.br/assets/img/og-kdopix.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/>
-<link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/><link href="manifest.webmanifest" rel="manifest"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="assets/css/style.css" rel="stylesheet"/><link href="assets/css/broadcast.css" rel="stylesheet"/><meta content="#050608" name="theme-color"/><meta content="https://kdopix.com.br/assets/img/og-kdopix.jpg" name="twitter:image"/></head>
+<link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/><link href="manifest.webmanifest" rel="manifest"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="assets/css/style.css" rel="stylesheet"/><link href="assets/css/broadcast.css" rel="stylesheet"/><meta content="#050608" name="theme-color"/><meta content="https://kdopix.com.br/assets/img/og-kdopix.jpg" name="twitter:image"/><style id="ajuste-responsivo-home">
+/* ==========================================================
+   KD O PIX? — correção responsiva exclusiva da página inicial
+   Mantém a estética de plantão sem cortes ou rolagem horizontal.
+   ========================================================== */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.dossier-gate-actions {
+  display: grid !important;
+  justify-items: center;
+  align-items: center;
+  gap: 10px !important;
+  width: 100%;
+}
+.dossier-gate-actions .button-primary {
+  width: auto !important;
+  min-width: 220px;
+  margin-inline: auto;
+}
+.dossier-gate-actions .button-ghost {
+  width: auto !important;
+  min-height: 38px;
+  padding: 7px 12px;
+  margin-inline: auto;
+  border: 0;
+  color: #c7ccd3;
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.dossier-gate-actions .button-ghost:hover {
+  background: transparent;
+  color: #fff;
+  transform: none;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: min(calc(100% - 28px), var(--max)) !important;
+  }
+
+  .site-header,
+  .header-inner {
+    width: 100%;
+  }
+  .header-inner {
+    min-height: 70px;
+    height: 70px !important;
+    grid-template-columns: minmax(0, 1fr) 44px !important;
+    gap: 10px !important;
+    padding-inline: 0;
+  }
+  .brand {
+    width: min(158px, 46vw) !important;
+    min-width: 0;
+  }
+  .brand img {
+    width: 100%;
+    height: auto;
+  }
+  .menu-toggle {
+    display: block !important;
+    grid-column: 2;
+    justify-self: end;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+  }
+  .header-tools {
+    display: none !important;
+  }
+  .main-nav {
+    top: 70px !important;
+    max-height: calc(100dvh - 70px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 10px 16px 18px !important;
+  }
+  .nav-link {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 12px 8px !important;
+    font-size: .72rem !important;
+    transform: none !important;
+  }
+
+  .compact-impact-home .hero-home {
+    height: auto !important;
+    min-height: 650px !important;
+    max-height: none !important;
+    align-items: end !important;
+  }
+  .compact-impact-home .hero-home::before {
+    left: 14px !important;
+    right: 14px !important;
+    top: 24px !important;
+    width: auto !important;
+    padding: 8px 12px !important;
+    font-size: .55rem !important;
+    line-height: 1.25;
+    text-align: center;
+    transform: rotate(-2deg) !important;
+  }
+  .compact-impact-home .hero-media {
+    inset: 0 !important;
+    opacity: .44 !important;
+    transform: none !important;
+  }
+  .compact-impact-home .hero-media::after {
+    background:
+      linear-gradient(0deg, #050608 0%, rgba(5,6,8,.93) 35%, rgba(5,6,8,.48) 72%, rgba(5,6,8,.72) 100%) !important;
+  }
+  .compact-impact-home .hero-media img {
+    object-position: 61% center !important;
+  }
+  .compact-impact-home .hero-content {
+    width: min(calc(100% - 28px), var(--max)) !important;
+    margin-inline: auto !important;
+    padding: 106px 0 34px !important;
+  }
+  .compact-impact-home .eyebrow {
+    gap: 7px;
+    margin-bottom: 17px !important;
+  }
+  .compact-impact-home .eyebrow span {
+    max-width: 100%;
+    padding: 6px 8px !important;
+    font-size: .54rem !important;
+    line-height: 1.3;
+    white-space: normal;
+  }
+  .compact-impact-home .impact-headline {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 18px !important;
+    font-size: clamp(2.85rem, 13.7vw, 4.75rem) !important;
+    line-height: .91 !important;
+    letter-spacing: -.058em !important;
+    transform: none !important;
+    overflow-wrap: normal;
+  }
+  .compact-impact-home .impact-headline > span {
+    display: block !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+  .compact-impact-home .impact-headline .impact-question {
+    display: inline-block !important;
+    width: auto !important;
+    max-width: calc(100% - 8px) !important;
+    margin-top: .17em !important;
+    padding: .05em .1em .09em .03em !important;
+    box-shadow: 6px 6px 0 var(--alarm-red) !important;
+    clip-path: none !important;
+  }
+  .compact-impact-home .hero-lead {
+    max-width: 100% !important;
+    padding: 10px 0 10px 13px !important;
+    font-size: .91rem !important;
+    line-height: 1.5 !important;
+  }
+  .compact-impact-home .hero-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px !important;
+    width: 100%;
+    margin-top: 21px !important;
+  }
+  .compact-impact-home .hero-actions .button {
+    width: 100% !important;
+    min-height: 45px !important;
+    padding-inline: 9px !important;
+    font-size: .57rem !important;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .ticker {
+    font-size: .76rem !important;
+  }
+  .ticker div {
+    padding-block: 8px !important;
+  }
+
+  .compact-impact-home .section,
+  .compact-impact-home main > .section:not(.section-compact):not(.section-dark) {
+    padding-top: 58px !important;
+    padding-bottom: 58px !important;
+  }
+  .compact-impact-home .section-compact {
+    padding: 34px 0 40px !important;
+  }
+  .stat-grid {
+    grid-template-columns: 1fr !important;
+    box-shadow: 7px 7px 0 var(--alarm-red) !important;
+  }
+  .compact-impact-home .stat-card {
+    min-height: 0 !important;
+    padding: 21px 20px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--line-dark) !important;
+  }
+  .compact-impact-home .stat-card:last-child {
+    border-bottom: 0 !important;
+  }
+  .compact-impact-home .stat-card strong,
+  .compact-impact-home .stat-card strong.text-stat {
+    margin: 18px 0 7px !important;
+    font-size: clamp(2.25rem, 12vw, 3.5rem) !important;
+  }
+
+  .split-heading,
+  .callout,
+  .map-teaser {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  .compact-impact-home .split-heading h2,
+  .compact-impact-home .section-heading h2,
+  .map-teaser-copy h2,
+  .callout h2 {
+    max-width: 100%;
+    font-size: clamp(2.45rem, 12vw, 4rem) !important;
+    line-height: .94 !important;
+    overflow-wrap: anywhere;
+  }
+  .split-heading .prose {
+    border-left: 0 !important;
+    border-top: 1px solid var(--line-dark);
+    padding: 25px 0 0 !important;
+    font-size: .94rem !important;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .compact-impact-home .feature-card {
+    min-height: 230px !important;
+    padding: 24px 21px !important;
+  }
+  .compact-impact-home .feature-card h3 {
+    margin-top: 32px !important;
+    font-size: clamp(1.9rem, 10vw, 3rem) !important;
+  }
+
+  .map-teaser-copy {
+    padding: 27px 21px !important;
+    box-shadow: 7px 7px 0 var(--alarm-red) !important;
+  }
+  .map-teaser-frame,
+  .map-teaser-frame iframe {
+    width: 100%;
+    min-height: 340px !important;
+  }
+  .map-teaser-frame {
+    box-shadow: 7px 7px 0 var(--alarm-yellow) !important;
+  }
+  .callout {
+    align-items: start !important;
+  }
+  .callout .button {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 31px !important;
+  }
+  .footer-grid > div,
+  .developer-credit {
+    grid-column: auto !important;
+  }
+  .footer-logo {
+    width: min(250px, 78vw) !important;
+  }
+  .footer-bottom {
+    display: grid !important;
+    gap: 8px;
+  }
+
+  .cookie-overlay {
+    padding: 12px !important;
+  }
+  .cookie-dialog {
+    width: 100% !important;
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    padding: 24px 20px !important;
+  }
+  .cookie-dialog h2 {
+    font-size: clamp(2rem, 11vw, 3rem) !important;
+  }
+  .cookie-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+  .cookie-actions .button {
+    width: 100% !important;
+  }
+
+  .dossier-gate {
+    min-height: 100dvh;
+    overflow-y: auto;
+    place-items: center;
+    padding: 16px !important;
+  }
+  .dossier-gate-card {
+    width: min(100%, 590px) !important;
+    padding-block: 12px;
+  }
+  .dossier-gate-card > span {
+    max-width: 100%;
+    margin-bottom: 14px !important;
+    padding: 7px 10px !important;
+    font-size: .55rem !important;
+    line-height: 1.35;
+  }
+  .dossier-gate-logo {
+    width: min(100%, 520px) !important;
+    max-height: 25dvh;
+    margin-bottom: 17px !important;
+    object-fit: contain;
+  }
+  .dossier-gate-card h2 {
+    margin-bottom: 9px !important;
+    font-size: clamp(1.8rem, 10vw, 3rem) !important;
+    line-height: .98 !important;
+  }
+  .dossier-gate-card p {
+    margin-bottom: 0;
+    font-size: .59rem !important;
+    line-height: 1.55;
+  }
+  .dossier-gate-actions {
+    margin-top: 20px !important;
+  }
+  .dossier-gate-actions .button-primary,
+  .dossier-gate-actions .button-ghost {
+    width: min(100%, 270px) !important;
+    min-width: 0;
+  }
+  .dossier-gate small {
+    margin-top: 15px !important;
+    padding-inline: 7px;
+    font-size: .54rem !important;
+    line-height: 1.45;
+  }
+
+  .back-top {
+    right: 14px !important;
+    bottom: 14px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .container,
+  .compact-impact-home .hero-content {
+    width: calc(100% - 22px) !important;
+  }
+  .brand {
+    width: 144px !important;
+  }
+  .compact-impact-home .hero-home {
+    min-height: 620px !important;
+  }
+  .compact-impact-home .hero-content {
+    padding-top: 101px !important;
+    padding-bottom: 28px !important;
+  }
+  .compact-impact-home .impact-headline {
+    font-size: clamp(2.55rem, 13.2vw, 3.35rem) !important;
+  }
+  .compact-impact-home .hero-actions {
+    grid-template-columns: 1fr !important;
+  }
+  .compact-impact-home .hero-actions .button {
+    min-height: 43px !important;
+  }
+  .dossier-gate {
+    padding: 10px !important;
+  }
+  .dossier-gate-logo {
+    max-height: 22dvh;
+  }
+}
+
+@media (max-height: 690px) and (max-width: 800px) {
+  .dossier-gate-card > span {
+    margin-bottom: 9px !important;
+  }
+  .dossier-gate-logo {
+    width: min(88%, 430px) !important;
+    max-height: 20dvh;
+    margin-bottom: 10px !important;
+  }
+  .dossier-gate-card h2 {
+    font-size: clamp(1.55rem, 8vw, 2.35rem) !important;
+  }
+  .dossier-gate-actions {
+    margin-top: 13px !important;
+    gap: 5px !important;
+  }
+  .dossier-gate small {
+    margin-top: 9px !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .dossier-gate {
+    align-items: start;
+  }
+  .dossier-gate-card {
+    width: min(100%, 760px) !important;
+  }
+  .dossier-gate-logo {
+    width: min(62%, 430px) !important;
+    max-height: 30vh;
+  }
+  .dossier-gate-actions {
+    grid-template-columns: auto auto;
+    justify-content: center;
+  }
+  .compact-impact-home .hero-home {
+    min-height: 560px !important;
+  }
+}
+</style>
+<link href="assets/css/responsive.css" rel="stylesheet"/></head>
 <body class="home-page broadcast-page compact-impact-home"><a class="skip-link" href="#conteudo">Pular para o conteúdo</a><header class="site-header" data-header="">
 <div class="header-inner container">
 <a aria-label="KD O PIX? — Início" class="brand" href="./"><img alt="KD O PIX? — Dossiê independente" src="assets/img/logo-kdopix.webp"/></a>
@@ -13,16 +445,18 @@
 </div></header><main id="conteudo">
 <section class="hero-home">
 <div class="hero-media"><img alt="Montagem editorial do dossiê KD O PIX?" height="484" src="media/juca.webp" width="860"/><div class="hero-scan"></div></div>
-<div class="container hero-content"><div class="eyebrow"><span>⚠ Conteúdo de sátira jornalística</span><span>Fontes públicas</span></div><h1 class="impact-headline"><span>O dinheiro entrou.</span><span class="impact-question">A pergunta ficou.</span></h1><p class="hero-lead">Uma reconstrução visual do caso das doações via Pix exibidas na TV baiana — com cronologia, documentos e fontes públicas.</p><div class="hero-actions"><a class="button button-primary" href="linha-do-tempo/">Ver cronologia</a><a class="button button-ghost" href="fontes/">Ver fontes públicas</a></div></div>
+<div class="container hero-content"><div class="eyebrow"><span>⚠ Sátira política sem anestesia</span><span>Fatos atribuídos • fontes abertas</span></div><h1 class="impact-headline"><span>O PIX CAIU.</span><span class="impact-question">A EXPLICAÇÃO, KD?</span></h1><p class="hero-lead">A denúncia é do MP-BA. A ação penal é pública. A ironia é nossa. Este dossiê separa documento, alegação oficial e crítica editorial — sem suavizar as perguntas.</p><div class="hero-actions"><a class="button button-primary" href="linha-do-tempo/">Abrir a cronologia</a><a class="button button-ghost" href="fontes/">Conferir cada fonte</a></div></div>
 </section>
-<section aria-label="Resumo do caso" class="ticker"><div>MP-BA DENUNCIA 12 PESSOAS  ///  JUSTIÇA BLOQUEIA MAIS DE R$ 600 MIL EM BENS  ///  R$ 407 MIL APONTADOS COMO DESVIADOS  ///  PRESUNÇÃO DE INOCÊNCIA GARANTIDA  ///  </div></section>
+<section aria-label="Resumo do caso" class="ticker"><div>A SÁTIRA É NOSSA. A DENÚNCIA É DO MP-BA.  ///  12 RÉUS NA MESMA AÇÃO PENAL  ///  MAIS DE R$ 600 MIL EM BLOQUEIO CAUTELAR  ///  R$ 407 MIL APONTADOS PELO MP-BA  ///  OS DOCUMENTOS SÃO PÚBLICOS. AS PERGUNTAS CONTINUAM.  ///  </div></section>
 <section class="section section-compact"><div class="container stat-grid"><article class="stat-card"><span>Valor apontado</span><strong data-counter="407000" data-prefix="R$ ">R$ 0</strong><small>aproximadamente 75% do total arrecadado, segundo o MP-BA</small></article><article class="stat-card"><span>Pessoas denunciadas</span><strong data-counter="12">0</strong><small>réus após o recebimento da denúncia pela Justiça</small></article><article class="stat-card"><span>Bloqueio cautelar</span><strong data-counter="600000" data-prefix="R$ ">R$ 0</strong><small>mais de R$ 600 mil em bens e ativos, conforme fontes públicas</small></article><article class="stat-card"><span>Último estágio descrito</span><strong class="text-stat">Pós-instrução</strong><small>diligências e alegações finais antes de eventual sentença</small></article></div></section>
-<section class="section"><div class="container split-heading"><div><span class="section-index">01 / RESUMO</span><h2>Sem gritaria.<br/>Com contexto.</h2></div><div class="prose"><p>O projeto preserva o humor e a crítica à estética sensacionalista, mas organiza o conteúdo como um dossiê verificável. Cada afirmação relevante aponta para uma fonte pública.</p><p>Os nomes aparecem porque constam em documentos e reportagens sobre uma ação penal pública. Isso não equivale a condenação: todos mantêm a presunção de inocência até decisão judicial definitiva.</p></div></div></section>
-<section class="section section-dark"><div class="container"><div class="section-heading"><span class="section-index">02 / NAVEGUE</span><h2>Escolha por onde começar.</h2></div><div class="feature-grid"><a class="feature-card" href="linha-do-tempo/"><span>01</span><h3>Linha do tempo</h3><p>Da investigação em 2023 ao encerramento da instrução em 2026.</p><b>Ver cronologia →</b></a><a class="feature-card" href="pessoas-citadas/"><span>02</span><h3>Pessoas citadas</h3><p>Os 12 nomes listados na denúncia recebida pela Justiça.</p><b>Ver nomes →</b></a><a class="feature-card" href="repercussao/"><span>03</span><h3>Repercussão</h3><p>Imprensa, audiência, contradições e o espelho da TV policial.</p><b>Ver repercussão →</b></a><a class="feature-card" href="fontes/"><span>04</span><h3>Fontes</h3><p>Links institucionais, reportagens e código público do projeto.</p><b>Auditar conteúdo →</b></a></div></div></section>
+<section class="section"><div class="container split-heading"><div><span class="section-index">01 / REGRA DO JOGO</span><h2>Sem pedido de desculpas.<br/>Com documento.</h2></div><div class="prose"><p><strong>A sátira é nossa. A denúncia é do MP-BA. O processo é público.</strong> A agressividade está na pergunta, no contraste e na crítica à atuação pública — não na fabricação de fatos.</p><p>Quando o texto relata uma acusação, informa quem acusou. Quando apresenta opinião, marca como crítica editorial. Quando usa montagem, identifica como sátira. O leitor não precisa confiar no site: pode abrir a fonte.</p></div></div></section>
+<section class="section section-compact evidence-section" aria-labelledby="evidence-title"><div class="container"><div class="section-heading"><span class="section-index">02 / LEGENDA EDITORIAL</span><h2 id="evidence-title">A pergunta pode cortar.<br/>A categoria não pode confundir.</h2></div><div class="evidence-grid"><article><span class="evidence-badge evidence-fact">FATO DOCUMENTADO</span><h3>O registro existe.</h3><p>Data, ato, vídeo, decisão, documento ou acontecimento verificável em fonte pública.</p></article><article><span class="evidence-badge evidence-allegation">ALEGAÇÃO OFICIAL</span><h3>A acusação tem autor.</h3><p>Informação atribuída expressamente ao MP, à Polícia, a testemunhas ou a outra fonte identificada.</p></article><article><span class="evidence-badge evidence-opinion">CRÍTICA EDITORIAL</span><h3>A leitura é nossa.</h3><p>Ironia, interpretação e juízo político apresentados como opinião — não como fato novo.</p></article><article><span class="evidence-badge evidence-satire">MONTAGEM SATÍRICA</span><h3>A imagem não se disfarça.</h3><p>Colagens e intervenções visuais identificadas para que não sejam confundidas com registro documental.</p></article></div></div></section>
+<section class="section section-dark"><div class="container"><div class="section-heading"><span class="section-index">03 / NAVEGUE</span><h2>Escolha por onde começar.</h2></div><div class="feature-grid"><a class="feature-card" href="linha-do-tempo/"><span>01</span><h3>Linha do tempo</h3><p>Da investigação em 2023 ao encerramento da instrução em 2026.</p><b>Ver cronologia →</b></a><a class="feature-card" href="pessoas-citadas/"><span>02</span><h3>Pessoas citadas</h3><p>Os 12 nomes listados na denúncia recebida pela Justiça.</p><b>Ver nomes →</b></a><a class="feature-card" href="repercussao/"><span>03</span><h3>Repercussão</h3><p>Imprensa, audiência, contradições e o espelho da TV policial.</p><b>Ver repercussão →</b></a><a class="feature-card" href="fontes/"><span>04</span><h3>Fontes</h3><p>Links institucionais, reportagens e código público do projeto.</p><b>Auditar conteúdo →</b></a></div></div></section>
+<section class="section section-dark authority-video" id="moeda-institucional" aria-labelledby="authority-video-title"><div class="container video-layout"><div class="authority-video-copy"><div class="evidence-inline"><span class="evidence-badge evidence-fact">REGISTRO AUDIOVISUAL</span><span class="evidence-badge evidence-opinion">CRÍTICA EDITORIAL</span></div><span class="section-index">04 / AUTORIDADE EM CENA</span><h2 id="authority-video-title">A moeda era institucional.<br/>A imagem também virou mensagem.</h2><p>Em julho de 2025, o delegado-geral da Polícia Civil da Bahia, <strong>André Augusto de Mendonça Viana</strong>, esteve no estúdio do programa e entregou uma moeda institucional ao apresentador <strong>Marcelo Valter Amorim Matos Lyrio Castro</strong>.</p><p>A Polícia Civil apresentou o gesto como cortesia a um veículo de imprensa. O vídeo comprova a entrega; não comprova favorecimento, acordo ou interferência. A pergunta editorial é outra: <strong>que mensagem pública uma autoridade policial produz ao entregar, em estúdio, uma moeda institucional a um apresentador que responde em uma ação penal?</strong></p><blockquote class="editorial-verdict">Uma cortesia, segundo a instituição.<br/>Um símbolo impossível de ignorar, segundo este dossiê.</blockquote><p class="source-line">CONTEXTO PÚBLICO: <a href="https://g1.globo.com/ba/bahia/noticia/2025/07/15/jornalista-denunciado-por-golpe-do-pix-viraliza.ghtml" target="_blank" rel="noopener noreferrer">G1 Bahia ↗</a></p></div><figure><video controls preload="metadata" poster="media/delegado.webp"><source src="media/delegado.mp4" type="video/mp4"/>Seu navegador não suporta vídeo HTML5.</video><figcaption>REGISTRO AUDIOVISUAL • ANDRÉ AUGUSTO DE MENDONÇA VIANA ENTREGA MOEDA INSTITUCIONAL A MARCELO VALTER AMORIM MATOS LYRIO CASTRO • CRÉDITO INDICADO NO MATERIAL ORIGINAL: MARCELO CASTRO / INSTAGRAM</figcaption></figure></div></section>
 <section aria-labelledby="map-teaser-title" class="section">
 <div class="container map-teaser">
 <div class="map-teaser-copy">
-<span class="section-index">03 / LOCAIS PÚBLICOS</span>
+<span class="section-index">05 / LOCAIS PÚBLICOS</span>
 <h2 id="map-teaser-title">O caso também tem endereço.</h2>
 <p>Veja no Google Maps os locais institucionais públicos associados à cobertura, à acusação e à tramitação judicial. A marcação de um endereço não significa que um crime ocorreu naquele ponto.</p>
 <a class="button button-primary" href="mapa/">Abrir mapa completo</a>
@@ -31,16 +465,17 @@
 <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Record%20Bahia%2C%20Rua%20Jardim%20Federa%C3%A7%C3%A3o%2081%2C%20Salvador%20BA&amp;output=embed" title="Google Maps — Record Bahia"></iframe>
 </div>
 </div>
-</section><section class="section"><div class="container callout"><div><span class="section-index">NOTA EDITORIAL</span><h2>Este site é sátira. Os links não são.</h2></div><p>O tom é de protesto e humor político. A base factual deve ser conferida diretamente nas fontes, especialmente porque situações processuais podem mudar.</p><a class="button button-primary" href="sobre/">Entender o projeto</a></div></section>
+</section><section class="section"><div class="container callout"><div><span class="section-index">NOTA EDITORIAL</span><h2>Não inventamos o enredo.<br/>Só recusamos o silêncio.</h2></div><p>O humor é agressivo. A atribuição factual é precisa. Situações processuais podem mudar; por isso, cada afirmação relevante deve poder ser conferida.</p><a class="button button-primary" href="sobre/">Ver o método editorial</a></div></section>
 </main><footer class="main-footer">
-<div aria-hidden="true" class="warning-tape"><div>CENA DO CRIME  ///  NÃO ULTRAPASSE  ///  CENA DO CRIME  ///  NÃO ULTRAPASSE  ///  CENA DO CRIME  ///  NÃO ULTRAPASSE  ///  </div></div>
+<div aria-hidden="true" class="warning-tape"><div>A SÁTIRA É NOSSA  ///  A DENÚNCIA É DO MP-BA  ///  OS DOCUMENTOS SÃO PÚBLICOS  ///  AS PERGUNTAS CONTINUAM  ///  </div></div>
 <div class="container footer-grid">
-<div><img alt="KD O PIX? — Dossiê independente" class="footer-logo" src="assets/img/logo-kdopix.webp"/><p>Dossiê satírico e independente construído com base em documentos e reportagens públicas.</p></div>
-<div><h2>Navegação</h2><a href="linha-do-tempo/">Linha do tempo</a><a href="pessoas-citadas/">Pessoas citadas</a><a href="mapa/">Mapa dos locais</a><a href="fontes/">Fontes</a><a href="sobre/">Sobre o projeto</a></div>
+<div><img alt="KD O PIX? — Dossiê independente" class="footer-logo" src="assets/img/logo-kdopix.webp"/><p>A sátira é nossa. Os documentos são públicos. As perguntas continuam.</p></div>
+<div><h2>Navegação</h2><a href="linha-do-tempo/">Linha do tempo</a><a href="pessoas-citadas/">Pessoas citadas</a><a href="mapa/">Mapa dos locais</a><a href="fontes/">Fontes</a><a href="sobre/">Método editorial</a></div>
 <div><h2>Transparência</h2><a href="politica-de-privacidade/">Política de privacidade</a><a href="termos-de-uso/">Termos de uso</a><a href="https://github.com/henriquetourinho/kdopix" rel="noopener noreferrer" target="_blank">Código no GitHub</a></div>
 <div class="developer-credit"><span>Desenvolvido por</span><a href="https://henriquetourinho.com.br/" rel="noopener noreferrer" target="_blank">Henrique Tourinho</a><small>Salvador, Bahia</small></div>
 </div>
-<div class="container footer-bottom"><p>Informações extraídas de fontes públicas. Sem vínculo com as partes citadas.</p><p>Última verificação editorial informada: 29/06/2026.</p></div>
+<div class="container constitutional-notice">É vedada toda e qualquer censura de natureza política, ideológica e artística. (Art. 220, § 2º, Constituição Federal)</div>
+<div class="container footer-bottom"><p>Fatos atribuídos às fontes. Opiniões identificadas como crítica editorial. Sem vínculo com as partes citadas.</p><p>Última verificação editorial informada: 14/07/2026.</p></div>
 </footer><audio id="site-audio" preload="none"><source src="media/kdopix.mp3" type="audio/mpeg"/></audio>
 <div class="cookie-overlay" data-cookie-overlay="" hidden="">
 <div aria-labelledby="cookie-title" aria-modal="true" class="cookie-dialog" role="dialog">
